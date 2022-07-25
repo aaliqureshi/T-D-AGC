@@ -1,4 +1,3 @@
-import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -111,27 +110,7 @@ print(j_avg)
 print(s_avg)
 
 x_axis=[1.05,1.2,1.6,2.0,2.4,2.8]
-
-font = {'family' : 'normal',
-        'weight' : 'bold',}
-matplotlib.rc('font',**font)
-
 plt.figure(1)
-
-# plt.plot(x_axis,j_max, "--")
-# plt.plot(x_axis,s_max, "--")
-# plt.plot(x_axis,j_avg,'-')
-# plt.plot(x_axis,s_avg,'-')
-# plt.xticks([1.05,1.2,1.6,2.0,2.4,2.8])
-# plt.ylim(top=0.06)
-# # plt.legend(('Max. error', 'Secant Line Approximation (max)', 'AVg (T)','Avg(S)'))
-# plt.legend(('Max. error (tangent line approx.)', 'Max. error (secant line approx.)',' Average error (tangent line approx)','Average error (secant line approx.)'))
-# plt.xlabel("DER power output [pu]")
-# plt.ylabel("Voltage error [%]")
-# plt.title("Mean voltage error as a function of DER output")
-# plt.savefig('RES4',dpi=300)
-
-# plt.figure(1)
 
 plt.plot(x_axis,j_max, "--" , linewidth=3)
 plt.plot(x_axis,s_max, "--", linewidth=3)
@@ -144,7 +123,7 @@ plt.legend(('Max. error (tangent line approx.)', 'Max. error (secant line approx
 plt.xlabel("DER power output [pu]",fontweight='bold')
 plt.ylabel("Voltage error [%]",fontweight='bold')
 plt.title("Mean voltage error as a function of DER output",fontweight='bold')
-plt.savefig('RES4',dpi=300)
+plt.savefig('RES3',dpi=300)
 
 plt.figure(2)
 
