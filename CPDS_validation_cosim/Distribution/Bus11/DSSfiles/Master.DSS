@@ -1,0 +1,35 @@
+Clear
+
+
+New Circuit.ieee13nodecktpositive
+~ basekv=66.395 pu=0.99245 phases=1 bus1=SourceBus 
+~ Angle=-7.044400009884178
+~ MVAsc3=6666.6 MVAsc1=6666.6 R1=0.16038 X1=0.64151
+
+Set Cktmodel=Positive
+
+Redirect LineCode.DSS
+
+Redirect Line.DSS
+Redirect Load.DSS
+Redirect Transformer.DSS
+Redirect Capacitor.DSS
+MakeBusList
+Set Voltagebases=[115, 4.16, .48]
+calcv
+Buscoords buscoords.dss
+New Energymeter.m1 Line.650632 1
+
+Transformer.Reg1.Taps=[1 1] 
+//set Controlmode=off
+set ControlMode=STATIC
+solve
+
+//show voltages LN Nodes
+///show voltage
+//plot profile phases=all
+
+//plot circuit
+
+//show eventlog
+//show taps

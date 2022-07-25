@@ -1,0 +1,11 @@
+{
+    "name": "Aggregator_DER_Bus11",
+    "total_time": 60,
+    "simulation_step_time": 1,
+    "num_DER": 4,
+    "scale_P": 1,
+    "scale_Q": 1,
+    "DER_output_MW_prescale": 2000,
+    "DER_rating_MW_prescale": 10000,
+    "Total_DER_ratings": 10000
+}

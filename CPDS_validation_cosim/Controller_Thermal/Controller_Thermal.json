@@ -1,0 +1,6 @@
+{
+    "name": "Controller_Thermal",
+    "total_time": 60,
+    "simulation_step_time": 1,
+    "num_TurbineGov": 5
+}

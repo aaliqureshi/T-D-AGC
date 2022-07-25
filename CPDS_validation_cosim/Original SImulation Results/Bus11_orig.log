@@ -1,0 +1,709 @@
+python_dir=C:\Users\aaliq\OneDrive\Documents\CoSimulation\CPDS_validation_cosim2\CPDS_validation_cosim\Distribution\Bus11
+reading json
+reading json okay!
+------ Running the Bus11 feeder in opendss
+------ Success for the test run -----
+After opendss run os.getcwd()=C:\Users\aaliq\OneDrive\Documents\CoSimulation\CPDS_validation_cosim2\CPDS_validation_cosim\Distribution\Bus11\DSSfiles
+dss.Solution.Mode()=2
+dss.Solution.ControlMode()=2
+Total power base line is [-3414.125043708438, -1705.139731983066]
+Bus11: Combination federate created
+DER output after scale in kw each = 500.0 of 4 DERs.
+index_DERs = [ 4 10 12 15]
+==============================
+current_time=0
+DER_output=[500. 500. 500. 500.] at time 0
+Total power=[-1499.782456135105, -1593.113058531508]
+DER power is 2000.0
+Overall after adjustment S=[-3499.782456135105, -1593.113058531508]
+Sent Active power at time 0: 3499.782456135105 kw
+Sent Reactive power at time 0: 1593.113058531508 kvar
+********* getting vsm ****************
+min of voltage = 0.938555359689878
+max of voltage = 0.9923495972903307
+index_DERs=[ 4 10 12 15]
+***************************************
+C:\Users\aaliq\AppData\Local\Programs\Python\Python310\lib\site-packages\helics\capi.py:7501: UserWarning: This function will return a complex number in the next major release
+  warnings.warn("This function will return a complex number in the next major release")
+Received voltage mag at time 0: -1e+49 pu
+Received voltage ang at time 0: 0.0 rad
+manually set up first step voltage
+Received DER_output at time 0: [-1e+49] MW
+Not change DER_output at time 0
+==============================
+current_time=1.0
+DER_output=[500. 500. 500. 500.] at time 1.0
+Total power=[-1499.9213801051146, -1593.3134766953094]
+DER power is 2000.0
+Overall after adjustment S=[-3499.9213801051146, -1593.3134766953094]
+Sent Active power at time 1.0: 3499.9213801051146 kw
+Sent Reactive power at time 1.0: 1593.3134766953094 kvar
+Received voltage mag at time 1.0: 0.9945371275728873 pu
+Received voltage ang at time 1.0: -0.11500846402496999 rad
+Received DER_output at time 1.0: [0.00200000877300096, 0.00400001754600192, 0.006000026319002879, 0.00800003509200384] MW
+==============================
+current_time=2.0
+DER_output=[500.00219325 500.00219325 500.00219325 500.00219325] at time 2.0
+Total power=[-1502.0618569906098, -1591.3357517075917]
+DER power is 2000.0087730009602
+Overall after adjustment S=[-3502.07062999157, -1591.3357517075917]
+Sent Active power at time 2.0: 3502.07062999157 kw
+Sent Reactive power at time 2.0: 1591.3357517075917 kvar
+Received voltage mag at time 2.0: 0.9942647530497329 pu
+Received voltage ang at time 2.0: -0.10248001227697556 rad
+Received DER_output at time 2.0: [0.0020162373929217946, 0.004032474785843589, 0.006048712178765346, 0.008064949571682594] MW
+==============================
+current_time=3.0
+DER_output=[504.05934823 504.05934823 504.05934823 504.05934823] at time 3.0
+Total power=[-1485.305947650646, -1590.33661602361]
+DER power is 2016.2373929213322
+Overall after adjustment S=[-3501.543340571978, -1590.33661602361]
+Sent Active power at time 3.0: 3501.543340571978 kw
+Sent Reactive power at time 3.0: 1590.33661602361 kvar
+Received voltage mag at time 3.0: 0.9941919328613446 pu
+Received voltage ang at time 3.0: -0.11539252495025543 rad
+Received DER_output at time 3.0: [0.0020971552893884918, 0.0041943105787769835, 0.0062914658681654766, 0.008388621157553967] MW
+==============================
+current_time=4.0
+DER_output=[524.28882235 524.28882235 524.28882235 524.28882235] at time 4.0
+Total power=[-1403.3089231572978, -1584.8084011814108]
+DER power is 2097.155289388492
+Overall after adjustment S=[-3500.4642125457895, -1584.8084011814108]
+Sent Active power at time 4.0: 3500.4642125457895 kw
+Sent Reactive power at time 4.0: 1584.8084011814108 kvar
+Received voltage mag at time 4.0: 0.9945879467597465 pu
+Received voltage ang at time 4.0: -0.11600440161088377 rad
+Received DER_output at time 4.0: [0.0020000192713024952, 0.0040000385426049905, 0.006000057813907485, 0.008000077085209981] MW
+==============================
+current_time=5.0
+DER_output=[500.00481783 500.00481783 500.00481783 500.00481783] at time 5.0
+Total power=[-1501.9782308246336, -1591.1081342239752]
+DER power is 2000.019271302495
+Overall after adjustment S=[-3501.9975021271284, -1591.1081342239752]
+Sent Active power at time 5.0: 3501.9975021271284 kw
+Sent Reactive power at time 5.0: 1591.1081342239752 kvar
+Received voltage mag at time 5.0: 0.9946445218623418 pu
+Received voltage ang at time 5.0: -0.08941394643741385 rad
+Received DER_output at time 5.0: [0.00199999053811756, 0.00399998107623512, 0.0059999716143526805, 0.00799996215247024] MW
+==============================
+current_time=6.0
+DER_output=[499.99763453 499.99763453 499.99763453 499.99763453] at time 6.0
+Total power=[-1502.2864686895675, -1591.294135247879]
+DER power is 1999.9905381175604
+Overall after adjustment S=[-3502.2770068071277, -1591.294135247879]
+Sent Active power at time 6.0: 3502.2770068071277 kw
+Sent Reactive power at time 6.0: 1591.294135247879 kvar
+Received voltage mag at time 6.0: 0.994066481873937 pu
+Received voltage ang at time 6.0: -0.0837986151739074 rad
+Received DER_output at time 6.0: [0.002122559618556303, 0.004245119237112606, 0.00636767885566891, 0.008490238474225212] MW
+==============================
+current_time=7.0
+DER_output=[530.63990464 530.63990464 530.63990464 530.63990464] at time 7.0
+Total power=[-1377.5020572715812, -1583.1751836869666]
+DER power is 2122.559618556303
+Overall after adjustment S=[-3500.0616758278843, -1583.1751836869666]
+Sent Active power at time 7.0: 3500.0616758278843 kw
+Sent Reactive power at time 7.0: 1583.1751836869666 kvar
+Received voltage mag at time 7.0: 0.9944605545759299 pu
+Received voltage ang at time 7.0: -0.09899861383224857 rad
+Received DER_output at time 7.0: [0.0019918332954490495, 0.003983666778312293, 0.005975500167468441, 0.007967333556624587] MW
+==============================
+current_time=8.0
+DER_output=[497.95834495 497.95834495 497.95834495 497.95834495] at time 8.0
+Total power=[-1510.0019849991716, -1591.6656336819026]
+DER power is 1991.8333797854368
+Overall after adjustment S=[-3501.8353647846084, -1591.6656336819026]
+Sent Active power at time 8.0: 3501.8353647846084 kw
+Sent Reactive power at time 8.0: 1591.6656336819026 kvar
+Received voltage mag at time 8.0: 0.994656606253106 pu
+Received voltage ang at time 8.0: -0.0679456883028373 rad
+Received DER_output at time 8.0: [0.0019917836685751544, 0.003983567337150309, 0.005975350825477211, 0.007967134428149003] MW
+==============================
+current_time=9.0
+DER_output=[497.94590648 497.94590648 497.94590648 497.94590648] at time 9.0
+Total power=[-1510.6786039785525, -1591.956166674825]
+DER power is 1991.7836259351677
+Overall after adjustment S=[-3502.46222991372, -1591.956166674825]
+Sent Active power at time 9.0: 3502.46222991372 kw
+Sent Reactive power at time 9.0: 1591.956166674825 kvar
+Received voltage mag at time 9.0: 0.9940845096928883 pu
+Received voltage ang at time 9.0: -0.06225419649472528 rad
+Received DER_output at time 9.0: [0.0021055061113439714, 0.004211012222687943, 0.006316518334031913, 0.008422024445375886] MW
+==============================
+current_time=10.0
+DER_output=[526.37652784 526.37652784 526.37652784 526.37652784] at time 10.0
+Total power=[-1394.7688239290674, -1584.30984753101]
+DER power is 2105.506111343971
+Overall after adjustment S=[-3500.2749352730384, -1584.30984753101]
+Sent Active power at time 10.0: 3500.2749352730384 kw
+Sent Reactive power at time 10.0: 1584.30984753101 kvar
+********* getting vsm ****************
+min of voltage = 0.9407124020165153
+max of voltage = 0.993985969519845
+index_DERs=[ 4 10 12 15]
+***************************************
+Received voltage mag at time 10.0: 0.994234099907132 pu
+Received voltage ang at time 10.0: -0.08068846090238312 rad
+Received DER_output at time 10.0: [0.0020324859183788874, 0.004064971836757775, 0.006097457755136661, 0.00812994367351555] MW
+==============================
+current_time=11.0
+DER_output=[508.12147959 508.12147959 508.12147959 508.12147959] at time 11.0
+Total power=[-1468.604790551104, -1588.9881714778946]
+DER power is 2032.4859183788874
+Overall after adjustment S=[-3501.0907089299917, -1588.9881714778946]
+Sent Active power at time 11.0: 3501.0907089299917 kw
+Sent Reactive power at time 11.0: 1588.9881714778946 kvar
+Received voltage mag at time 11.0: 0.9945239645469823 pu
+Received voltage ang at time 11.0: -0.07287429073955771 rad
+Received DER_output at time 11.0: [0.0019880265361597016, 0.003976053072319403, 0.005964079608479109, 0.007952106144684853] MW
+==============================
+current_time=12.0
+DER_output=[497.00663404 497.00663404 497.00663404 497.00663404] at time 12.0
+Total power=[-1514.1755664492996, -1592.1748846823123]
+DER power is 1988.0265361643064
+Overall after adjustment S=[-3502.2021026136063, -1592.1748846823123]
+Sent Active power at time 12.0: 3502.2021026136063 kw
+Sent Reactive power at time 12.0: 1592.1748846823123 kvar
+Received voltage mag at time 12.0: 0.9943919960547176 pu
+Received voltage ang at time 12.0: -0.06163071307972419 rad
+Received DER_output at time 12.0: [0.0019880147409519254, 0.003976029481903851, 0.005964044048686218, 0.007952058731524495] MW
+==============================
+current_time=13.0
+DER_output=[497.00367508 497.00367508 497.00367508 497.00367508] at time 13.0
+Total power=[-1514.0372201623609, -1592.2693672734335]
+DER power is 1988.0147003066488
+Overall after adjustment S=[-3502.05192046901, -1592.2693672734335]
+Sent Active power at time 13.0: 3502.05192046901 kw
+Sent Reactive power at time 13.0: 1592.2693672734335 kvar
+Received voltage mag at time 13.0: 0.9941002732283516 pu
+Received voltage ang at time 13.0: -0.0683253782251529 rad
+Received DER_output at time 13.0: [0.0021454745518759612, 0.0042909491037519225, 0.006436423655627883, 0.008581898207503845] MW
+==============================
+current_time=14.0
+DER_output=[536.36863797 536.36863797 536.36863797 536.36863797] at time 14.0
+Total power=[-1354.4147011574196, -1581.7278672413486]
+DER power is 2145.4745518759614
+Overall after adjustment S=[-3499.889253033381, -1581.7278672413486]
+Sent Active power at time 14.0: 3499.889253033381 kw
+Sent Reactive power at time 14.0: 1581.7278672413486 kvar
+Received voltage mag at time 14.0: 0.994316203503803 pu
+Received voltage ang at time 14.0: -0.08864305820555902 rad
+Received DER_output at time 14.0: [0.00203914170114188, 0.00407828340228376, 0.006117425103425641, 0.00815656680456752] MW
+==============================
+current_time=15.0
+DER_output=[509.78542529 509.78542529 509.78542529 509.78542529] at time 15.0
+Total power=[-1461.8994128806569, -1588.3699284964227]
+DER power is 2039.1417011418803
+Overall after adjustment S=[-3501.041114022537, -1588.3699284964227]
+Sent Active power at time 15.0: 3501.041114022537 kw
+Sent Reactive power at time 15.0: 1588.3699284964227 kvar
+Received voltage mag at time 15.0: 0.9945648800262905 pu
+Received voltage ang at time 15.0: -0.08166773903118624 rad
+Received DER_output at time 15.0: [0.001990775301167363, 0.003981550602334726, 0.005972325903502089, 0.007963101204669452] MW
+==============================
+current_time=16.0
+DER_output=[497.69382529 497.69382529 497.69382529 497.69382529] at time 16.0
+Total power=[-1511.4070569405114, -1591.9021920269327]
+DER power is 1990.7753011673628
+Overall after adjustment S=[-3502.1823581078743, -1591.9021920269327]
+Sent Active power at time 16.0: 3502.1823581078743 kw
+Sent Reactive power at time 16.0: 1591.9021920269327 kvar
+Received voltage mag at time 16.0: 0.9944992029836668 pu
+Received voltage ang at time 16.0: -0.06968726183882372 rad
+Received DER_output at time 16.0: [0.0019907693533012445, 0.003981538706602489, 0.005972308059903734, 0.007963077413204978] MW
+==============================
+current_time=17.0
+DER_output=[497.69233833 497.69233833 497.69233833 497.69233833] at time 17.0
+Total power=[-1511.3748131717607, -1591.9917733582522]
+DER power is 1990.7693533012443
+Overall after adjustment S=[-3502.144166473005, -1591.9917733582522]
+Sent Active power at time 17.0: 3502.144166473005 kw
+Sent Reactive power at time 17.0: 1591.9917733582522 kvar
+Received voltage mag at time 17.0: 0.994064268489968 pu
+Received voltage ang at time 17.0: -0.07228176689241528 rad
+Received DER_output at time 17.0: [0.002172409042631435, 0.00434481808526287, 0.006517227127894307, 0.00868963617052574] MW
+==============================
+current_time=18.0
+DER_output=[543.10226066 543.10226066 543.10226066 543.10226066] at time 18.0
+Total power=[-1327.1520168799198, -1579.9787697296156]
+DER power is 2172.409042631435
+Overall after adjustment S=[-3499.561059511355, -1579.9787697296156]
+Sent Active power at time 18.0: 3499.561059511355 kw
+Sent Reactive power at time 18.0: 1579.9787697296156 kvar
+Received voltage mag at time 18.0: 0.9939776556140105 pu
+Received voltage ang at time 18.0: -0.1119054929708873 rad
+Received DER_output at time 18.0: [0.002317901842081548, 0.004635803684163096, 0.006953705526244644, 0.009271607368326192] MW
+==============================
+current_time=19.0
+DER_output=[579.47546052 579.47546052 579.47546052 579.47546052] at time 19.0
+Total power=[-1179.891281338524, -1570.6752132427312]
+DER power is 2317.9018420815482
+Overall after adjustment S=[-3497.7931234200723, -1570.6752132427312]
+Sent Active power at time 19.0: 3497.7931234200723 kw
+Sent Reactive power at time 19.0: 1570.6752132427312 kvar
+Received voltage mag at time 19.0: 0.9943074592283776 pu
+Received voltage ang at time 19.0: -0.14855921315039577 rad
+Received DER_output at time 19.0: [0.0021790700024864494, 0.004358140004972899, 0.006537210007459347, 0.008716280009945798] MW
+==============================
+current_time=20.0
+DER_output=[544.76750062 544.76750062 544.76750062 544.76750062] at time 20.0
+Total power=[-1320.4776065683682, -1579.00751224936]
+DER power is 2179.070002486449
+Overall after adjustment S=[-3499.5476090548173, -1579.00751224936]
+Sent Active power at time 20.0: 3499.5476090548173 kw
+Sent Reactive power at time 20.0: 1579.00751224936 kvar
+********* getting vsm ****************
+min of voltage = 0.9412443243193213
+max of voltage = 0.9942101044259757
+index_DERs=[ 4 10 12 15]
+***************************************
+Received voltage mag at time 20.0: 0.9945499999909282 pu
+Received voltage ang at time 20.0: -0.1622799505890413 rad
+Received DER_output at time 20.0: [0.002031000322224908, 0.004062000644449816, 0.006093000966674725, 0.008124001288899632] MW
+==============================
+current_time=21.0
+DER_output=[507.75008056 507.75008056 507.75008056 507.75008056] at time 21.0
+Total power=[-1470.352434002234, -1588.6599297233379]
+DER power is 2031.0003222249081
+Overall after adjustment S=[-3501.352756227142, -1588.6599297233379]
+Sent Active power at time 21.0: 3501.352756227142 kw
+Sent Reactive power at time 21.0: 1588.6599297233379 kvar
+Received voltage mag at time 21.0: 0.994492408310097 pu
+Received voltage ang at time 21.0: -0.16569057025613865 rad
+Received DER_output at time 21.0: [0.002029448752614537, 0.004058897505229074, 0.006088346257843612, 0.008117795010458149] MW
+==============================
+current_time=22.0
+DER_output=[507.36218815 507.36218815 507.36218815 507.36218815] at time 22.0
+Total power=[-1472.087552123644, -1589.1207079022042]
+DER power is 2029.448752614537
+Overall after adjustment S=[-3501.5363047381807, -1589.1207079022042]
+Sent Active power at time 22.0: 3501.5363047381807 kw
+Sent Reactive power at time 22.0: 1589.1207079022042 kvar
+Received voltage mag at time 22.0: 0.9943194978449335 pu
+Received voltage ang at time 22.0: -0.17566963120300116 rad
+Received DER_output at time 22.0: [0.0021263736736866043, 0.004252747347373209, 0.006379121021059814, 0.008505494694746417] MW
+==============================
+current_time=23.0
+DER_output=[531.59341842 531.59341842 531.59341842 531.59341842] at time 23.0
+Total power=[-1373.8800804551697, -1582.6924122103144]
+DER power is 2126.3736736866044
+Overall after adjustment S=[-3500.253754141774, -1582.6924122103144]
+Sent Active power at time 23.0: 3500.253754141774 kw
+Sent Reactive power at time 23.0: 1582.6924122103144 kvar
+Received voltage mag at time 23.0: 0.9945551003855353 pu
+Received voltage ang at time 23.0: -0.1853402733786688 rad
+Received DER_output at time 23.0: [0.0020067645735378195, 0.004013528967982026, 0.006020293444242362, 0.008027057925656481] MW
+==============================
+current_time=24.0
+DER_output=[501.69112279 501.69112279 501.69112279 501.69112279] at time 24.0
+Total power=[-1494.976874432941, -1590.4845543675717]
+DER power is 2006.7644911418686
+Overall after adjustment S=[-3501.7413655748096, -1590.4845543675717]
+Sent Active power at time 24.0: 3501.7413655748096 kw
+Sent Reactive power at time 24.0: 1590.4845543675717 kvar
+Received voltage mag at time 24.0: 0.9944049411433032 pu
+Received voltage ang at time 24.0: -0.17121999561418821 rad
+Received DER_output at time 24.0: [0.0020067250438344703, 0.004013450087668941, 0.006020175350904451, 0.008026900467872597] MW
+==============================
+current_time=25.0
+DER_output=[501.68127376 501.68127376 501.68127376 501.68127376] at time 25.0
+Total power=[-1495.0965316457502, -1590.8980190975963]
+DER power is 2006.725095028046
+Overall after adjustment S=[-3501.8216266737963, -1590.8980190975963]
+Sent Active power at time 25.0: 3501.8216266737963 kw
+Sent Reactive power at time 25.0: 1590.8980190975963 kvar
+Received voltage mag at time 25.0: 0.9945023733709204 pu
+Received voltage ang at time 25.0: -0.17181923765907767 rad
+Received DER_output at time 25.0: [0.002006761036688609, 0.004013521967959237, 0.006020282865944693, 0.00802704382125959] MW
+==============================
+current_time=26.0
+DER_output=[501.6902423 501.6902423 501.6902423 501.6902423] at time 26.0
+Total power=[-1495.1467954729433, -1590.8274705619472]
+DER power is 2006.7609691852128
+Overall after adjustment S=[-3501.9077646581563, -1590.8274705619472]
+Sent Active power at time 26.0: 3501.9077646581563 kw
+Sent Reactive power at time 26.0: 1590.8274705619472 kvar
+Received voltage mag at time 26.0: 0.9946289463105329 pu
+Received voltage ang at time 26.0: -0.14658226662885135 rad
+Received DER_output at time 26.0: [0.002010287094146771, 0.004020574188293542, 0.006030861282440313, 0.008041148376587084] MW
+==============================
+current_time=27.0
+DER_output=[502.57177354 502.57177354 502.57177354 502.57177354] at time 27.0
+Total power=[-1491.8550038361836, -1590.5941929869978]
+DER power is 2010.287094146771
+Overall after adjustment S=[-3502.1420979829545, -1590.5941929869978]
+Sent Active power at time 27.0: 3502.1420979829545 kw
+Sent Reactive power at time 27.0: 1590.5941929869978 kvar
+Received voltage mag at time 27.0: 0.9941640397615745 pu
+Received voltage ang at time 27.0: -0.13181236434383406 rad
+Received DER_output at time 27.0: [0.002024514347865712, 0.004049028696370432, 0.006073543044561578, 0.008098057392748775] MW
+==============================
+current_time=28.0
+DER_output=[506.12858704 506.12858704 506.12858704 506.12858704] at time 28.0
+Total power=[-1476.7756485771897, -1589.76997829273]
+DER power is 2024.5143481546497
+Overall after adjustment S=[-3501.2899967318394, -1589.76997829273]
+Sent Active power at time 28.0: 3501.2899967318394 kw
+Sent Reactive power at time 28.0: 1589.76997829273 kvar
+Received voltage mag at time 28.0: 0.9943579370996033 pu
+Received voltage ang at time 28.0: -0.1356357767773878 rad
+Received DER_output at time 28.0: [0.002010313065637494, 0.0040206258350204286, 0.0060309387525262406, 0.008041251670034987] MW
+==============================
+current_time=29.0
+DER_output=[502.57823308 502.57823308 502.57823308 502.57823308] at time 29.0
+Total power=[-1491.3859978860464, -1590.698615945059]
+DER power is 2010.312932321915
+Overall after adjustment S=[-3501.6989302079614, -1590.698615945059]
+Sent Active power at time 29.0: 3501.6989302079614 kw
+Sent Reactive power at time 29.0: 1590.698615945059 kvar
+Received voltage mag at time 29.0: 0.9944647349203137 pu
+Received voltage ang at time 29.0: -0.11487320076541216 rad
+Received DER_output at time 29.0: [0.0020102843479476353, 0.004020568695895271, 0.006030853043842905, 0.00804113757542659] MW
+==============================
+current_time=30.0
+DER_output=[502.57109158 502.57109158 502.57109158 502.57109158] at time 30.0
+Total power=[-1491.6582956627167, -1590.7190448981435]
+DER power is 2010.28436631124
+Overall after adjustment S=[-3501.942661973957, -1590.7190448981435]
+Sent Active power at time 30.0: 3501.942661973957 kw
+Sent Reactive power at time 30.0: 1590.7190448981435 kvar
+********* getting vsm ****************
+min of voltage = 0.9407340850909061
+max of voltage = 0.9943647345376004
+index_DERs=[ 4 10 12 15]
+***************************************
+Received voltage mag at time 30.0: 0.9943748245431792 pu
+Received voltage ang at time 30.0: -0.10391164829585975 rad
+Received DER_output at time 30.0: [0.001995809330912323, 0.003991618661824646, 0.005987427992736968, 0.007983237323649292] MW
+==============================
+current_time=31.0
+DER_output=[498.95233273 498.95233273 498.95233273 498.95233273] at time 31.0
+Total power=[-1506.1045330286026, -1591.6959333983973]
+DER power is 1995.809330912323
+Overall after adjustment S=[-3501.9138639409257, -1591.6959333983973]
+Sent Active power at time 31.0: 3501.9138639409257 kw
+Sent Reactive power at time 31.0: 1591.6959333983973 kvar
+Received voltage mag at time 31.0: 0.9943115338521674 pu
+Received voltage ang at time 31.0: -0.09264010062752502 rad
+Received DER_output at time 31.0: [0.0019958026796486525, 0.003991605359297305, 0.005987408038945957, 0.00798321071859461] MW
+==============================
+current_time=32.0
+DER_output=[498.95066991 498.95066991 498.95066991 498.95066991] at time 32.0
+Total power=[-1506.082443203102, -1591.8078156926483]
+DER power is 1995.8026796486527
+Overall after adjustment S=[-3501.8851228517547, -1591.8078156926483]
+Sent Active power at time 32.0: 3501.8851228517547 kw
+Sent Reactive power at time 32.0: 1591.8078156926483 kvar
+Received voltage mag at time 32.0: 0.9947229943711136 pu
+Received voltage ang at time 32.0: -0.07725527072325353 rad
+Received DER_output at time 32.0: [0.0019958300716143283, 0.0039916601432286565, 0.0059874902148429835, 0.00798332028645731] MW
+==============================
+current_time=33.0
+DER_output=[498.9575179 498.9575179 498.9575179 498.9575179] at time 33.0
+Total power=[-1506.6214006198095, -1591.6099772074203]
+DER power is 1995.8300716143278
+Overall after adjustment S=[-3502.4514722341373, -1591.6099772074203]
+Sent Active power at time 33.0: 3502.4514722341373 kw
+Sent Reactive power at time 33.0: 1591.6099772074203 kvar
+Received voltage mag at time 33.0: 0.9948181641798066 pu
+Received voltage ang at time 33.0: -0.026690042795604916 rad
+Received DER_output at time 33.0: [0.0019957967456780577, 0.003991593491356115, 0.005987390237034173, 0.00798318698271223] MW
+==============================
+current_time=34.0
+DER_output=[498.94918642 498.94918642 498.94918642 498.94918642] at time 34.0
+Total power=[-1506.5713102559816, -1591.3054819252175]
+DER power is 1995.796745678058
+Overall after adjustment S=[-3502.3680559340396, -1591.3054819252175]
+Sent Active power at time 34.0: 3502.3680559340396 kw
+Sent Reactive power at time 34.0: 1591.3054819252175 kvar
+Received voltage mag at time 34.0: 0.9942454525078547 pu
+Received voltage ang at time 34.0: 0.006547678252413354 rad
+Received DER_output at time 34.0: [0.001979680323357797, 0.003959360646715594, 0.005939040970073392, 0.007918721293431187] MW
+==============================
+current_time=35.0
+DER_output=[494.92008084 494.92008084 494.92008084 494.92008084] at time 35.0
+Total power=[-1522.3057861396408, -1592.9134801323153]
+DER power is 1979.680323357797
+Overall after adjustment S=[-3501.9861094974376, -1592.9134801323153]
+Sent Active power at time 35.0: 3501.9861094974376 kw
+Sent Reactive power at time 35.0: 1592.9134801323153 kvar
+Received voltage mag at time 35.0: 0.9938573845489775 pu
+Received voltage ang at time 35.0: 0.0013121798758354156 rad
+Received DER_output at time 35.0: [0.0021539982891970043, 0.004307996578394009, 0.006461994867591013, 0.008615993156788017] MW
+==============================
+current_time=36.0
+DER_output=[538.4995723 538.4995723 538.4995723 538.4995723] at time 36.0
+Total power=[-1345.5554881291134, -1581.3993718616343]
+DER power is 2153.9982891970044
+Overall after adjustment S=[-3499.5537773261176, -1581.3993718616343]
+Sent Active power at time 36.0: 3499.5537773261176 kw
+Sent Reactive power at time 36.0: 1581.3993718616343 kvar
+Received voltage mag at time 36.0: 0.9940815426742975 pu
+Received voltage ang at time 36.0: -0.025965311044261235 rad
+Received DER_output at time 36.0: [0.0021321853153025423, 0.004264370630605085, 0.006396555945907626, 0.00852874126121017] MW
+==============================
+current_time=37.0
+DER_output=[533.04632883 533.04632883 533.04632883 533.04632883] at time 37.0
+Total power=[-1367.5858914831135, -1582.3175601347716]
+DER power is 2132.185315302542
+Overall after adjustment S=[-3499.7712067856555, -1582.3175601347716]
+Sent Active power at time 37.0: 3499.7712067856555 kw
+Sent Reactive power at time 37.0: 1582.3175601347716 kvar
+Received voltage mag at time 37.0: 0.9943425796072497 pu
+Received voltage ang at time 37.0: -0.03814770652871238 rad
+Received DER_output at time 37.0: [0.002047061488134098, 0.004094122976268196, 0.0061411844644022945, 0.008188245952536392] MW
+==============================
+current_time=38.0
+DER_output=[511.76537203 511.76537203 511.76537203 511.76537203] at time 38.0
+Total power=[-1453.996443670076, -1587.8917008728463]
+DER power is 2047.0614881340978
+Overall after adjustment S=[-3501.0579318041737, -1587.8917008728463]
+Sent Active power at time 38.0: 3501.0579318041737 kw
+Sent Reactive power at time 38.0: 1587.8917008728463 kvar
+Received voltage mag at time 38.0: 0.9943499270321116 pu
+Received voltage ang at time 38.0: -0.047419790518711744 rad
+Received DER_output at time 38.0: [0.0020832238185764175, 0.004166447637152835, 0.006249671455729251, 0.00833289527430567] MW
+==============================
+current_time=39.0
+DER_output=[520.80595464 520.80595464 520.80595464 520.80595464] at time 39.0
+Total power=[-1417.5367986756874, -1585.5575285675652]
+DER power is 2083.223818576417
+Overall after adjustment S=[-3500.7606172521046, -1585.5575285675652]
+Sent Active power at time 39.0: 3500.7606172521046 kw
+Sent Reactive power at time 39.0: 1585.5575285675652 kvar
+Received voltage mag at time 39.0: 0.9945066549449851 pu
+Received voltage ang at time 39.0: -0.056077624487978664 rad
+Received DER_output at time 39.0: [0.001988554369648199, 0.0039771089030601345, 0.00596566335987068, 0.007954217813160906] MW
+==============================
+current_time=40.0
+DER_output=[497.13861114 497.13861114 497.13861114 497.13861114] at time 40.0
+Total power=[-1513.4058316857825, -1591.8895869555809]
+DER power is 1988.5544445739918
+Overall after adjustment S=[-3501.960276259774, -1591.8895869555809]
+Sent Active power at time 40.0: 3501.960276259774 kw
+Sent Reactive power at time 40.0: 1591.8895869555809 kvar
+********* getting vsm ****************
+min of voltage = 0.9407027991781686
+max of voltage = 0.9944063360198958
+index_DERs=[ 4 10 12 15]
+***************************************
+Received voltage mag at time 40.0: 0.9944447863512126 pu
+Received voltage ang at time 40.0: -0.04834982971651632 rad
+Received DER_output at time 40.0: [0.0019885284164473547, 0.003977056732061386, 0.005965585010675831, 0.007954113347567302] MW
+==============================
+current_time=41.0
+DER_output=[497.13208767 497.13208767 497.13208767 497.13208767] at time 41.0
+Total power=[-1513.5689243967797, -1592.1893293673336]
+DER power is 1988.5283506751873
+Overall after adjustment S=[-3502.097275071967, -1592.1893293673336]
+Sent Active power at time 41.0: 3502.097275071967 kw
+Sent Reactive power at time 41.0: 1592.1893293673336 kvar
+Received voltage mag at time 41.0: 0.9944319586047768 pu
+Received voltage ang at time 41.0: -0.049101698793386474 rad
+Received DER_output at time 41.0: [0.0019885449001678054, 0.003977089800335611, 0.005965634700503416, 0.007954179701107952] MW
+==============================
+current_time=42.0
+DER_output=[497.13622755 497.13622755 497.13622755 497.13622755] at time 42.0
+Total power=[-1513.505015476902, -1592.1768726664593]
+DER power is 1988.5449102114785
+Overall after adjustment S=[-3502.0499256883804, -1592.1768726664593]
+Sent Active power at time 42.0: 3502.0499256883804 kw
+Sent Reactive power at time 42.0: 1592.1768726664593 kvar
+Received voltage mag at time 42.0: 0.9946939861726013 pu
+Received voltage ang at time 42.0: -0.03344010466596787 rad
+Received DER_output at time 42.0: [0.0019900780990208555, 0.003980156198041711, 0.005970234297062565, 0.007960312496683764] MW
+==============================
+current_time=43.0
+DER_output=[497.51952727 497.51952727 497.51952727 497.51952727] at time 43.0
+Total power=[-1512.3846556041697, -1592.0030502898246]
+DER power is 1990.0781090808894
+Overall after adjustment S=[-3502.462764685059, -1592.0030502898246]
+Sent Active power at time 43.0: 3502.462764685059 kw
+Sent Reactive power at time 43.0: 1592.0030502898246 kvar
+Received voltage mag at time 43.0: 0.994475788386858 pu
+Received voltage ang at time 43.0: -0.005649051345484243 rad
+Received DER_output at time 43.0: [0.001990053855548756, 0.003980107536400898, 0.005970161303910713, 0.007960215071880468] MW
+==============================
+current_time=44.0
+DER_output=[497.51344419 497.51344419 497.51344419 497.51344419] at time 44.0
+Total power=[-1512.1211764794903, -1592.0842798981864]
+DER power is 1990.0537767740832
+Overall after adjustment S=[-3502.174953253573, -1592.0842798981864]
+Sent Active power at time 44.0: 3502.174953253573 kw
+Sent Reactive power at time 44.0: 1592.0842798981864 kvar
+Received voltage mag at time 44.0: 0.9940744212836168 pu
+Received voltage ang at time 44.0: -0.0036366654050073713 rad
+Received DER_output at time 44.0: [0.002076247916256873, 0.004152495832513746, 0.006228743748770619, 0.008304991665027493] MW
+==============================
+current_time=45.0
+DER_output=[519.06197906 519.06197906 519.06197906 519.06197906] at time 45.0
+Total power=[-1424.3590772026466, -1586.332932589932]
+DER power is 2076.247916256873
+Overall after adjustment S=[-3500.60699345952, -1586.332932589932]
+Sent Active power at time 45.0: 3500.60699345952 kw
+Sent Reactive power at time 45.0: 1586.332932589932 kvar
+Received voltage mag at time 45.0: 0.9941089371909836 pu
+Received voltage ang at time 45.0: -0.021019422876651876 rad
+Received DER_output at time 45.0: [0.0021180713455227823, 0.0042361426910455646, 0.006354214036568348, 0.008472285382091129] MW
+==============================
+current_time=46.0
+DER_output=[529.51783638 529.51783638 529.51783638 529.51783638] at time 46.0
+Total power=[-1381.9976365715313, -1583.3775446041561]
+DER power is 2118.0713455227824
+Overall after adjustment S=[-3500.0689820943135, -1583.3775446041561]
+Sent Active power at time 46.0: 3500.0689820943135 kw
+Sent Reactive power at time 46.0: 1583.3775446041561 kvar
+Received voltage mag at time 46.0: 0.994301178800858 pu
+Received voltage ang at time 46.0: -0.03369842433152788 rad
+Received DER_output at time 46.0: [0.0020468691104033603, 0.0040937382208067205, 0.006140607331210079, 0.008187476441613441] MW
+==============================
+current_time=47.0
+DER_output=[511.7172776 511.7172776 511.7172776 511.7172776] at time 47.0
+Total power=[-1454.1526599599788, -1587.9518423266616]
+DER power is 2046.8691104033599
+Overall after adjustment S=[-3501.021770363339, -1587.9518423266616]
+Sent Active power at time 47.0: 3501.021770363339 kw
+Sent Reactive power at time 47.0: 1587.9518423266616 kvar
+Received voltage mag at time 47.0: 0.9941389111261377 pu
+Received voltage ang at time 47.0: -0.04871961209428041 rad
+Received DER_output at time 47.0: [0.0022209185906306075, 0.004441837181261215, 0.006662755771891822, 0.00888367436252243] MW
+==============================
+current_time=48.0
+DER_output=[555.22964766 555.22964766 555.22964766 555.22964766] at time 48.0
+Total power=[-1278.1686792321434, -1576.7559242127334]
+DER power is 2220.9185906306075
+Overall after adjustment S=[-3499.087269862751, -1576.7559242127334]
+Sent Active power at time 48.0: 3499.087269862751 kw
+Sent Reactive power at time 48.0: 1576.7559242127334 kvar
+Received voltage mag at time 48.0: 0.9943017717943522 pu
+Received voltage ang at time 48.0: -0.08381570859571905 rad
+Received DER_output at time 48.0: [0.0021654917688025757, 0.004330983537605151, 0.006496475306407727, 0.008661967075210303] MW
+==============================
+current_time=49.0
+DER_output=[541.3729422 541.3729422 541.3729422 541.3729422] at time 49.0
+Total power=[-1334.012792181915, -1579.7277737568795]
+DER power is 2165.4917688025757
+Overall after adjustment S=[-3499.504560984491, -1579.7277737568795]
+Sent Active power at time 49.0: 3499.504560984491 kw
+Sent Reactive power at time 49.0: 1579.7277737568795 kvar
+Received voltage mag at time 49.0: 0.9944385893693387 pu
+Received voltage ang at time 49.0: -0.09814737708375014 rad
+Received DER_output at time 49.0: [0.0020876168551177696, 0.004175233710235539, 0.006262850565353308, 0.008350467420471078] MW
+==============================
+current_time=50.0
+DER_output=[521.90421378 521.90421378 521.90421378 521.90421378] at time 50.0
+Total power=[-1413.000059204468, -1584.9125472471092]
+DER power is 2087.6168551177693
+Overall after adjustment S=[-3500.6169143222373, -1584.9125472471092]
+Sent Active power at time 50.0: 3500.6169143222373 kw
+Sent Reactive power at time 50.0: 1584.9125472471092 kvar
+********* getting vsm ****************
+min of voltage = 0.9410267832888702
+max of voltage = 0.994339829475026
+index_DERs=[ 4 10 12 15]
+***************************************
+Received voltage mag at time 50.0: 0.9942799563004031 pu
+Received voltage ang at time 50.0: -0.11776795689555215 rad
+Received DER_output at time 50.0: [0.0022133817445541917, 0.004426763489108383, 0.006640145233662575, 0.008853526978216767] MW
+==============================
+current_time=51.0
+DER_output=[553.34543614 553.34543614 553.34543614 553.34543614] at time 51.0
+Total power=[-1285.8387316793116, -1576.9773293877756]
+DER power is 2213.3817445541918
+Overall after adjustment S=[-3499.220476233503, -1576.9773293877756]
+Sent Active power at time 51.0: 3499.220476233503 kw
+Sent Reactive power at time 51.0: 1576.9773293877756 kvar
+Received voltage mag at time 51.0: 0.9946214673141739 pu
+Received voltage ang at time 51.0: -0.1379029847265425 rad
+Received DER_output at time 51.0: [0.0019974560896111253, 0.0039949121792222505, 0.0059923682688333745, 0.007989824358444501] MW
+==============================
+current_time=52.0
+DER_output=[499.3640224 499.3640224 499.3640224 499.3640224] at time 52.0
+Total power=[-1504.635703868901, -1591.295862767302]
+DER power is 1997.456089611125
+Overall after adjustment S=[-3502.091793480026, -1591.295862767302]
+Sent Active power at time 52.0: 3502.091793480026 kw
+Sent Reactive power at time 52.0: 1591.295862767302 kvar
+Received voltage mag at time 52.0: 0.9949417185917493 pu
+Received voltage ang at time 52.0: -0.110172634996802 rad
+Received DER_output at time 52.0: [0.001997393749518061, 0.003994787499036122, 0.005992181248554184, 0.007989574998072244] MW
+==============================
+current_time=53.0
+DER_output=[499.34843738 499.34843738 499.34843738 499.34843738] at time 53.0
+Total power=[-1505.2950986390608, -1591.3002875475186]
+DER power is 1997.393749518061
+Overall after adjustment S=[-3502.688848157122, -1591.3002875475186]
+Sent Active power at time 53.0: 3502.688848157122 kw
+Sent Reactive power at time 53.0: 1591.3002875475186 kvar
+Received voltage mag at time 53.0: 0.9941989958048041 pu
+Received voltage ang at time 53.0: -0.08977352409949227 rad
+Received DER_output at time 53.0: [0.0020430502201463354, 0.004086100440280413, 0.00612915066042062, 0.008172200880560827] MW
+==============================
+current_time=54.0
+DER_output=[510.76255504 510.76255504 510.76255504 510.76255504] at time 54.0
+Total power=[-1458.041059249997, -1588.403766766673]
+DER power is 2043.0502201408196
+Overall after adjustment S=[-3501.0912793908165, -1588.403766766673]
+Sent Active power at time 54.0: 3501.0912793908165 kw
+Sent Reactive power at time 54.0: 1588.403766766673 kvar
+Received voltage mag at time 54.0: 0.9941977568925914 pu
+Received voltage ang at time 54.0: -0.10716846364276353 rad
+Received DER_output at time 54.0: [0.0020404917427310648, 0.0040809834854621295, 0.006121475228193195, 0.008161966970924259] MW
+==============================
+current_time=55.0
+DER_output=[510.12293568 510.12293568 510.12293568 510.12293568] at time 55.0
+Total power=[-1460.5437409690403, -1588.5737570674987]
+DER power is 2040.4917427310647
+Overall after adjustment S=[-3501.035483700105, -1588.5737570674987]
+Sent Active power at time 55.0: 3501.035483700105 kw
+Sent Reactive power at time 55.0: 1588.5737570674987 kvar
+Received voltage mag at time 55.0: 0.9943631132245384 pu
+Received voltage ang at time 55.0: -0.10284650577697065 rad
+Received DER_output at time 55.0: [0.0019893535475364, 0.0039787070950728, 0.0059680606426092, 0.0079574141901456] MW
+==============================
+current_time=56.0
+DER_output=[497.33838688 497.33838688 497.33838688 497.33838688] at time 56.0
+Total power=[-1512.6043296633084, -1592.153705966367]
+DER power is 1989.3535475364001
+Overall after adjustment S=[-3501.9578771997085, -1592.153705966367]
+Sent Active power at time 56.0: 3501.9578771997085 kw
+Sent Reactive power at time 56.0: 1592.153705966367 kvar
+Received voltage mag at time 56.0: 0.9941943048504939 pu
+Received voltage ang at time 56.0: -0.10704732670601608 rad
+Received DER_output at time 56.0: [0.002094132213302459, 0.004188264426604918, 0.006282396639907377, 0.008376528853209836] MW
+==============================
+current_time=57.0
+DER_output=[523.53305333 523.53305333 523.53305333 523.53305333] at time 57.0
+Total power=[-1406.4309370832862, -1585.0774336891934]
+DER power is 2094.132213302459
+Overall after adjustment S=[-3500.5631503857453, -1585.0774336891934]
+Sent Active power at time 57.0: 3500.5631503857453 kw
+Sent Reactive power at time 57.0: 1585.0774336891934 kvar
+Received voltage mag at time 57.0: 0.9941961726788116 pu
+Received voltage ang at time 57.0: -0.1264030760994509 rad
+Received DER_output at time 57.0: [0.00213646438853401, 0.00427292877706802, 0.006409393165602029, 0.00854585755413604] MW
+==============================
+current_time=58.0
+DER_output=[534.11609713 534.11609713 534.11609713 534.11609713] at time 58.0
+Total power=[-1363.4574564172565, -1582.0221153641528]
+DER power is 2136.4643885340097
+Overall after adjustment S=[-3499.9218449512664, -1582.0221153641528]
+Sent Active power at time 58.0: 3499.9218449512664 kw
+Sent Reactive power at time 58.0: 1582.0221153641528 kvar
+Received voltage mag at time 58.0: 0.994219968366025 pu
+Received voltage ang at time 58.0: -0.1465040839782178 rad
+Received DER_output at time 58.0: [0.0021838137463494316, 0.004367627492698863, 0.006551441239048294, 0.008735254985397727] MW
+==============================
+current_time=59.0
+DER_output=[545.95343659 545.95343659 545.95343659 545.95343659] at time 59.0
+Total power=[-1315.5976859846328, -1578.8521015895215]
+DER power is 2183.8137463494318
+Overall after adjustment S=[-3499.4114323340646, -1578.8521015895215]
+Sent Active power at time 59.0: 3499.4114323340646 kw
+Sent Reactive power at time 59.0: 1578.8521015895215 kvar
+Received voltage mag at time 59.0: 0.9942829320641434 pu
+Received voltage ang at time 59.0: -0.17265065734231735 rad
+Received DER_output at time 59.0: [0.002187293002824887, 0.004374586005649774, 0.006561879008474661, 0.008749172011299548] MW
+C:\Users\aaliq\AppData\Local\Programs\Python\Python310\lib\site-packages\helics\capi.py:3993: UserWarning: This function is deprecated. Use `helicsFederateDisconnect` instead.
+  warnings.warn("This function is deprecated. Use `helicsFederateDisconnect` instead.")
+Federate finalized

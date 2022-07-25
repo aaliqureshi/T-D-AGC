@@ -1,0 +1,1922 @@
+reading json
+reading json okay!
+TransmissionSim: Combination federate created
+Working directory: "C:\Users\aaliq\OneDrive\Documents\CoSimulation\CPDS_validation_cosim2\CPDS_validation_cosim\Transmission"
+Loaded generated Python code in "C:\Users\aaliq\.andes\pycode".
+Parsing input file "C:\Users\aaliq\OneDrive\Documents\CoSimulation\CPDS_validation_cosim2\CPDS_validation_cosim\Transmission\..\Network_models\Transmission\ieee14_pvd1_1DistBus.xlsx"...
+Input file parsed in 0.2523 seconds.
+[31mSystem is not set up. Routines cannot continue.[0m
+-> Single process finished in 0.5278 seconds.
+PVD1 <1> added BusFreq <BusFreq_5> linked to bus <11>
+System internal structure set up in 0.0339 seconds.
+-> System connectivity check results:
+  No islanded bus detected.
+  A total of 1 island(s) detected.
+  Each island has a slack bus correctly defined and enabled.
+
+-> Power flow calculation
+   Sparse solver: KLU
+ Solution method: NR method
+Power flow initialized in 0.0000 seconds.
+0: |F(x)| = 0.0500512267
+1: |F(x)| = 4.92102341e-05
+2: |F(x)| = 2.875291116e-10
+Converged in 3 iterations in 0.0054 seconds.
+Initialization for dynamics completed in 0.0255 seconds.
+Initialization was successful.
+[33mTimeSeries does not contain any time stamp.[0m
+TransmissionSim: Entering execution mode
+===========Start simulation==================
+total_num_DER=4
+=============================
+request_time=0.0
+saving ss to object.
+pvd1_qpower = [0.06572999 0.13145998 0.19718997 0.26291996] at time 0
+C:\Users\aaliq\AppData\Local\Programs\Python\Python310\lib\site-packages\helics\capi.py:7501: UserWarning: This function will return a complex number in the next major release
+  warnings.warn("This function will return a complex number in the next major release")
+Received active power from Bus11 at time 0: -1e+49 kw
+Received reactive power from Bus11 at time 0: 0.0 kvar
+manually set up first step load bus P and Q
+bus_name=11
+
+-> Time Domain Simulation Summary:
+Sparse Solver: KLU
+Simulation time: 0.0-0.5 s.
+Fixed step size: h=33.33 ms. Shrink if not converged.
+  0%|                                                    | 0/100 [00:00<?, ?%/s] 17%|#######1                                  | 17/100 [00:00<00:00, 435.51%/s]
+Simulation completed in 0.0390 seconds.
+current_time=0
+ACE_raw = 0.0021558608990645874
+ACE_raw_integral = 0.0010779304495322937
+bus_pvd1_power {'11': [0.00200000877300096, 0.00400001754600192, 0.006000026319002879, 0.00800003509200384]}
+Sending to Aggregator_DER_Bus11 at time 0: ACE -0.00032337913485968814 100 MW.
+Sent voltage at time 0: (0.9945371275728873 pu , -0.11500846402496999 rad)to Bus 11
+Sent DER_power at time 0: [0.00200000877300096, 0.00400001754600192, 0.006000026319002879, 0.00800003509200384] MW to Bus 11
+=============================
+request_time=0.5
+saving ss to object.
+pvd1_qpower = [0.06573028 0.13146055 0.19719083 0.26292111] at time 0.5
+Received active power from Bus11 at time 0.5: 3499.782456135105 kw
+Received reactive power from Bus11 at time 0.5: 1593.113058531508 kvar
+manually set up first step load bus P and Q
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '0.0', '0.0', '0.0', '0.0'] from Aggregator_DER_Bus11 at time 0.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[0. 0. 0. 0.]
+  0%|                                                    | 0/100 [00:00<?, ?%/s] 67%|##########################1            | 67.0/100 [00:00<00:00, 1994.40%/s]
+Simulation completed in 0.0335 seconds.
+current_time=0.5
+ACE_raw = 0.0035556019707432534
+ACE_raw_integral = 0.0028557314349039204
+bus_pvd1_power {'11': [0.0020000037697170702, 0.0040000075394341405, 0.00600001130915121, 0.008000015078868281]}
+Sending to Aggregator_DER_Bus11 at time 0.5: ACE -0.0006411333405647174 100 MW.
+=============================
+request_time=1.0
+saving ss to object.
+pvd1_qpower = [0.06573011 0.13146023 0.19719034 0.26292045] at time 1.0
+Received active power from Bus11 at time 1.0: 3499.782456135105 kw
+Received reactive power from Bus11 at time 1.0: 1593.113058531508 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s] 83%|################################3      | 83.0/100 [00:00<00:00, 2979.34%/s]
+Simulation completed in 0.0278 seconds.
+current_time=1.0
+ACE_raw = -0.0002796330463401316
+ACE_raw_integral = 0.0027159149117338545
+bus_pvd1_power {'11': [0.0020162373929217946, 0.004032474785843589, 0.006048712178765346, 0.008064949571682594]}
+Sending to Aggregator_DER_Bus11 at time 1.0: ACE -0.0002436281865393723 100 MW.
+Sent voltage at time 1.0: (0.9942647530497329 pu , -0.10248001227697556 rad)to Bus 11
+Sent DER_power at time 1.0: [0.0020162373929217946, 0.004032474785843589, 0.006048712178765346, 0.008064949571682594] MW to Bus 11
+=============================
+request_time=1.5
+saving ss to object.
+pvd1_qpower = [0.06572958 0.13145916 0.19718873 0.26291831] at time 1.5
+Received active power from Bus11 at time 1.5: 3499.9213801051146 kw
+Received reactive power from Bus11 at time 1.5: 1593.3134766953094 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s] 91%|###################################4   | 91.0/100 [00:00<00:00, 2599.29%/s]
+Simulation completed in 0.0350 seconds.
+current_time=1.5
+ACE_raw = -0.002572863680992708
+ACE_raw_integral = 0.0014294830712375005
+bus_pvd1_power {'11': [0.0021244387999924284, 0.004248877599984857, 0.0063733163999772835, 0.008497755199969714]}
+Sending to Aggregator_DER_Bus11 at time 1.5: ACE 0.00011433806097552074 100 MW.
+=============================
+request_time=2.0
+saving ss to object.
+pvd1_qpower = [0.06572981 0.13145963 0.19718945 0.26291926] at time 2.0
+Received active power from Bus11 at time 2.0: 3499.9213801051146 kw
+Received reactive power from Bus11 at time 2.0: 1593.3134766953094 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s] 97%|#####################################8 | 97.0/100 [00:00<00:00, 2225.98%/s]
+Simulation completed in 0.0435 seconds.
+current_time=2.0
+ACE_raw = -0.0019827673801898174
+ACE_raw_integral = 0.00043809938114259183
+bus_pvd1_power {'11': [0.0020971552893884918, 0.0041943105787769835, 0.0062914658681654766, 0.008388621157553967]}
+Sending to Aggregator_DER_Bus11 at time 2.0: ACE 0.00015446679990472256 100 MW.
+Sent voltage at time 2.0: (0.9941919328613446 pu , -0.11539252495025543 rad)to Bus 11
+Sent DER_power at time 2.0: [0.0020971552893884918, 0.0041943105787769835, 0.0062914658681654766, 0.008388621157553967] MW to Bus 11
+=============================
+request_time=2.5
+saving ss to object.
+pvd1_qpower = [0.06573007 0.13146014 0.1971902  0.26292027] at time 2.5
+Received active power from Bus11 at time 2.5: 3502.07062999157 kw
+Received reactive power from Bus11 at time 2.5: 1591.3357517075917 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4812.08%/s]
+Simulation completed in 0.0207 seconds.
+current_time=2.5
+ACE_raw = -0.001376660399930213
+ACE_raw_integral = -0.0002502308188225146
+bus_pvd1_power {'11': [0.002067328052900816, 0.004134656105801632, 0.006201984158702448, 0.008269312211603264]}
+Sending to Aggregator_DER_Bus11 at time 2.5: ACE 0.00016268912187527275 100 MW.
+=============================
+request_time=3.0
+saving ss to object.
+pvd1_qpower = [0.06573012 0.13146025 0.19719037 0.2629205 ] at time 3.0
+Received active power from Bus11 at time 3.0: 3502.07062999157 kw
+Received reactive power from Bus11 at time 3.0: 1591.3357517075917 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2551.53%/s]
+Simulation completed in 0.0391 seconds.
+current_time=3.0
+ACE_raw = 0.002447240272497422
+ACE_raw_integral = 0.0009733893174261964
+bus_pvd1_power {'11': [0.0020000192713024952, 0.0040000385426049905, 0.006000057813907485, 0.008000077085209981]}
+Sending to Aggregator_DER_Bus11 at time 3.0: ACE -0.00034206295899236183 100 MW.
+Sent voltage at time 3.0: (0.9945879467597465 pu , -0.11600440161088377 rad)to Bus 11
+Sent DER_power at time 3.0: [0.0020000192713024952, 0.0040000385426049905, 0.006000057813907485, 0.008000077085209981] MW to Bus 11
+=============================
+request_time=3.5
+saving ss to object.
+pvd1_qpower = [0.06573062 0.13146124 0.19719187 0.26292249] at time 3.5
+Received active power from Bus11 at time 3.5: 3501.543340571978 kw
+Received reactive power from Bus11 at time 3.5: 1590.33661602361 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4648.10%/s]
+Simulation completed in 0.0215 seconds.
+current_time=3.5
+ACE_raw = 0.0048196977366328966
+ACE_raw_integral = 0.0033832381857426446
+bus_pvd1_power {'11': [0.002000008221948152, 0.004000016443896304, 0.0060000246658444565, 0.008000032887792607]}
+Sending to Aggregator_DER_Bus11 at time 3.5: ACE -0.0008202935922375542 100 MW.
+=============================
+request_time=4.0
+saving ss to object.
+pvd1_qpower = [0.06573026 0.13146052 0.19719078 0.26292104] at time 4.0
+Received active power from Bus11 at time 4.0: 3501.543340571978 kw
+Received reactive power from Bus11 at time 4.0: 1590.33661602361 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2984.74%/s]
+Simulation completed in 0.0335 seconds.
+current_time=4.0
+ACE_raw = 0.003823984102695253
+ACE_raw_integral = 0.005295230237090271
+bus_pvd1_power {'11': [0.00199999053811756, 0.00399998107623512, 0.0059999716143526805, 0.00799996215247024]}
+Sending to Aggregator_DER_Bus11 at time 4.0: ACE -0.0009119214339785524 100 MW.
+Sent voltage at time 4.0: (0.9946445218623418 pu , -0.08941394643741385 rad)to Bus 11
+Sent DER_power at time 4.0: [0.00199999053811756, 0.00399998107623512, 0.0059999716143526805, 0.00799996215247024] MW to Bus 11
+=============================
+request_time=4.5
+saving ss to object.
+pvd1_qpower = [0.06572968 0.13145936 0.19718903 0.26291871] at time 4.5
+Received active power from Bus11 at time 4.5: 3500.4642125457895 kw
+Received reactive power from Bus11 at time 4.5: 1584.8084011814108 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-8.202935922375543e-06', '-1.6405871844751087e-05', '-2.4608807767126623e-05', '-3.2811743689502174e-05'] from Aggregator_DER_Bus11 at time 4.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-8.20293592e-06 -1.64058718e-05 -2.46088078e-05 -3.28117437e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4208.87%/s]
+Simulation completed in 0.0237 seconds.
+current_time=4.5
+ACE_raw = 0.0025789968942683144
+ACE_raw_integral = 0.006584728684224428
+bus_pvd1_power {'11': [0.001991786699665534, 0.003983573399331068, 0.005975360098996603, 0.007967146623395226]}
+Sending to Aggregator_DER_Bus11 at time 4.5: ACE -0.0009163725578492743 100 MW.
+=============================
+request_time=5.0
+saving ss to object.
+pvd1_qpower = [0.06572964 0.13145929 0.19718893 0.26291858] at time 5.0
+Received active power from Bus11 at time 5.0: 3500.4642125457895 kw
+Received reactive power from Bus11 at time 5.0: 1584.8084011814108 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1927.42%/s]
+Simulation completed in 0.0518 seconds.
+current_time=5.0
+ACE_raw = -0.0027081961051500336
+ACE_raw_integral = 0.005230630631649411
+bus_pvd1_power {'11': [0.002122559618556303, 0.004245119237112606, 0.00636767885566891, 0.008490238474225212]}
+Sending to Aggregator_DER_Bus11 at time 5.0: ACE -0.00025224345264993775 100 MW.
+Sent voltage at time 5.0: (0.994066481873937 pu , -0.0837986151739074 rad)to Bus 11
+Sent DER_power at time 5.0: [0.002122559618556303, 0.004245119237112606, 0.00636767885566891, 0.008490238474225212] MW to Bus 11
+=============================
+request_time=5.5
+saving ss to object.
+pvd1_qpower = [0.06572957 0.13145914 0.19718871 0.26291827] at time 5.5
+Received active power from Bus11 at time 5.5: 3501.9975021271284 kw
+Received reactive power from Bus11 at time 5.5: 1591.1081342239752 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2212.82%/s]
+Simulation completed in 0.0451 seconds.
+current_time=5.5
+ACE_raw = -0.005246061767064781
+ACE_raw_integral = 0.00260759974811702
+bus_pvd1_power {'11': [0.0022461590725686062, 0.0044923181451372125, 0.006738477217705818, 0.008984636290274425]}
+Sending to Aggregator_DER_Bus11 at time 5.5: ACE 0.00026384620189477616 100 MW.
+=============================
+request_time=6.0
+saving ss to object.
+pvd1_qpower = [0.06572989 0.13145979 0.19718968 0.26291958] at time 6.0
+Received active power from Bus11 at time 6.0: 3501.9975021271284 kw
+Received reactive power from Bus11 at time 6.0: 1591.1081342239752 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1932.67%/s]
+Simulation completed in 0.0517 seconds.
+current_time=6.0
+ACE_raw = 0.001685024354644194
+ACE_raw_integral = 0.0034501119254391173
+bus_pvd1_power {'11': [0.0019918332954490495, 0.003983666778312293, 0.005975500167468441, 0.007967333556624587]}
+Sending to Aggregator_DER_Bus11 at time 6.0: ACE -0.0005135136280083312 100 MW.
+Sent voltage at time 6.0: (0.9944605545759299 pu , -0.09899861383224857 rad)to Bus 11
+Sent DER_power at time 6.0: [0.0019918332954490495, 0.003983666778312293, 0.005975500167468441, 0.007967333556624587] MW to Bus 11
+=============================
+request_time=6.5
+saving ss to object.
+pvd1_qpower = [0.06573118 0.13146237 0.19719355 0.26292473] at time 6.5
+Received active power from Bus11 at time 6.5: 3502.2770068071277 kw
+Received reactive power from Bus11 at time 6.5: 1591.294135247879 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2795.77%/s]
+Simulation completed in 0.0357 seconds.
+current_time=6.5
+ACE_raw = 0.006284384061642923
+ACE_raw_integral = 0.006592303956260578
+bus_pvd1_power {'11': [0.0019918177012102673, 0.003983635587238079, 0.005975453380857119, 0.007967271174476157]}
+Sending to Aggregator_DER_Bus11 at time 6.5: ACE -0.0012876688017903503 100 MW.
+=============================
+request_time=7.0
+saving ss to object.
+pvd1_qpower = [0.06573067 0.13146135 0.19719202 0.2629227 ] at time 7.0
+Received active power from Bus11 at time 7.0: 3502.2770068071277 kw
+Received reactive power from Bus11 at time 7.0: 1591.294135247879 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2903.60%/s]
+Simulation completed in 0.0344 seconds.
+current_time=7.0
+ACE_raw = 0.004202929522886762
+ACE_raw_integral = 0.00869376871770396
+bus_pvd1_power {'11': [0.0019917836685751544, 0.003983567337150309, 0.005975350825477211, 0.007967134428149003]}
+Sending to Aggregator_DER_Bus11 at time 7.0: ACE -0.0012896698240590723 100 MW.
+Sent voltage at time 7.0: (0.994656606253106 pu , -0.0679456883028373 rad)to Bus 11
+Sent DER_power at time 7.0: [0.0019917836685751544, 0.003983567337150309, 0.005975350825477211, 0.007967134428149003] MW to Bus 11
+=============================
+request_time=7.5
+saving ss to object.
+pvd1_qpower = [0.06572954 0.13145909 0.19718863 0.26291818] at time 7.5
+Received active power from Bus11 at time 7.5: 3500.0616758278843 kw
+Received reactive power from Bus11 at time 7.5: 1583.1751836869666 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2704.54%/s]
+Simulation completed in 0.0369 seconds.
+current_time=7.5
+ACE_raw = 0.002188858432008297
+ACE_raw_integral = 0.009788197933708108
+bus_pvd1_power {'11': [0.0019917836646547705, 0.003983567329309541, 0.00597535082243123, 0.007967134429908304]}
+Sending to Aggregator_DER_Bus11 at time 7.5: ACE -0.0011977056365716405 100 MW.
+=============================
+request_time=8.0
+saving ss to object.
+pvd1_qpower = [0.06572954 0.13145909 0.19718863 0.26291817] at time 8.0
+Received active power from Bus11 at time 8.0: 3500.0616758278843 kw
+Received reactive power from Bus11 at time 8.0: 1583.1751836869666 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1888.84%/s]
+Simulation completed in 0.0529 seconds.
+current_time=8.0
+ACE_raw = -0.0023526831350991783
+ACE_raw_integral = 0.008611856366158518
+bus_pvd1_power {'11': [0.0021055061113439714, 0.004211012222687943, 0.006316518334031913, 0.008422024445375886]}
+Sending to Aggregator_DER_Bus11 at time 8.0: ACE -0.000625917323105934 100 MW.
+Sent voltage at time 8.0: (0.9940845096928883 pu , -0.06225419649472528 rad)to Bus 11
+Sent DER_power at time 8.0: [0.0021055061113439714, 0.004211012222687943, 0.006316518334031913, 0.008422024445375886] MW to Bus 11
+=============================
+request_time=8.5
+saving ss to object.
+pvd1_qpower = [0.06572961 0.13145922 0.19718883 0.26291843] at time 8.5
+Received active power from Bus11 at time 8.5: 3501.8353647846084 kw
+Received reactive power from Bus11 at time 8.5: 1591.6656336819026 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-1.1977056365716408e-05', '-2.3954112731432816e-05', '-3.593116909714921e-05', '-4.790822546286563e-05'] from Aggregator_DER_Bus11 at time 8.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-1.19770564e-05 -2.39541127e-05 -3.59311691e-05 -4.79082255e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1662.24%/s]
+Simulation completed in 0.0601 seconds.
+current_time=8.5
+ACE_raw = -0.0043975836991234805
+ACE_raw_integral = 0.006413064516596777
+bus_pvd1_power {'11': [0.0022012840130301646, 0.004402568026060329, 0.006603852039090493, 0.008805136052120658]}
+Sending to Aggregator_DER_Bus11 at time 8.5: ACE -0.00020154808174732968 100 MW.
+=============================
+request_time=9.0
+saving ss to object.
+pvd1_qpower = [0.06572992 0.13145984 0.19718977 0.2629197 ] at time 9.0
+Received active power from Bus11 at time 9.0: 3501.8353647846084 kw
+Received reactive power from Bus11 at time 9.0: 1591.6656336819026 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1812.77%/s]
+Simulation completed in 0.0562 seconds.
+current_time=9.0
+ACE_raw = -0.000903489749606519
+ACE_raw_integral = 0.005961319641793517
+bus_pvd1_power {'11': [0.0020324859183788874, 0.004064971836757775, 0.006097457755136661, 0.00812994367351555]}
+Sending to Aggregator_DER_Bus11 at time 9.0: ACE -0.0005057829892186999 100 MW.
+Sent voltage at time 9.0: (0.994234099907132 pu , -0.08068846090238312 rad)to Bus 11
+Sent DER_power at time 9.0: [0.0020324859183788874, 0.004064971836757775, 0.006097457755136661, 0.00812994367351555] MW to Bus 11
+=============================
+request_time=9.5
+saving ss to object.
+pvd1_qpower = [0.06573038 0.13146076 0.19719113 0.26292151] at time 9.5
+Received active power from Bus11 at time 9.5: 3502.46222991372 kw
+Received reactive power from Bus11 at time 9.5: 1591.956166674825 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3495.02%/s]
+Simulation completed in 0.0404 seconds.
+current_time=9.5
+ACE_raw = 0.0013235344171928308
+ACE_raw_integral = 0.006623086850389932
+bus_pvd1_power {'11': [0.0019880360274205935, 0.003976072234746784, 0.005964108352120177, 0.007952144469493569]}
+Sending to Aggregator_DER_Bus11 at time 9.5: ACE -0.0007946621267582764 100 MW.
+=============================
+request_time=10.0
+saving ss to object.
+pvd1_qpower = [0.06573043 0.13146085 0.19719128 0.2629217 ] at time 10.0
+Received active power from Bus11 at time 10.0: 3502.46222991372 kw
+Received reactive power from Bus11 at time 10.0: 1591.956166674825 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3059.37%/s]
+Simulation completed in 0.0326 seconds.
+current_time=10.0
+ACE_raw = 0.0020203916799185788
+ACE_raw_integral = 0.007633282690349222
+bus_pvd1_power {'11': [0.0019880265361597016, 0.003976053072319403, 0.005964079608479109, 0.007952106144684853]}
+Sending to Aggregator_DER_Bus11 at time 10.0: ACE -0.0009653674370267802 100 MW.
+Sent voltage at time 10.0: (0.9945239645469823 pu , -0.07287429073955771 rad)to Bus 11
+Sent DER_power at time 10.0: [0.0019880265361597016, 0.003976053072319403, 0.005964079608479109, 0.007952106144684853] MW to Bus 11
+=============================
+request_time=10.5
+saving ss to object.
+pvd1_qpower = [0.06573011 0.13146022 0.19719033 0.26292044] at time 10.5
+Received active power from Bus11 at time 10.5: 3500.2749352730384 kw
+Received reactive power from Bus11 at time 10.5: 1584.30984753101 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2776.18%/s]
+Simulation completed in 0.0360 seconds.
+current_time=10.5
+ACE_raw = 0.0022118506042799356
+ACE_raw_integral = 0.00873920799248919
+bus_pvd1_power {'11': [0.0019880218446678656, 0.003976043689335731, 0.005964065534003597, 0.007952087378671145]}
+Sending to Aggregator_DER_Bus11 at time 10.5: ACE -0.0010951058596769126 100 MW.
+=============================
+request_time=11.0
+saving ss to object.
+pvd1_qpower = [0.06572995 0.1314599  0.19718986 0.26291981] at time 11.0
+Received active power from Bus11 at time 11.0: 3500.2749352730384 kw
+Received reactive power from Bus11 at time 11.0: 1584.30984753101 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3903.60%/s]
+Simulation completed in 0.0256 seconds.
+current_time=11.0
+ACE_raw = 0.0009327673157386793
+ACE_raw_integral = 0.00920559165035853
+bus_pvd1_power {'11': [0.0019880147409519254, 0.003976029481903851, 0.005964044048686218, 0.007952058731524495]}
+Sending to Aggregator_DER_Bus11 at time 11.0: ACE -0.001013835896609721 100 MW.
+Sent voltage at time 11.0: (0.9943919960547176 pu , -0.06163071307972419 rad)to Bus 11
+Sent DER_power at time 11.0: [0.0019880147409519254, 0.003976029481903851, 0.005964044048686218, 0.007952058731524495] MW to Bus 11
+=============================
+request_time=11.5
+saving ss to object.
+pvd1_qpower = [0.06572971 0.13145943 0.19718914 0.26291886] at time 11.5
+Received active power from Bus11 at time 11.5: 3501.0907089299917 kw
+Received reactive power from Bus11 at time 11.5: 1588.9881714778946 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2958.84%/s]
+Simulation completed in 0.0371 seconds.
+current_time=11.5
+ACE_raw = 1.3856612753917125e-05
+ACE_raw_integral = 0.009212519956735488
+bus_pvd1_power {'11': [0.0019887077157276552, 0.0039774154314553105, 0.005966123147182967, 0.007954830862863827]}
+Sending to Aggregator_DER_Bus11 at time 11.5: ACE -0.0009226376569489406 100 MW.
+=============================
+request_time=12.0
+saving ss to object.
+pvd1_qpower = [0.06572983 0.13145967 0.1971895  0.26291933] at time 12.0
+Received active power from Bus11 at time 12.0: 3501.0907089299917 kw
+Received reactive power from Bus11 at time 12.0: 1588.9881714778946 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2377.52%/s]
+Simulation completed in 0.0420 seconds.
+current_time=12.0
+ACE_raw = -0.003251425301212033
+ACE_raw_integral = 0.007586807306129472
+bus_pvd1_power {'11': [0.0021454745518759612, 0.0042909491037519225, 0.006436423655627883, 0.008581898207503845]}
+Sending to Aggregator_DER_Bus11 at time 12.0: ACE -0.0004335382004917439 100 MW.
+Sent voltage at time 12.0: (0.9941002732283516 pu , -0.0683253782251529 rad)to Bus 11
+Sent DER_power at time 12.0: [0.0021454745518759612, 0.0042909491037519225, 0.006436423655627883, 0.008581898207503845] MW to Bus 11
+=============================
+request_time=12.5
+saving ss to object.
+pvd1_qpower = [0.06572977 0.13145957 0.19718936 0.26291915] at time 12.5
+Received active power from Bus11 at time 12.5: 3502.2021026136063 kw
+Received reactive power from Bus11 at time 12.5: 1592.1748846823123 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-9.226376569489408e-06', '-1.8452753138978817e-05', '-2.7679129708468217e-05', '-3.690550627795763e-05'] from Aggregator_DER_Bus11 at time 12.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-9.22637657e-06 -1.84527531e-05 -2.76791297e-05 -3.69055063e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2553.33%/s]
+Simulation completed in 0.0391 seconds.
+current_time=12.5
+ACE_raw = -0.00465494801100128
+ACE_raw_integral = 0.005259333300628832
+bus_pvd1_power {'11': [0.002216208005239163, 0.004432416010478326, 0.006648624015717489, 0.008864832020956653]}
+Sending to Aggregator_DER_Bus11 at time 12.5: ACE -6.043852896275533e-05 100 MW.
+=============================
+request_time=13.0
+saving ss to object.
+pvd1_qpower = [0.06573 0.13146 0.19719 0.26292] at time 13.0
+Received active power from Bus11 at time 13.0: 3502.2021026136063 kw
+Received reactive power from Bus11 at time 13.0: 1592.1748846823123 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1900.32%/s]
+Simulation completed in 0.0526 seconds.
+current_time=13.0
+ACE_raw = -0.0009837338205852717
+ACE_raw_integral = 0.004767466390336196
+bus_pvd1_power {'11': [0.00203914170114188, 0.00407828340228376, 0.006117425103425641, 0.00815656680456752]}
+Sending to Aggregator_DER_Bus11 at time 13.0: ACE -0.00037837325697509245 100 MW.
+Sent voltage at time 13.0: (0.994316203503803 pu , -0.08864305820555902 rad)to Bus 11
+Sent DER_power at time 13.0: [0.00203914170114188, 0.00407828340228376, 0.006117425103425641, 0.00815656680456752] MW to Bus 11
+=============================
+request_time=13.5
+saving ss to object.
+pvd1_qpower = [0.06573037 0.13146074 0.19719112 0.26292149] at time 13.5
+Received active power from Bus11 at time 13.5: 3502.05192046901 kw
+Received reactive power from Bus11 at time 13.5: 1592.2693672734335 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2555.94%/s]
+Simulation completed in 0.0391 seconds.
+current_time=13.5
+ACE_raw = 0.0012219683198117428
+ACE_raw_integral = 0.005378450550242068
+bus_pvd1_power {'11': [0.0019907852134759966, 0.003981570426952366, 0.005972355823913487, 0.007963141098551316]}
+Sending to Aggregator_DER_Bus11 at time 13.5: ACE -0.000660041887005381 100 MW.
+=============================
+request_time=14.0
+saving ss to object.
+pvd1_qpower = [0.06573037 0.13146075 0.19719112 0.2629215 ] at time 14.0
+Received active power from Bus11 at time 14.0: 3502.05192046901 kw
+Received reactive power from Bus11 at time 14.0: 1592.2693672734335 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3333.26%/s]
+Simulation completed in 0.0290 seconds.
+current_time=14.0
+ACE_raw = 0.0018106942663302231
+ACE_raw_integral = 0.00628379768340718
+bus_pvd1_power {'11': [0.001990775301167363, 0.003981550602334726, 0.005972325903502089, 0.007963101204669452]}
+Sending to Aggregator_DER_Bus11 at time 14.0: ACE -0.0008094491949737403 100 MW.
+Sent voltage at time 14.0: (0.9945648800262905 pu , -0.08166773903118624 rad)to Bus 11
+Sent DER_power at time 14.0: [0.001990775301167363, 0.003981550602334726, 0.005972325903502089, 0.007963101204669452] MW to Bus 11
+=============================
+request_time=14.5
+saving ss to object.
+pvd1_qpower = [0.06573004 0.13146009 0.19719013 0.26292018] at time 14.5
+Received active power from Bus11 at time 14.5: 3499.889253033381 kw
+Received reactive power from Bus11 at time 14.5: 1581.7278672413486 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2527.34%/s]
+Simulation completed in 0.0395 seconds.
+current_time=14.5
+ACE_raw = 0.0018900032403295494
+ACE_raw_integral = 0.007228799303571954
+bus_pvd1_power {'11': [0.0019907709029988343, 0.003981541805997669, 0.0059723127089965035, 0.007963083611995337]}
+Sending to Aggregator_DER_Bus11 at time 14.5: ACE -0.0009118802543901503 100 MW.
+=============================
+request_time=15.0
+saving ss to object.
+pvd1_qpower = [0.0657299  0.1314598  0.19718969 0.26291959] at time 15.0
+Received active power from Bus11 at time 15.0: 3499.889253033381 kw
+Received reactive power from Bus11 at time 15.0: 1581.7278672413486 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3339.36%/s]
+Simulation completed in 0.0299 seconds.
+current_time=15.0
+ACE_raw = 0.0017234404309529265
+ACE_raw_integral = 0.008090519519048418
+bus_pvd1_power {'11': [0.0019907693533012445, 0.003981538706602489, 0.005972308059903734, 0.007963077413204978]}
+Sending to Aggregator_DER_Bus11 at time 15.0: ACE -0.0009813959950001345 100 MW.
+Sent voltage at time 15.0: (0.9944992029836668 pu , -0.06968726183882372 rad)to Bus 11
+Sent DER_power at time 15.0: [0.0019907693533012445, 0.003981538706602489, 0.005972308059903734, 0.007963077413204978] MW to Bus 11
+=============================
+request_time=15.5
+saving ss to object.
+pvd1_qpower = [0.06572985 0.13145969 0.19718954 0.26291939] at time 15.5
+Received active power from Bus11 at time 15.5: 3501.041114022537 kw
+Received reactive power from Bus11 at time 15.5: 1588.3699284964227 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2853.75%/s]
+Simulation completed in 0.0350 seconds.
+current_time=15.5
+ACE_raw = 0.0014819816190359818
+ACE_raw_integral = 0.00883151032856641
+bus_pvd1_power {'11': [0.001990769649663729, 0.003981539299327458, 0.005972308948991187, 0.007963078598654916]}
+Sending to Aggregator_DER_Bus11 at time 15.5: ACE -0.0010313491947602392 100 MW.
+=============================
+request_time=16.0
+saving ss to object.
+pvd1_qpower = [0.06572986 0.13145971 0.19718957 0.26291943] at time 16.0
+Received active power from Bus11 at time 16.0: 3501.041114022537 kw
+Received reactive power from Bus11 at time 16.0: 1588.3699284964227 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2014.68%/s]
+Simulation completed in 0.0496 seconds.
+current_time=16.0
+ACE_raw = -0.00375641493979662
+ACE_raw_integral = 0.006953302858668099
+bus_pvd1_power {'11': [0.002172409042631435, 0.00434481808526287, 0.006517227127894307, 0.00868963617052574]}
+Sending to Aggregator_DER_Bus11 at time 16.0: ACE -0.0003196887918871479 100 MW.
+Sent voltage at time 16.0: (0.994064268489968 pu , -0.07228176689241528 rad)to Bus 11
+Sent DER_power at time 16.0: [0.002172409042631435, 0.00434481808526287, 0.006517227127894307, 0.00868963617052574] MW to Bus 11
+=============================
+request_time=16.5
+saving ss to object.
+pvd1_qpower = [0.06572961 0.13145923 0.19718884 0.26291846] at time 16.5
+Received active power from Bus11 at time 16.5: 3502.1823581078743 kw
+Received reactive power from Bus11 at time 16.5: 1591.9021920269327 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-1.0313491947602393e-05', '-2.0626983895204786e-05', '-3.094047584280717e-05', '-4.125396779040957e-05'] from Aggregator_DER_Bus11 at time 16.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-1.03134919e-05 -2.06269839e-05 -3.09404758e-05 -4.12539678e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2049.79%/s]
+Simulation completed in 0.0487 seconds.
+current_time=16.5
+ACE_raw = -0.006283595312133273
+ACE_raw_integral = 0.0038115052026014627
+bus_pvd1_power {'11': [0.002294383678890377, 0.004588767357780754, 0.006883151036671132, 0.009177534715561509]}
+Sending to Aggregator_DER_Bus11 at time 16.5: ACE 0.00024720901095318104 100 MW.
+=============================
+request_time=17.0
+saving ss to object.
+pvd1_qpower = [0.0657299  0.13145982 0.19718972 0.26291963] at time 17.0
+Received active power from Bus11 at time 17.0: 3502.1823581078743 kw
+Received reactive power from Bus11 at time 17.0: 1591.9021920269327 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2838.65%/s]
+Simulation completed in 0.0352 seconds.
+current_time=17.0
+ACE_raw = -0.00675796362773689
+ACE_raw_integral = 0.00043252338873301776
+bus_pvd1_power {'11': [0.002317901842081548, 0.004635803684163096, 0.006953705526244644, 0.009271607368326192]}
+Sending to Aggregator_DER_Bus11 at time 17.0: ACE 0.0006325440239003873 100 MW.
+Sent voltage at time 17.0: (0.9939776556140105 pu , -0.1119054929708873 rad)to Bus 11
+Sent DER_power at time 17.0: [0.002317901842081548, 0.004635803684163096, 0.006953705526244644, 0.009271607368326192] MW to Bus 11
+=============================
+request_time=17.5
+saving ss to object.
+pvd1_qpower = [0.06573015 0.13146031 0.19719046 0.26292061] at time 17.5
+Received active power from Bus11 at time 17.5: 3502.144166473005 kw
+Received reactive power from Bus11 at time 17.5: 1591.9917733582522 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4543.91%/s]
+Simulation completed in 0.0220 seconds.
+current_time=17.5
+ACE_raw = -0.006481263721097081
+ACE_raw_integral = -0.0028081084718155225
+bus_pvd1_power {'11': [0.0023047087131270864, 0.004609417426254173, 0.00691412613938126, 0.009218834852508346]}
+Sending to Aggregator_DER_Bus11 at time 17.5: ACE 0.0009289372192912604 100 MW.
+=============================
+request_time=18.0
+saving ss to object.
+pvd1_qpower = [0.06573025 0.1314605  0.19719075 0.262921  ] at time 18.0
+Received active power from Bus11 at time 18.0: 3502.144166473005 kw
+Received reactive power from Bus11 at time 18.0: 1591.9917733582522 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1733.21%/s]
+Simulation completed in 0.0576 seconds.
+current_time=18.0
+ACE_raw = -0.0038943100376546583
+ACE_raw_integral = -0.004755263490642852
+bus_pvd1_power {'11': [0.0021790700024864494, 0.004358140004972899, 0.006537210007459347, 0.008716280009945798]}
+Sending to Aggregator_DER_Bus11 at time 18.0: ACE 0.0008649573528297511 100 MW.
+Sent voltage at time 18.0: (0.9943074592283776 pu , -0.14855921315039577 rad)to Bus 11
+Sent DER_power at time 18.0: [0.0021790700024864494, 0.004358140004972899, 0.006537210007459347, 0.008716280009945798] MW to Bus 11
+=============================
+request_time=18.5
+saving ss to object.
+pvd1_qpower = [0.06573039 0.13146075 0.19719112 0.2629215 ] at time 18.5
+Received active power from Bus11 at time 18.5: 3499.561059511355 kw
+Received reactive power from Bus11 at time 18.5: 1579.9787697296156 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1873.16%/s]
+Simulation completed in 0.0533 seconds.
+current_time=18.5
+ACE_raw = -0.0024598078474596624
+ACE_raw_integral = -0.005985167414372683
+bus_pvd1_power {'11': [0.002109334759026441, 0.004218669518052882, 0.006328004277079322, 0.008437339036105765]}
+Sending to Aggregator_DER_Bus11 at time 18.5: ACE 0.0008444975261832346 100 MW.
+=============================
+request_time=19.0
+saving ss to object.
+pvd1_qpower = [0.0657302  0.13146041 0.1971906  0.26292079] at time 19.0
+Received active power from Bus11 at time 19.0: 3499.561059511355 kw
+Received reactive power from Bus11 at time 19.0: 1579.9787697296156 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2226.54%/s]
+Simulation completed in 0.0439 seconds.
+current_time=19.0
+ACE_raw = -0.0008473930853965939
+ACE_raw_integral = -0.0064088639570709805
+bus_pvd1_power {'11': [0.002031000322224908, 0.004062000644449816, 0.006093000966674725, 0.008124001288899632]}
+Sending to Aggregator_DER_Bus11 at time 19.0: ACE 0.0007256257042467574 100 MW.
+Sent voltage at time 19.0: (0.9945499999909282 pu , -0.1622799505890413 rad)to Bus 11
+Sent DER_power at time 19.0: [0.002031000322224908, 0.004062000644449816, 0.006093000966674725, 0.008124001288899632] MW to Bus 11
+=============================
+request_time=19.5
+saving ss to object.
+pvd1_qpower = [0.06573011 0.13146022 0.19719031 0.26292041] at time 19.5
+Received active power from Bus11 at time 19.5: 3497.7931234200723 kw
+Received reactive power from Bus11 at time 19.5: 1570.6752132427312 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4725.98%/s]
+Simulation completed in 0.0211 seconds.
+current_time=19.5
+ACE_raw = -0.00022412996774683896
+ACE_raw_integral = -0.0065209289409444
+bus_pvd1_power {'11': [0.0020010344515776026, 0.004002068903155205, 0.006003103354732808, 0.00800413780631041]}
+Sending to Aggregator_DER_Bus11 at time 19.5: ACE 0.000674505890869124 100 MW.
+=============================
+request_time=20.0
+saving ss to object.
+pvd1_qpower = [0.06572993 0.13145988 0.19718982 0.26291976] at time 20.0
+Received active power from Bus11 at time 20.0: 3497.7931234200723 kw
+Received reactive power from Bus11 at time 20.0: 1570.6752132427312 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3507.32%/s]
+Simulation completed in 0.0285 seconds.
+current_time=20.0
+ACE_raw = -0.0008284572368473356
+ACE_raw_integral = -0.006935157559368068
+bus_pvd1_power {'11': [0.002029448752614537, 0.004058897505229074, 0.006088346257843612, 0.008117795010458149]}
+Sending to Aggregator_DER_Bus11 at time 20.0: ACE 0.0007763614796215404 100 MW.
+Sent voltage at time 20.0: (0.994492408310097 pu , -0.16569057025613865 rad)to Bus 11
+Sent DER_power at time 20.0: [0.002029448752614537, 0.004058897505229074, 0.006088346257843612, 0.008117795010458149] MW to Bus 11
+=============================
+request_time=20.5
+saving ss to object.
+pvd1_qpower = [0.06572984 0.13145969 0.19718953 0.26291938] at time 20.5
+Received active power from Bus11 at time 20.5: 3499.5476090548173 kw
+Received reactive power from Bus11 at time 20.5: 1579.00751224936 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '6.745058908691241e-06', '1.3490117817382482e-05', '2.023517672607372e-05', '2.6980235634764965e-05'] from Aggregator_DER_Bus11 at time 20.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[6.74505891e-06 1.34901178e-05 2.02351767e-05 2.69802356e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2955.42%/s]
+Simulation completed in 0.0338 seconds.
+current_time=20.5
+ACE_raw = -0.0010434646946315901
+ACE_raw_integral = -0.007456889906683863
+bus_pvd1_power {'11': [0.0020574612464406045, 0.004114922492881209, 0.006172383739321815, 0.008229844985762418]}
+Sending to Aggregator_DER_Bus11 at time 20.5: ACE 0.0008500354601315453 100 MW.
+=============================
+request_time=21.0
+saving ss to object.
+pvd1_qpower = [0.06572987 0.13145974 0.19718961 0.26291946] at time 21.0
+Received active power from Bus11 at time 21.0: 3499.5476090548173 kw
+Received reactive power from Bus11 at time 21.0: 1579.00751224936 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2109.58%/s]
+Simulation completed in 0.0474 seconds.
+current_time=21.0
+ACE_raw = -0.0024637776242577504
+ACE_raw_integral = -0.008688778718812738
+bus_pvd1_power {'11': [0.0021263736736866043, 0.004252747347373209, 0.006379121021059814, 0.008505494694746417]}
+Sending to Aggregator_DER_Bus11 at time 21.0: ACE 0.001115255634307049 100 MW.
+Sent voltage at time 21.0: (0.9943194978449335 pu , -0.17566963120300116 rad)to Bus 11
+Sent DER_power at time 21.0: [0.0021263736736866043, 0.004252747347373209, 0.006379121021059814, 0.008505494694746417] MW to Bus 11
+=============================
+request_time=21.5
+saving ss to object.
+pvd1_qpower = [0.06572981 0.13145962 0.19718944 0.26291926] at time 21.5
+Received active power from Bus11 at time 21.5: 3501.352756227142 kw
+Received reactive power from Bus11 at time 21.5: 1588.6599297233379 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2439.44%/s]
+Simulation completed in 0.0409 seconds.
+current_time=21.5
+ACE_raw = -0.0031616630218981112
+ACE_raw_integral = -0.010269610229761793
+bus_pvd1_power {'11': [0.0021599120439741554, 0.004319824087948311, 0.006479736131922467, 0.008639648175896622]}
+Sending to Aggregator_DER_Bus11 at time 21.5: ACE 0.0013431273251659904 100 MW.
+=============================
+request_time=22.0
+saving ss to object.
+pvd1_qpower = [0.06572993 0.13145986 0.19718979 0.26291972] at time 22.0
+Received active power from Bus11 at time 22.0: 3501.352756227142 kw
+Received reactive power from Bus11 at time 22.0: 1588.6599297233379 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2695.93%/s]
+Simulation completed in 0.0370 seconds.
+current_time=22.0
+ACE_raw = 0.0011451497281188927
+ACE_raw_integral = -0.009697035365702347
+bus_pvd1_power {'11': [0.0020067645735378195, 0.004013528967982026, 0.006020293444242362, 0.008027057925656481]}
+Sending to Aggregator_DER_Bus11 at time 22.0: ACE 0.0008551885637583453 100 MW.
+Sent voltage at time 22.0: (0.9945551003855353 pu , -0.1853402733786688 rad)to Bus 11
+Sent DER_power at time 22.0: [0.0020067645735378195, 0.004013528967982026, 0.006020293444242362, 0.008027057925656481] MW to Bus 11
+=============================
+request_time=22.5
+saving ss to object.
+pvd1_qpower = [0.06573062 0.13146125 0.19719187 0.26292249] at time 22.5
+Received active power from Bus11 at time 22.5: 3501.5363047381807 kw
+Received reactive power from Bus11 at time 22.5: 1589.1207079022042 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4552.54%/s]
+Simulation completed in 0.0219 seconds.
+current_time=22.5
+ACE_raw = 0.003822425339067136
+ACE_raw_integral = -0.007785822696168778
+bus_pvd1_power {'11': [0.002006753926397853, 0.004013507852795706, 0.0060202617786731145, 0.008027015519424339]}
+Sending to Aggregator_DER_Bus11 at time 22.5: ACE 0.00039633973571016423 100 MW.
+=============================
+request_time=23.0
+saving ss to object.
+pvd1_qpower = [0.06573028 0.13146056 0.19719083 0.26292111] at time 23.0
+Received active power from Bus11 at time 23.0: 3501.5363047381807 kw
+Received reactive power from Bus11 at time 23.0: 1589.1207079022042 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3576.56%/s]
+Simulation completed in 0.0279 seconds.
+current_time=23.0
+ACE_raw = 0.0004924373007712129
+ACE_raw_integral = -0.007539604045783172
+bus_pvd1_power {'11': [0.0020067250438344703, 0.004013450087668941, 0.006020175350904451, 0.008026900467872597]}
+Sending to Aggregator_DER_Bus11 at time 23.0: ACE 0.0007047166745011959 100 MW.
+Sent voltage at time 23.0: (0.9944049411433032 pu , -0.17121999561418821 rad)to Bus 11
+Sent DER_power at time 23.0: [0.0020067250438344703, 0.004013450087668941, 0.006020175350904451, 0.008026900467872597] MW to Bus 11
+=============================
+request_time=23.5
+saving ss to object.
+pvd1_qpower = [0.06572934 0.13145867 0.19718801 0.26291735] at time 23.5
+Received active power from Bus11 at time 23.5: 3500.253754141774 kw
+Received reactive power from Bus11 at time 23.5: 1582.6924122103144 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2360.54%/s]
+Simulation completed in 0.0423 seconds.
+current_time=23.5
+ACE_raw = -0.001835071203882968
+ACE_raw_integral = -0.008457139647724656
+bus_pvd1_power {'11': [0.0020953886469118324, 0.004190777293823665, 0.006286165940735497, 0.00838155458764733]}
+Sending to Aggregator_DER_Bus11 at time 23.5: ACE 0.0010292210851607624 100 MW.
+=============================
+request_time=24.0
+saving ss to object.
+pvd1_qpower = [0.06572972 0.13145946 0.19718919 0.26291892] at time 24.0
+Received active power from Bus11 at time 24.0: 3500.253754141774 kw
+Received reactive power from Bus11 at time 24.0: 1582.6924122103144 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2885.58%/s]
+Simulation completed in 0.0346 seconds.
+current_time=24.0
+ACE_raw = 0.0018497958850128378
+ACE_raw_integral = -0.0075322417052182365
+bus_pvd1_power {'11': [0.002006761036688609, 0.004013521967959237, 0.006020282865944693, 0.00802704382125959]}
+Sending to Aggregator_DER_Bus11 at time 24.0: ACE 0.0005682445820205399 100 MW.
+Sent voltage at time 24.0: (0.9945023733709204 pu , -0.17181923765907767 rad)to Bus 11
+Sent DER_power at time 24.0: [0.002006761036688609, 0.004013521967959237, 0.006020282865944693, 0.00802704382125959] MW to Bus 11
+=============================
+request_time=24.5
+saving ss to object.
+pvd1_qpower = [0.06573051 0.13146102 0.19719153 0.26292204] at time 24.5
+Received active power from Bus11 at time 24.5: 3501.7413655748096 kw
+Received reactive power from Bus11 at time 24.5: 1590.4845543675717 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '1.0292210851607627e-05', '2.0584421703215253e-05', '3.087663255482287e-05', '4.116884340643051e-05'] from Aggregator_DER_Bus11 at time 24.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[1.02922109e-05 2.05844217e-05 3.08766326e-05 4.11688434e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3670.20%/s]
+Simulation completed in 0.0272 seconds.
+current_time=24.5
+ACE_raw = 0.004355597719690695
+ACE_raw_integral = -0.005354442845372889
+bus_pvd1_power {'11': [0.0020103010582174317, 0.0040206021163877535, 0.006030902974993058, 0.00804120396665741]}
+Sending to Aggregator_DER_Bus11 at time 24.5: ACE 9.988451256821943e-05 100 MW.
+=============================
+request_time=25.0
+saving ss to object.
+pvd1_qpower = [0.06573028 0.13146055 0.19719083 0.2629211 ] at time 25.0
+Received active power from Bus11 at time 25.0: 3501.7413655748096 kw
+Received reactive power from Bus11 at time 25.0: 1590.4845543675717 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3051.65%/s]
+Simulation completed in 0.0327 seconds.
+current_time=25.0
+ACE_raw = 0.004132357793131154
+ACE_raw_integral = -0.003288263948807312
+bus_pvd1_power {'11': [0.002010287094146771, 0.004020574188293542, 0.006030861282440313, 0.008041148376587084]}
+Sending to Aggregator_DER_Bus11 at time 25.0: ACE -8.440938443238423e-05 100 MW.
+Sent voltage at time 25.0: (0.9946289463105329 pu , -0.14658226662885135 rad)to Bus 11
+Sent DER_power at time 25.0: [0.002010287094146771, 0.004020574188293542, 0.006030861282440313, 0.008041148376587084] MW to Bus 11
+=============================
+request_time=25.5
+saving ss to object.
+pvd1_qpower = [0.06572982 0.13145965 0.19718947 0.26291929] at time 25.5
+Received active power from Bus11 at time 25.5: 3501.8216266737963 kw
+Received reactive power from Bus11 at time 25.5: 1590.8980190975963 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 5054.11%/s]
+Simulation completed in 0.0197 seconds.
+current_time=25.5
+ACE_raw = 0.003534784233524618
+ACE_raw_integral = -0.0015208718320450028
+bus_pvd1_power {'11': [0.0020102849267423797, 0.004020569853484759, 0.0060308547802271385, 0.008041139914155627]}
+Sending to Aggregator_DER_Bus11 at time 25.5: ACE -0.00020139124014796153 100 MW.
+=============================
+request_time=26.0
+saving ss to object.
+pvd1_qpower = [0.06572975 0.13145951 0.19718926 0.26291901] at time 26.0
+Received active power from Bus11 at time 26.0: 3501.8216266737963 kw
+Received reactive power from Bus11 at time 26.0: 1590.8980190975963 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2642.28%/s]
+Simulation completed in 0.0378 seconds.
+current_time=26.0
+ACE_raw = -0.00023438410863545225
+ACE_raw_integral = -0.001638063886362729
+bus_pvd1_power {'11': [0.002024514347865712, 0.004049028696370432, 0.006073543044561578, 0.008098057392748775]}
+Sending to Aggregator_DER_Bus11 at time 26.0: ACE 0.00018724479949981814 100 MW.
+Sent voltage at time 26.0: (0.9941640397615745 pu , -0.13181236434383406 rad)to Bus 11
+Sent DER_power at time 26.0: [0.002024514347865712, 0.004049028696370432, 0.006073543044561578, 0.008098057392748775] MW to Bus 11
+=============================
+request_time=26.5
+saving ss to object.
+pvd1_qpower = [0.06572955 0.13145912 0.19718868 0.26291825] at time 26.5
+Received active power from Bus11 at time 26.5: 3501.9077646581563 kw
+Received reactive power from Bus11 at time 26.5: 1590.8274705619472 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2372.59%/s]
+Simulation completed in 0.0421 seconds.
+current_time=26.5
+ACE_raw = -0.002294755166845074
+ACE_raw_integral = -0.002785441469785266
+bus_pvd1_power {'11': [0.002121320423433059, 0.004242640846866118, 0.006363961270299177, 0.008485281693732236]}
+Sending to Aggregator_DER_Bus11 at time 26.5: ACE 0.000508019663663034 100 MW.
+=============================
+request_time=27.0
+saving ss to object.
+pvd1_qpower = [0.06572986 0.13145973 0.1971896  0.26291947] at time 27.0
+Received active power from Bus11 at time 27.0: 3501.9077646581563 kw
+Received reactive power from Bus11 at time 27.0: 1590.8274705619472 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2692.19%/s]
+Simulation completed in 0.0371 seconds.
+current_time=27.0
+ACE_raw = 0.001488136187771107
+ACE_raw_integral = -0.0020413733758997124
+bus_pvd1_power {'11': [0.002010313065637494, 0.0040206258350204286, 0.0060309387525262406, 0.008041251670034987]}
+Sending to Aggregator_DER_Bus11 at time 27.0: ACE 5.5323718812860524e-05 100 MW.
+Sent voltage at time 27.0: (0.9943579370996033 pu , -0.1356357767773878 rad)to Bus 11
+Sent DER_power at time 27.0: [0.002010313065637494, 0.0040206258350204286, 0.0060309387525262406, 0.008041251670034987] MW to Bus 11
+=============================
+request_time=27.5
+saving ss to object.
+pvd1_qpower = [0.06573067 0.13146133 0.197192   0.26292266] at time 27.5
+Received active power from Bus11 at time 27.5: 3502.1420979829545 kw
+Received reactive power from Bus11 at time 27.5: 1590.5941929869978 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 5629.11%/s]
+Simulation completed in 0.0177 seconds.
+current_time=27.5
+ACE_raw = 0.004156005450787788
+ACE_raw_integral = 3.662934949418169e-05
+bus_pvd1_power {'11': [0.0020103053896249486, 0.0040206105891763344, 0.0060309158837645, 0.008041221178352669]}
+Sending to Aggregator_DER_Bus11 at time 27.5: ACE -0.000419263480028197 100 MW.
+=============================
+request_time=28.0
+saving ss to object.
+pvd1_qpower = [0.06573042 0.13146083 0.19719125 0.26292166] at time 28.0
+Received active power from Bus11 at time 28.0: 3502.1420979829545 kw
+Received reactive power from Bus11 at time 28.0: 1590.5941929869978 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4924.45%/s]
+Simulation completed in 0.0203 seconds.
+current_time=28.0
+ACE_raw = 0.0027324742551969694
+ACE_raw_integral = 0.0014028664770926664
+bus_pvd1_power {'11': [0.0020102843479476353, 0.004020568695895271, 0.006030853043842905, 0.00804113757542659]}
+Sending to Aggregator_DER_Bus11 at time 28.0: ACE -0.0004135340732289636 100 MW.
+Sent voltage at time 28.0: (0.9944647349203137 pu , -0.11487320076541216 rad)to Bus 11
+Sent DER_power at time 28.0: [0.0020102843479476353, 0.004020568695895271, 0.006030853043842905, 0.00804113757542659] MW to Bus 11
+=============================
+request_time=28.5
+saving ss to object.
+pvd1_qpower = [0.06572973 0.13145947 0.1971892  0.26291893] at time 28.5
+Received active power from Bus11 at time 28.5: 3501.2899967318394 kw
+Received reactive power from Bus11 at time 28.5: 1589.76997829273 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-4.192634800281971e-06', '-8.385269600563942e-06', '-1.2577904400845909e-05', '-1.6770539201127883e-05'] from Aggregator_DER_Bus11 at time 28.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-4.19263480e-06 -8.38526960e-06 -1.25779044e-05 -1.67705392e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3203.45%/s]
+Simulation completed in 0.0312 seconds.
+current_time=28.5
+ACE_raw = 0.0011951259288282105
+ACE_raw_integral = 0.002000429441506772
+bus_pvd1_power {'11': [0.0019957989408281598, 0.0039915978816563195, 0.0059873968224844806, 0.007983195763312639]}
+Sending to Aggregator_DER_Bus11 at time 28.5: ACE -0.00031955553703349825 100 MW.
+=============================
+request_time=29.0
+saving ss to object.
+pvd1_qpower = [0.06572971 0.13145942 0.19718913 0.26291884] at time 29.0
+Received active power from Bus11 at time 29.0: 3501.2899967318394 kw
+Received reactive power from Bus11 at time 29.0: 1589.76997829273 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2964.99%/s]
+Simulation completed in 0.0337 seconds.
+current_time=29.0
+ACE_raw = 0.001741640995090072
+ACE_raw_integral = 0.002871249939051808
+bus_pvd1_power {'11': [0.001995809330912323, 0.003991618661824646, 0.005987427992736968, 0.007983237323649292]}
+Sending to Aggregator_DER_Bus11 at time 29.0: ACE -0.000461289093414188 100 MW.
+Sent voltage at time 29.0: (0.9943748245431792 pu , -0.10391164829585975 rad)to Bus 11
+Sent DER_power at time 29.0: [0.001995809330912323, 0.003991618661824646, 0.005987427992736968, 0.007983237323649292] MW to Bus 11
+=============================
+request_time=29.5
+saving ss to object.
+pvd1_qpower = [0.06573005 0.13146011 0.19719016 0.26292021] at time 29.5
+Received active power from Bus11 at time 29.5: 3501.6989302079614 kw
+Received reactive power from Bus11 at time 29.5: 1590.698615945059 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 5793.24%/s]
+Simulation completed in 0.0329 seconds.
+current_time=29.5
+ACE_raw = 0.002202437430634017
+ACE_raw_integral = 0.003972468654368816
+bus_pvd1_power {'11': [0.0019958092135005322, 0.0039916184270010644, 0.005987427640501596, 0.007983236854002129]}
+Sending to Aggregator_DER_Bus11 at time 29.5: ACE -0.0006174906085002833 100 MW.
+=============================
+request_time=30.0
+saving ss to object.
+pvd1_qpower = [0.06573005 0.1314601  0.19719015 0.2629202 ] at time 30.0
+Received active power from Bus11 at time 30.0: 3501.6989302079614 kw
+Received reactive power from Bus11 at time 30.0: 1590.698615945059 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 5583.32%/s]
+Simulation completed in 0.0179 seconds.
+current_time=30.0
+ACE_raw = 0.0011338936261896058
+ACE_raw_integral = 0.004539415467463619
+bus_pvd1_power {'11': [0.0019958026796486525, 0.003991605359297305, 0.005987408038945957, 0.00798321071859461]}
+Sending to Aggregator_DER_Bus11 at time 30.0: ACE -0.0005673309093653225 100 MW.
+Sent voltage at time 30.0: (0.9943115338521674 pu , -0.09264010062752502 rad)to Bus 11
+Sent DER_power at time 30.0: [0.0019958026796486525, 0.003991605359297305, 0.005987408038945957, 0.00798321071859461] MW to Bus 11
+=============================
+request_time=30.5
+saving ss to object.
+pvd1_qpower = [0.06572983 0.13145967 0.1971895  0.26291934] at time 30.5
+Received active power from Bus11 at time 30.5: 3501.942661973957 kw
+Received reactive power from Bus11 at time 30.5: 1590.7190448981435 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3750.31%/s]
+Simulation completed in 0.0327 seconds.
+current_time=30.5
+ACE_raw = 0.00038996087268716994
+ACE_raw_integral = 0.004734395903807204
+bus_pvd1_power {'11': [0.001995804927809184, 0.003991609855618368, 0.005987414783427552, 0.007983219711236736]}
+Sending to Aggregator_DER_Bus11 at time 30.5: ACE -0.0005124356776494374 100 MW.
+=============================
+request_time=31.0
+saving ss to object.
+pvd1_qpower = [0.06572991 0.13145982 0.19718972 0.26291963] at time 31.0
+Received active power from Bus11 at time 31.0: 3501.942661973957 kw
+Received reactive power from Bus11 at time 31.0: 1590.7190448981435 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2689.64%/s]
+Simulation completed in 0.0371 seconds.
+current_time=31.0
+ACE_raw = 0.005378740103250449
+ACE_raw_integral = 0.007423765955432428
+bus_pvd1_power {'11': [0.0019958300716143283, 0.0039916601432286565, 0.0059874902148429835, 0.00798332028645731]}
+Sending to Aggregator_DER_Bus11 at time 31.0: ACE -0.0012802506058682878 100 MW.
+Sent voltage at time 31.0: (0.9947229943711136 pu , -0.07725527072325353 rad)to Bus 11
+Sent DER_power at time 31.0: [0.0019958300716143283, 0.0039916601432286565, 0.0059874902148429835, 0.00798332028645731] MW to Bus 11
+=============================
+request_time=31.5
+saving ss to object.
+pvd1_qpower = [0.06573074 0.13146148 0.19719222 0.26292296] at time 31.5
+Received active power from Bus11 at time 31.5: 3501.9138639409257 kw
+Received reactive power from Bus11 at time 31.5: 1591.6959333983973 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 5176.04%/s]
+Simulation completed in 0.0193 seconds.
+current_time=31.5
+ACE_raw = 0.008584172845220409
+ACE_raw_integral = 0.011715852378042632
+bus_pvd1_power {'11': [0.001995817593621845, 0.00399163518724369, 0.0059874527808655344, 0.00798327037448738]}
+Sending to Aggregator_DER_Bus11 at time 31.5: ACE -0.002030002522326304 100 MW.
+=============================
+request_time=32.0
+saving ss to object.
+pvd1_qpower = [0.06573033 0.13146065 0.19719098 0.26292131] at time 32.0
+Received active power from Bus11 at time 32.0: 3501.9138639409257 kw
+Received reactive power from Bus11 at time 32.0: 1591.6959333983973 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2824.16%/s]
+Simulation completed in 0.0354 seconds.
+current_time=32.0
+ACE_raw = 0.0077215553239359195
+ACE_raw_integral = 0.015576630040010593
+bus_pvd1_power {'11': [0.0019957967456780577, 0.003991593491356115, 0.005987390237034173, 0.00798318698271223]}
+Sending to Aggregator_DER_Bus11 at time 32.0: ACE -0.0023298185363946513 100 MW.
+Sent voltage at time 32.0: (0.9948181641798066 pu , -0.026690042795604916 rad)to Bus 11
+Sent DER_power at time 32.0: [0.0019957967456780577, 0.003991593491356115, 0.005987390237034173, 0.00798318698271223] MW to Bus 11
+=============================
+request_time=32.5
+saving ss to object.
+pvd1_qpower = [0.06572964 0.13145928 0.19718891 0.26291855] at time 32.5
+Received active power from Bus11 at time 32.5: 3501.8851228517547 kw
+Received reactive power from Bus11 at time 32.5: 1591.8078156926483 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-2.0300025223263045e-05', '-4.060005044652609e-05', '-6.090007566978912e-05', '-8.120010089305218e-05'] from Aggregator_DER_Bus11 at time 32.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-2.03000252e-05 -4.06000504e-05 -6.09000757e-05 -8.12001009e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2950.64%/s]
+Simulation completed in 0.0338 seconds.
+current_time=32.5
+ACE_raw = 0.006088161463745414
+ACE_raw_integral = 0.0186207107718833
+bus_pvd1_power {'11': [0.001979685783217855, 0.00395937156643571, 0.005939057349653564, 0.00791874313287142]}
+Sending to Aggregator_DER_Bus11 at time 32.5: ACE -0.0024708872235628715 100 MW.
+=============================
+request_time=33.0
+saving ss to object.
+pvd1_qpower = [0.06572951 0.13145903 0.19718854 0.26291806] at time 33.0
+Received active power from Bus11 at time 33.0: 3501.8851228517547 kw
+Received reactive power from Bus11 at time 33.0: 1591.8078156926483 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2478.62%/s]
+Simulation completed in 0.0403 seconds.
+current_time=33.0
+ACE_raw = 0.002503775845687914
+ACE_raw_integral = 0.019872598694727257
+bus_pvd1_power {'11': [0.001979680323357797, 0.003959360646715594, 0.005939040970073392, 0.007918721293431187]}
+Sending to Aggregator_DER_Bus11 at time 33.0: ACE -0.0022376374540415173 100 MW.
+Sent voltage at time 33.0: (0.9942454525078547 pu , 0.006547678252413354 rad)to Bus 11
+Sent DER_power at time 33.0: [0.001979680323357797, 0.003959360646715594, 0.005939040970073392, 0.007918721293431187] MW to Bus 11
+=============================
+request_time=33.5
+saving ss to object.
+pvd1_qpower = [0.06572933 0.13145867 0.197188   0.26291733] at time 33.5
+Received active power from Bus11 at time 33.5: 3502.4514722341373 kw
+Received reactive power from Bus11 at time 33.5: 1591.6099772074203 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2621.62%/s]
+Simulation completed in 0.0391 seconds.
+current_time=33.5
+ACE_raw = 0.00024716774710785796
+ACE_raw_integral = 0.019996182568281187
+bus_pvd1_power {'11': [0.0019796912324450268, 0.003959382248967127, 0.005939073373450692, 0.007918764497934255]}
+Sending to Aggregator_DER_Bus11 at time 33.5: ACE -0.0020243350315389047 100 MW.
+=============================
+request_time=34.0
+saving ss to object.
+pvd1_qpower = [0.06572969 0.13145939 0.19718908 0.26291877] at time 34.0
+Received active power from Bus11 at time 34.0: 3502.4514722341373 kw
+Received reactive power from Bus11 at time 34.0: 1591.6099772074203 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1560.01%/s]
+Simulation completed in 0.0641 seconds.
+current_time=34.0
+ACE_raw = -0.00360277458581686
+ACE_raw_integral = 0.01819479527537276
+bus_pvd1_power {'11': [0.0021539982891970043, 0.004307996578394009, 0.006461994867591013, 0.008615993156788017]}
+Sending to Aggregator_DER_Bus11 at time 34.0: ACE -0.0014592020689555899 100 MW.
+Sent voltage at time 34.0: (0.9938573845489775 pu , 0.0013121798758354156 rad)to Bus 11
+Sent DER_power at time 34.0: [0.0021539982891970043, 0.004307996578394009, 0.006461994867591013, 0.008615993156788017] MW to Bus 11
+=============================
+request_time=34.5
+saving ss to object.
+pvd1_qpower = [0.06572988 0.13145976 0.19718963 0.26291951] at time 34.5
+Received active power from Bus11 at time 34.5: 3502.3680559340396 kw
+Received reactive power from Bus11 at time 34.5: 1591.3054819252175 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2968.22%/s]
+Simulation completed in 0.0336 seconds.
+current_time=34.5
+ACE_raw = -0.005089677017243303
+ACE_raw_integral = 0.015649956766751107
+bus_pvd1_power {'11': [0.002226032837218446, 0.004452065674436892, 0.006678098511655336, 0.008904131348873783]}
+Sending to Aggregator_DER_Bus11 at time 34.5: ACE -0.0010560279749507804 100 MW.
+=============================
+request_time=35.0
+saving ss to object.
+pvd1_qpower = [0.06573017 0.13146033 0.1971905  0.26292066] at time 35.0
+Received active power from Bus11 at time 35.0: 3502.3680559340396 kw
+Received reactive power from Bus11 at time 35.0: 1591.3054819252175 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2775.86%/s]
+Simulation completed in 0.0360 seconds.
+current_time=35.0
+ACE_raw = -0.003136687334314796
+ACE_raw_integral = 0.014081613099593708
+bus_pvd1_power {'11': [0.0021321853153025423, 0.004264370630605085, 0.006396555945907626, 0.00852874126121017]}
+Sending to Aggregator_DER_Bus11 at time 35.0: ACE -0.0010944925765278913 100 MW.
+Sent voltage at time 35.0: (0.9940815426742975 pu , -0.025965311044261235 rad)to Bus 11
+Sent DER_power at time 35.0: [0.0021321853153025423, 0.004264370630605085, 0.006396555945907626, 0.00852874126121017] MW to Bus 11
+=============================
+request_time=35.5
+saving ss to object.
+pvd1_qpower = [0.06573043 0.13146084 0.19719127 0.26292169] at time 35.5
+Received active power from Bus11 at time 35.5: 3501.9861094974376 kw
+Received reactive power from Bus11 at time 35.5: 1592.9134801323153 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2548.74%/s]
+Simulation completed in 0.0392 seconds.
+current_time=35.5
+ACE_raw = -0.0017473137271758375
+ACE_raw_integral = 0.01320795623600579
+bus_pvd1_power {'11': [0.002064561232570377, 0.004129122465140754, 0.00619368369771113, 0.008258244930281508]}
+Sending to Aggregator_DER_Bus11 at time 35.5: ACE -0.0011460642508829952 100 MW.
+=============================
+request_time=36.0
+saving ss to object.
+pvd1_qpower = [0.06573034 0.13146069 0.19719101 0.26292135] at time 36.0
+Received active power from Bus11 at time 36.0: 3501.9861094974376 kw
+Received reactive power from Bus11 at time 36.0: 1592.9134801323153 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2631.36%/s]
+Simulation completed in 0.0380 seconds.
+current_time=36.0
+ACE_raw = -0.0013879090108017648
+ACE_raw_integral = 0.012514001730604907
+bus_pvd1_power {'11': [0.002047061488134098, 0.004094122976268196, 0.0061411844644022945, 0.008188245952536392]}
+Sending to Aggregator_DER_Bus11 at time 36.0: ACE -0.0011126092719803142 100 MW.
+Sent voltage at time 36.0: (0.9943425796072497 pu , -0.03814770652871238 rad)to Bus 11
+Sent DER_power at time 36.0: [0.002047061488134098, 0.004094122976268196, 0.0061411844644022945, 0.008188245952536392] MW to Bus 11
+=============================
+request_time=36.5
+saving ss to object.
+pvd1_qpower = [0.06573015 0.13146033 0.1971905  0.26292066] at time 36.5
+Received active power from Bus11 at time 36.5: 3499.5537773261176 kw
+Received reactive power from Bus11 at time 36.5: 1581.3993718616343 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-1.1460642508829954e-05', '-2.2921285017659908e-05', '-3.438192752648985e-05', '-4.5842570035319815e-05'] from Aggregator_DER_Bus11 at time 36.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-1.14606425e-05 -2.29212850e-05 -3.43819275e-05 -4.58425700e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2753.14%/s]
+Simulation completed in 0.0365 seconds.
+current_time=36.5
+ACE_raw = -0.0009838832704796002
+ACE_raw_integral = 0.012022060095365106
+bus_pvd1_power {'11': [0.002036588623726351, 0.004073177247452702, 0.006109765871179053, 0.008146354494905405]}
+Sending to Aggregator_DER_Bus11 at time 36.5: ACE -0.0011038176824885507 100 MW.
+=============================
+request_time=37.0
+saving ss to object.
+pvd1_qpower = [0.06573007 0.13146014 0.19719021 0.26292029] at time 37.0
+Received active power from Bus11 at time 37.0: 3499.5537773261176 kw
+Received reactive power from Bus11 at time 37.0: 1581.3993718616343 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2451.65%/s]
+Simulation completed in 0.0407 seconds.
+current_time=37.0
+ACE_raw = -0.0019499924241719222
+ACE_raw_integral = 0.011047063883279145
+bus_pvd1_power {'11': [0.0020832238185764175, 0.004166447637152835, 0.006249671455729251, 0.00833289527430567]}
+Sending to Aggregator_DER_Bus11 at time 37.0: ACE -0.0009097071459107224 100 MW.
+Sent voltage at time 37.0: (0.9943499270321116 pu , -0.047419790518711744 rad)to Bus 11
+Sent DER_power at time 37.0: [0.0020832238185764175, 0.004166447637152835, 0.006249671455729251, 0.00833289527430567] MW to Bus 11
+=============================
+request_time=37.5
+saving ss to object.
+pvd1_qpower = [0.06572994 0.13145988 0.19718982 0.26291977] at time 37.5
+Received active power from Bus11 at time 37.5: 3499.7712067856555 kw
+Received reactive power from Bus11 at time 37.5: 1582.3175601347716 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4750.55%/s]
+Simulation completed in 0.0210 seconds.
+current_time=37.5
+ACE_raw = -0.0024158095284400097
+ACE_raw_integral = 0.009839159119059141
+bus_pvd1_power {'11': [0.0021055325505943768, 0.0042110651011887535, 0.00631659765178313, 0.008422130202377507]}
+Sending to Aggregator_DER_Bus11 at time 37.5: ACE -0.0007423349590619132 100 MW.
+=============================
+request_time=38.0
+saving ss to object.
+pvd1_qpower = [0.06572999 0.13145995 0.19718992 0.2629199 ] at time 38.0
+Received active power from Bus11 at time 38.0: 3499.7712067856555 kw
+Received reactive power from Bus11 at time 38.0: 1582.3175601347716 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2033.71%/s]
+Simulation completed in 0.0491 seconds.
+current_time=38.0
+ACE_raw = 0.0003777535054784734
+ACE_raw_integral = 0.010028035871798378
+bus_pvd1_power {'11': [0.001988554369648199, 0.0039771089030601345, 0.00596566335987068, 0.007954217813160906]}
+Sending to Aggregator_DER_Bus11 at time 38.0: ACE -0.0010405789377276851 100 MW.
+Sent voltage at time 38.0: (0.9945066549449851 pu , -0.056077624487978664 rad)to Bus 11
+Sent DER_power at time 38.0: [0.001988554369648199, 0.0039771089030601345, 0.00596566335987068, 0.007954217813160906] MW to Bus 11
+=============================
+request_time=38.5
+saving ss to object.
+pvd1_qpower = [0.06573038 0.13146077 0.19719115 0.26292154] at time 38.5
+Received active power from Bus11 at time 38.5: 3501.0579318041737 kw
+Received reactive power from Bus11 at time 38.5: 1587.8917008728463 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 5015.97%/s]
+Simulation completed in 0.0199 seconds.
+current_time=38.5
+ACE_raw = 0.00209392366358849
+ACE_raw_integral = 0.011074997703592623
+bus_pvd1_power {'11': [0.0019885447978534353, 0.003977089595706871, 0.005965634393605821, 0.007954179255754394]}
+Sending to Aggregator_DER_Bus11 at time 38.5: ACE -0.0013168921367181113 100 MW.
+=============================
+request_time=39.0
+saving ss to object.
+pvd1_qpower = [0.06573017 0.13146034 0.19719051 0.26292068] at time 39.0
+Received active power from Bus11 at time 39.0: 3501.0579318041737 kw
+Received reactive power from Bus11 at time 39.0: 1587.8917008728463 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2778.35%/s]
+Simulation completed in 0.0359 seconds.
+current_time=39.0
+ACE_raw = 0.0003750304253311345
+ACE_raw_integral = 0.01126251291625819
+bus_pvd1_power {'11': [0.0019885284164473547, 0.003977056732061386, 0.005965585010675831, 0.007954113347567302]}
+Sending to Aggregator_DER_Bus11 at time 39.0: ACE -0.0011637543341589324 100 MW.
+Sent voltage at time 39.0: (0.9944447863512126 pu , -0.04834982971651632 rad)to Bus 11
+Sent DER_power at time 39.0: [0.0019885284164473547, 0.003977056732061386, 0.005965585010675831, 0.007954113347567302] MW to Bus 11
+=============================
+request_time=39.5
+saving ss to object.
+pvd1_qpower = [0.06572962 0.13145925 0.19718887 0.2629185 ] at time 39.5
+Received active power from Bus11 at time 39.5: 3500.7606172521046 kw
+Received reactive power from Bus11 at time 39.5: 1585.5575285675652 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2277.79%/s]
+Simulation completed in 0.0439 seconds.
+current_time=39.5
+ACE_raw = -0.0008883367720480562
+ACE_raw_integral = 0.010818344530234161
+bus_pvd1_power {'11': [0.0020314135588702514, 0.004062827117740503, 0.006094240676610755, 0.008125654235481006]}
+Sending to Aggregator_DER_Bus11 at time 39.5: ACE -0.0009930007758186105 100 MW.
+=============================
+request_time=40.0
+saving ss to object.
+pvd1_qpower = [0.06572981 0.13145963 0.19718946 0.26291928] at time 40.0
+Received active power from Bus11 at time 40.0: 3500.7606172521046 kw
+Received reactive power from Bus11 at time 40.0: 1585.5575285675652 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2783.18%/s]
+Simulation completed in 0.0359 seconds.
+current_time=40.0
+ACE_raw = 0.0006358829350497738
+ACE_raw_integral = 0.011136285997759048
+bus_pvd1_power {'11': [0.0019885449001678054, 0.003977089800335611, 0.005965634700503416, 0.007954179701107952]}
+Sending to Aggregator_DER_Bus11 at time 40.0: ACE -0.0011772168932808822 100 MW.
+Sent voltage at time 40.0: (0.9944319586047768 pu , -0.049101698793386474 rad)to Bus 11
+Sent DER_power at time 40.0: [0.0019885449001678054, 0.003977089800335611, 0.005965634700503416, 0.007954179701107952] MW to Bus 11
+=============================
+request_time=40.5
+saving ss to object.
+pvd1_qpower = [0.06573017 0.13146035 0.19719052 0.26292069] at time 40.5
+Received active power from Bus11 at time 40.5: 3501.960276259774 kw
+Received reactive power from Bus11 at time 40.5: 1591.8895869555809 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-9.930007758186107e-06', '-1.9860015516372214e-05', '-2.9790023274558314e-05', '-3.972003103274443e-05'] from Aggregator_DER_Bus11 at time 40.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-9.93000776e-06 -1.98600155e-05 -2.97900233e-05 -3.97200310e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2859.55%/s]
+Simulation completed in 0.0349 seconds.
+current_time=40.5
+ACE_raw = 0.0016882001710824062
+ACE_raw_integral = 0.011980386083300251
+bus_pvd1_power {'11': [0.0019900731009629357, 0.003980146201925871, 0.005970219302888806, 0.007960292403851743]}
+Sending to Aggregator_DER_Bus11 at time 40.5: ACE -0.001366858625438266 100 MW.
+=============================
+request_time=41.0
+saving ss to object.
+pvd1_qpower = [0.06573009 0.13146018 0.19719028 0.26292037] at time 41.0
+Received active power from Bus11 at time 41.0: 3501.960276259774 kw
+Received reactive power from Bus11 at time 41.0: 1591.8895869555809 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2797.27%/s]
+Simulation completed in 0.0357 seconds.
+current_time=41.0
+ACE_raw = 0.004073495873850749
+ACE_raw_integral = 0.014017134020225626
+bus_pvd1_power {'11': [0.0019900780990208555, 0.003980156198041711, 0.005970234297062565, 0.007960312496683764]}
+Sending to Aggregator_DER_Bus11 at time 41.0: ACE -0.0018090629894076374 100 MW.
+Sent voltage at time 41.0: (0.9946939861726013 pu , -0.03344010466596787 rad)to Bus 11
+Sent DER_power at time 41.0: [0.0019900780990208555, 0.003980156198041711, 0.005970234297062565, 0.007960312496683764] MW to Bus 11
+=============================
+request_time=41.5
+saving ss to object.
+pvd1_qpower = [0.06573026 0.13146052 0.19719078 0.26292104] at time 41.5
+Received active power from Bus11 at time 41.5: 3502.097275071967 kw
+Received reactive power from Bus11 at time 41.5: 1592.1893293673336 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2884.98%/s]
+Simulation completed in 0.0349 seconds.
+current_time=41.5
+ACE_raw = 0.005356482255696767
+ACE_raw_integral = 0.01669537514807401
+bus_pvd1_power {'11': [0.0019900708315160843, 0.003980141663032169, 0.005970212494548252, 0.007960283326064337]}
+Sending to Aggregator_DER_Bus11 at time 41.5: ACE -0.002205185740377078 100 MW.
+=============================
+request_time=42.0
+saving ss to object.
+pvd1_qpower = [0.06573002 0.13146003 0.19719005 0.26292007] at time 42.0
+Received active power from Bus11 at time 42.0: 3502.097275071967 kw
+Received reactive power from Bus11 at time 42.0: 1592.1893293673336 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2632.69%/s]
+Simulation completed in 0.0379 seconds.
+current_time=42.0
+ACE_raw = 0.0029059369166948125
+ACE_raw_integral = 0.018148343606421417
+bus_pvd1_power {'11': [0.001990053855548756, 0.003980107536400898, 0.005970161303910713, 0.007960215071880468]}
+Sending to Aggregator_DER_Bus11 at time 42.0: ACE -0.0021054280523116232 100 MW.
+Sent voltage at time 42.0: (0.994475788386858 pu , -0.005649051345484243 rad)to Bus 11
+Sent DER_power at time 42.0: [0.001990053855548756, 0.003980107536400898, 0.005970161303910713, 0.007960215071880468] MW to Bus 11
+=============================
+request_time=42.5
+saving ss to object.
+pvd1_qpower = [0.06572945 0.1314589  0.19718835 0.26291781] at time 42.5
+Received active power from Bus11 at time 42.5: 3502.0499256883804 kw
+Received reactive power from Bus11 at time 42.5: 1592.1768726664593 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3807.78%/s]
+Simulation completed in 0.0262 seconds.
+current_time=42.5
+ACE_raw = 0.0010257754784636856
+ACE_raw_integral = 0.01866123134565326
+bus_pvd1_power {'11': [0.001990058935846631, 0.003980117871693262, 0.005970176636822155, 0.007960235515762873]}
+Sending to Aggregator_DER_Bus11 at time 42.5: ACE -0.0019687006824116947 100 MW.
+=============================
+request_time=43.0
+saving ss to object.
+pvd1_qpower = [0.06572962 0.13145924 0.19718886 0.26291848] at time 43.0
+Received active power from Bus11 at time 43.0: 3502.0499256883804 kw
+Received reactive power from Bus11 at time 43.0: 1592.1768726664593 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1952.06%/s]
+Simulation completed in 0.0500 seconds.
+current_time=43.0
+ACE_raw = -0.0017817698240815197
+ACE_raw_integral = 0.0177703464336125
+bus_pvd1_power {'11': [0.002076247916256873, 0.004152495832513746, 0.006228743748770619, 0.008304991665027493]}
+Sending to Aggregator_DER_Bus11 at time 43.0: ACE -0.001598857660953098 100 MW.
+Sent voltage at time 43.0: (0.9940744212836168 pu , -0.0036366654050073713 rad)to Bus 11
+Sent DER_power at time 43.0: [0.002076247916256873, 0.004152495832513746, 0.006228743748770619, 0.008304991665027493] MW to Bus 11
+=============================
+request_time=43.5
+saving ss to object.
+pvd1_qpower = [0.06572978 0.13145959 0.19718939 0.26291919] at time 43.5
+Received active power from Bus11 at time 43.5: 3502.462764685059 kw
+Received reactive power from Bus11 at time 43.5: 1592.0030502898246 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1985.68%/s]
+Simulation completed in 0.0503 seconds.
+current_time=43.5
+ACE_raw = -0.002936491737883879
+ACE_raw_integral = 0.01630210056467056
+bus_pvd1_power {'11': [0.002132098617603224, 0.004264197235206448, 0.006396295852809672, 0.008528394470412896]}
+Sending to Aggregator_DER_Bus11 at time 43.5: ACE -0.001336560882678668 100 MW.
+=============================
+request_time=44.0
+saving ss to object.
+pvd1_qpower = [0.06573003 0.13146006 0.19719009 0.26292012] at time 44.0
+Received active power from Bus11 at time 44.0: 3502.462764685059 kw
+Received reactive power from Bus11 at time 44.0: 1592.0030502898246 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2381.34%/s]
+Simulation completed in 0.0419 seconds.
+current_time=44.0
+ACE_raw = -0.0026283965768333565
+ACE_raw_integral = 0.014987902276253882
+bus_pvd1_power {'11': [0.0021180713455227823, 0.0042361426910455646, 0.006354214036568348, 0.008472285382091129]}
+Sending to Aggregator_DER_Bus11 at time 44.0: ACE -0.0012359505699420525 100 MW.
+Sent voltage at time 44.0: (0.9941089371909836 pu , -0.021019422876651876 rad)to Bus 11
+Sent DER_power at time 44.0: [0.0021180713455227823, 0.0042361426910455646, 0.006354214036568348, 0.008472285382091129] MW to Bus 11
+=============================
+request_time=44.5
+saving ss to object.
+pvd1_qpower = [0.06573017 0.13146034 0.1971905  0.26292067] at time 44.5
+Received active power from Bus11 at time 44.5: 3502.174953253573 kw
+Received reactive power from Bus11 at time 44.5: 1592.0842798981864 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-1.3365608826786683e-05', '-2.6731217653573365e-05', '-4.0096826480360045e-05', '-5.346243530714673e-05'] from Aggregator_DER_Bus11 at time 44.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-1.33656088e-05 -2.67312177e-05 -4.00968265e-05 -5.34624353e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2425.98%/s]
+Simulation completed in 0.0412 seconds.
+current_time=44.5
+ACE_raw = -0.0022034098801379477
+ACE_raw_integral = 0.013886197336184907
+bus_pvd1_power {'11': [0.0020939110448129354, 0.004187822089625871, 0.006281733134438807, 0.008375644179251742]}
+Sending to Aggregator_DER_Bus11 at time 44.5: ACE -0.001168278745604696 100 MW.
+=============================
+request_time=45.0
+saving ss to object.
+pvd1_qpower = [0.06573018 0.13146037 0.19719055 0.26292073] at time 45.0
+Received active power from Bus11 at time 45.0: 3502.174953253573 kw
+Received reactive power from Bus11 at time 45.0: 1592.0842798981864 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2121.31%/s]
+Simulation completed in 0.0471 seconds.
+current_time=45.0
+ACE_raw = -0.0012429518778016154
+ACE_raw_integral = 0.0132647213972841
+bus_pvd1_power {'11': [0.0020468691104033603, 0.0040937382208067205, 0.006140607331210079, 0.008187476441613441]}
+Sending to Aggregator_DER_Bus11 at time 45.0: ACE -0.0012021769519482484 100 MW.
+Sent voltage at time 45.0: (0.994301178800858 pu , -0.03369842433152788 rad)to Bus 11
+Sent DER_power at time 45.0: [0.0020468691104033603, 0.0040937382208067205, 0.006140607331210079, 0.008187476441613441] MW to Bus 11
+=============================
+request_time=45.5
+saving ss to object.
+pvd1_qpower = [0.06573019 0.13146037 0.19719056 0.26292073] at time 45.5
+Received active power from Bus11 at time 45.5: 3500.60699345952 kw
+Received reactive power from Bus11 at time 45.5: 1586.332932589932 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3249.11%/s]
+Simulation completed in 0.0307 seconds.
+current_time=45.5
+ACE_raw = -0.0007052204566766864
+ACE_raw_integral = 0.012912111168945757
+bus_pvd1_power {'11': [0.0020212108623553463, 0.0040424217247106925, 0.00606363258706604, 0.008084843449421385]}
+Sending to Aggregator_DER_Bus11 at time 45.5: ACE -0.0012206890712269072 100 MW.
+=============================
+request_time=46.0
+saving ss to object.
+pvd1_qpower = [0.06573009 0.13146018 0.19719027 0.26292036] at time 46.0
+Received active power from Bus11 at time 46.0: 3500.60699345952 kw
+Received reactive power from Bus11 at time 46.0: 1586.332932589932 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1860.20%/s]
+Simulation completed in 0.0537 seconds.
+current_time=46.0
+ACE_raw = -0.004838213595870501
+ACE_raw_integral = 0.010493004371010507
+bus_pvd1_power {'11': [0.0022209185906306075, 0.004441837181261215, 0.006662755771891822, 0.00888367436252243]}
+Sending to Aggregator_DER_Bus11 at time 46.0: ACE -0.0005654790775140008 100 MW.
+Sent voltage at time 46.0: (0.9941389111261377 pu , -0.04871961209428041 rad)to Bus 11
+Sent DER_power at time 46.0: [0.0022209185906306075, 0.004441837181261215, 0.006662755771891822, 0.00888367436252243] MW to Bus 11
+=============================
+request_time=46.5
+saving ss to object.
+pvd1_qpower = [0.06572977 0.13145953 0.1971893  0.26291907] at time 46.5
+Received active power from Bus11 at time 46.5: 3500.0689820943135 kw
+Received reactive power from Bus11 at time 46.5: 1583.3775446041561 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2541.51%/s]
+Simulation completed in 0.0393 seconds.
+current_time=46.5
+ACE_raw = -0.006849750700632021
+ACE_raw_integral = 0.007068129020694497
+bus_pvd1_power {'11': [0.0023188823986746315, 0.004637764797349263, 0.006956647196023892, 0.009275529594698526]}
+Sending to Aggregator_DER_Bus11 at time 46.5: ACE -2.1837832006247563e-05 100 MW.
+=============================
+request_time=47.0
+saving ss to object.
+pvd1_qpower = [0.06572994 0.13145989 0.19718985 0.26291981] at time 47.0
+Received active power from Bus11 at time 47.0: 3500.0689820943135 kw
+Received reactive power from Bus11 at time 47.0: 1583.3775446041561 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1972.48%/s]
+Simulation completed in 0.0506 seconds.
+current_time=47.0
+ACE_raw = -0.0036698444553655073
+ACE_raw_integral = 0.005233206793011743
+bus_pvd1_power {'11': [0.0021654917688025757, 0.004330983537605151, 0.006496475306407727, 0.008661967075210303]}
+Sending to Aggregator_DER_Bus11 at time 47.0: ACE -0.00015633623376462357 100 MW.
+Sent voltage at time 47.0: (0.9943017717943522 pu , -0.08381570859571905 rad)to Bus 11
+Sent DER_power at time 47.0: [0.0021654917688025757, 0.004330983537605151, 0.006496475306407727, 0.008661967075210303] MW to Bus 11
+=============================
+request_time=47.5
+saving ss to object.
+pvd1_qpower = [0.06573034 0.13146068 0.19719101 0.26292135] at time 47.5
+Received active power from Bus11 at time 47.5: 3501.021770363339 kw
+Received reactive power from Bus11 at time 47.5: 1587.9518423266616 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2117.11%/s]
+Simulation completed in 0.0472 seconds.
+current_time=47.5
+ACE_raw = -0.0017534715612742972
+ACE_raw_integral = 0.004356471012374594
+bus_pvd1_power {'11': [0.00207212668009639, 0.00414425336019278, 0.00621638004028917, 0.00828850672038556]}
+Sending to Aggregator_DER_Bus11 at time 47.5: ACE -0.0002602999451100297 100 MW.
+=============================
+request_time=48.0
+saving ss to object.
+pvd1_qpower = [0.06573023 0.13146046 0.19719068 0.26292091] at time 48.0
+Received active power from Bus11 at time 48.0: 3501.021770363339 kw
+Received reactive power from Bus11 at time 48.0: 1587.9518423266616 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2496.49%/s]
+Simulation completed in 0.0400 seconds.
+current_time=48.0
+ACE_raw = -0.0020906758256393275
+ACE_raw_integral = 0.0033111330995549302
+bus_pvd1_power {'11': [0.0020876168551177696, 0.004175233710235539, 0.006262850565353308, 0.008350467420471078]}
+Sending to Aggregator_DER_Bus11 at time 48.0: ACE -0.00012204572739156028 100 MW.
+Sent voltage at time 48.0: (0.9944385893693387 pu , -0.09814737708375014 rad)to Bus 11
+Sent DER_power at time 48.0: [0.0020876168551177696, 0.004175233710235539, 0.006262850565353308, 0.008350467420471078] MW to Bus 11
+=============================
+request_time=48.5
+saving ss to object.
+pvd1_qpower = [0.06573001 0.13146002 0.19719002 0.26292003] at time 48.5
+Received active power from Bus11 at time 48.5: 3499.087269862751 kw
+Received reactive power from Bus11 at time 48.5: 1576.7559242127334 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-2.6029994511002977e-06', '-5.2059989022005954e-06', '-7.80899835330089e-06', '-1.0411997804401191e-05'] from Aggregator_DER_Bus11 at time 48.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-2.60299945e-06 -5.20599890e-06 -7.80899835e-06 -1.04119978e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2860.14%/s]
+Simulation completed in 0.0359 seconds.
+current_time=48.5
+ACE_raw = -0.0021975029191764277
+ACE_raw_integral = 0.002212381639966716
+bus_pvd1_power {'11': [0.0021041233184762205, 0.004208246547397784, 0.006312369821096676, 0.008416493094795568]}
+Sending to Aggregator_DER_Bus11 at time 48.5: ACE -1.4878720790288311e-06 100 MW.
+=============================
+request_time=49.0
+saving ss to object.
+pvd1_qpower = [0.06572995 0.1314599  0.19718984 0.26291979] at time 49.0
+Received active power from Bus11 at time 49.0: 3499.087269862751 kw
+Received reactive power from Bus11 at time 49.0: 1576.7559242127334 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 1982.77%/s]
+Simulation completed in 0.0504 seconds.
+current_time=49.0
+ACE_raw = -0.004451019431415888
+ACE_raw_integral = -1.3128075741227797e-05
+bus_pvd1_power {'11': [0.0022133817445541917, 0.004426763489108383, 0.006640145233662575, 0.008853526978216767]}
+Sending to Aggregator_DER_Bus11 at time 49.0: ACE 0.00044641475071571156 100 MW.
+Sent voltage at time 49.0: (0.9942799563004031 pu , -0.11776795689555215 rad)to Bus 11
+Sent DER_power at time 49.0: [0.0022133817445541917, 0.004426763489108383, 0.006640145233662575, 0.008853526978216767] MW to Bus 11
+=============================
+request_time=49.5
+saving ss to object.
+pvd1_qpower = [0.06572979 0.1314596  0.19718941 0.26291921] at time 49.5
+Received active power from Bus11 at time 49.5: 3499.504560984491 kw
+Received reactive power from Bus11 at time 49.5: 1579.7277737568795 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2943.91%/s]
+Simulation completed in 0.0339 seconds.
+current_time=49.5
+ACE_raw = -0.005521128793105017
+ACE_raw_integral = -0.002773692472293736
+bus_pvd1_power {'11': [0.002265017214739818, 0.004530034429479636, 0.0067950516442194546, 0.009060068858959273]}
+Sending to Aggregator_DER_Bus11 at time 49.5: ACE 0.0008294821265398752 100 MW.
+=============================
+request_time=50.0
+saving ss to object.
+pvd1_qpower = [0.06572994 0.13145989 0.19718983 0.26291978] at time 50.0
+Received active power from Bus11 at time 50.0: 3499.504560984491 kw
+Received reactive power from Bus11 at time 50.0: 1579.7277737568795 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2538.80%/s]
+Simulation completed in 0.0393 seconds.
+current_time=50.0
+ACE_raw = 0.0006957360534018344
+ACE_raw_integral = -0.0024258244455928188
+bus_pvd1_power {'11': [0.0019974560896111253, 0.0039949121792222505, 0.0059923682688333745, 0.007989824358444501]}
+Sending to Aggregator_DER_Bus11 at time 50.0: ACE 0.00017300883921909845 100 MW.
+Sent voltage at time 50.0: (0.9946214673141739 pu , -0.1379029847265425 rad)to Bus 11
+Sent DER_power at time 50.0: [0.0019974560896111253, 0.0039949121792222505, 0.0059923682688333745, 0.007989824358444501] MW to Bus 11
+=============================
+request_time=50.5
+saving ss to object.
+pvd1_qpower = [0.06573087 0.13146174 0.1971926  0.26292347] at time 50.5
+Received active power from Bus11 at time 50.5: 3500.6169143222373 kw
+Received reactive power from Bus11 at time 50.5: 1584.9125472471092 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2741.64%/s]
+Simulation completed in 0.0364 seconds.
+current_time=50.5
+ACE_raw = 0.004473177214702975
+ACE_raw_integral = -0.00018923583824133122
+bus_pvd1_power {'11': [0.0019974098546229023, 0.003994819709245805, 0.005992229563868708, 0.00798963941849161]}
+Sending to Aggregator_DER_Bus11 at time 50.5: ACE -0.0004283941376461644 100 MW.
+=============================
+request_time=51.0
+saving ss to object.
+pvd1_qpower = [0.06573041 0.13146083 0.19719124 0.26292165] at time 51.0
+Received active power from Bus11 at time 51.0: 3500.6169143222373 kw
+Received reactive power from Bus11 at time 51.0: 1584.9125472471092 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4207.77%/s]
+Simulation completed in 0.0237 seconds.
+current_time=51.0
+ACE_raw = 0.005477772322976477
+ACE_raw_integral = 0.002549650323246907
+bus_pvd1_power {'11': [0.001997393749518061, 0.003994787499036122, 0.005992181248554184, 0.007989574998072244]}
+Sending to Aggregator_DER_Bus11 at time 51.0: ACE -0.0008027422646223385 100 MW.
+Sent voltage at time 51.0: (0.9949417185917493 pu , -0.110172634996802 rad)to Bus 11
+Sent DER_power at time 51.0: [0.001997393749518061, 0.003994787499036122, 0.005992181248554184, 0.007989574998072244] MW to Bus 11
+=============================
+request_time=51.5
+saving ss to object.
+pvd1_qpower = [0.06572988 0.13145976 0.19718964 0.26291953] at time 51.5
+Received active power from Bus11 at time 51.5: 3499.220476233503 kw
+Received reactive power from Bus11 at time 51.5: 1576.9773293877756 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2864.34%/s]
+Simulation completed in 0.0349 seconds.
+current_time=51.5
+ACE_raw = 0.005396871365211355
+ACE_raw_integral = 0.005248086005852585
+bus_pvd1_power {'11': [0.0019973868425359285, 0.003994773685071857, 0.005992160527607785, 0.007989547370143714]}
+Sending to Aggregator_DER_Bus11 at time 51.5: ACE -0.001064495737106394 100 MW.
+=============================
+request_time=52.0
+saving ss to object.
+pvd1_qpower = [0.06572965 0.13145931 0.19718896 0.26291862] at time 52.0
+Received active power from Bus11 at time 52.0: 3499.220476233503 kw
+Received reactive power from Bus11 at time 52.0: 1576.9773293877756 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2443.81%/s]
+Simulation completed in 0.0409 seconds.
+current_time=52.0
+ACE_raw = -0.0009056262166287114
+ACE_raw_integral = 0.004795272897538229
+bus_pvd1_power {'11': [0.0020430502201463354, 0.004086100440280413, 0.00612915066042062, 0.008172200880560827]}
+Sending to Aggregator_DER_Bus11 at time 52.0: ACE -0.0003889646680909518 100 MW.
+Sent voltage at time 52.0: (0.9941989958048041 pu , -0.08977352409949227 rad)to Bus 11
+Sent DER_power at time 52.0: [0.0020430502201463354, 0.004086100440280413, 0.00612915066042062, 0.008172200880560827] MW to Bus 11
+=============================
+request_time=52.5
+saving ss to object.
+pvd1_qpower = [0.06572925 0.13145849 0.19718774 0.26291698] at time 52.5
+Received active power from Bus11 at time 52.5: 3502.091793480026 kw
+Received reactive power from Bus11 at time 52.5: 1591.295862767302 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '-1.0644957371063943e-05', '-2.1289914742127885e-05', '-3.193487211319182e-05', '-4.257982948425577e-05'] from Aggregator_DER_Bus11 at time 52.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[-1.06449574e-05 -2.12899147e-05 -3.19348721e-05 -4.25798295e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2003.13%/s]
+Simulation completed in 0.0499 seconds.
+current_time=52.5
+ACE_raw = -0.004533395105773389
+ACE_raw_integral = 0.0025285753446515347
+bus_pvd1_power {'11': [0.0022088994529713022, 0.0044177989059426045, 0.006626698358913908, 0.008835597811885209]}
+Sending to Aggregator_DER_Bus11 at time 52.5: ACE 0.00020048197611218546 100 MW.
+=============================
+request_time=53.0
+saving ss to object.
+pvd1_qpower = [0.06572967 0.13145936 0.19718904 0.26291873] at time 53.0
+Received active power from Bus11 at time 53.0: 3502.091793480026 kw
+Received reactive power from Bus11 at time 53.0: 1591.295862767302 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2717.70%/s]
+Simulation completed in 0.0367 seconds.
+current_time=53.0
+ACE_raw = -0.0010353211972537204
+ACE_raw_integral = 0.0020109147460246743
+bus_pvd1_power {'11': [0.0020404917427310648, 0.0040809834854621295, 0.006121475228193195, 0.008161966970924259]}
+Sending to Aggregator_DER_Bus11 at time 53.0: ACE -9.75593548770954e-05 100 MW.
+Sent voltage at time 53.0: (0.9941977568925914 pu , -0.10716846364276353 rad)to Bus 11
+Sent DER_power at time 53.0: [0.0020404917427310648, 0.0040809834854621295, 0.006121475228193195, 0.008161966970924259] MW to Bus 11
+=============================
+request_time=53.5
+saving ss to object.
+pvd1_qpower = [0.06573031 0.13146061 0.19719092 0.26292122] at time 53.5
+Received active power from Bus11 at time 53.5: 3502.688848157122 kw
+Received reactive power from Bus11 at time 53.5: 1591.3002875475186 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2456.03%/s]
+Simulation completed in 0.0407 seconds.
+current_time=53.5
+ACE_raw = 0.0012905648739792227
+ACE_raw_integral = 0.0026561971830142855
+bus_pvd1_power {'11': [0.0019893683051775196, 0.003978736610861149, 0.005968105134072732, 0.007957473512096974]}
+Sending to Aggregator_DER_Bus11 at time 53.5: ACE -0.00039467620569935084 100 MW.
+=============================
+request_time=54.0
+saving ss to object.
+pvd1_qpower = [0.06573043 0.13146086 0.19719129 0.26292172] at time 54.0
+Received active power from Bus11 at time 54.0: 3502.688848157122 kw
+Received reactive power from Bus11 at time 54.0: 1591.3002875475186 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 4082.80%/s]
+Simulation completed in 0.0244 seconds.
+current_time=54.0
+ACE_raw = 0.0006821165041088404
+ACE_raw_integral = 0.0029972554350687058
+bus_pvd1_power {'11': [0.0019893535475364, 0.0039787070950728, 0.0059680606426092, 0.0079574141901456]}
+Sending to Aggregator_DER_Bus11 at time 54.0: ACE -0.00036793719391775467 100 MW.
+Sent voltage at time 54.0: (0.9943631132245384 pu , -0.10284650577697065 rad)to Bus 11
+Sent DER_power at time 54.0: [0.0019893535475364, 0.0039787070950728, 0.0059680606426092, 0.0079574141901456] MW to Bus 11
+=============================
+request_time=54.5
+saving ss to object.
+pvd1_qpower = [0.06572994 0.13145988 0.19718982 0.26291976] at time 54.5
+Received active power from Bus11 at time 54.5: 3501.0912793908165 kw
+Received reactive power from Bus11 at time 54.5: 1588.403766766673 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2863.14%/s]
+Simulation completed in 0.0339 seconds.
+current_time=54.5
+ACE_raw = 4.877191041121343e-05
+ACE_raw_integral = 0.0030216413902743127
+bus_pvd1_power {'11': [0.001989352272331917, 0.003978704544663834, 0.005968056816995751, 0.007957409089327667]}
+Sending to Aggregator_DER_Bus11 at time 54.5: ACE -0.0003070413300685526 100 MW.
+=============================
+request_time=55.0
+saving ss to object.
+pvd1_qpower = [0.0657299  0.13145979 0.19718969 0.26291959] at time 55.0
+Received active power from Bus11 at time 55.0: 3501.0912793908165 kw
+Received reactive power from Bus11 at time 55.0: 1588.403766766673 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2055.82%/s]
+Simulation completed in 0.0486 seconds.
+current_time=55.0
+ACE_raw = -0.00216286949732317
+ACE_raw_integral = 0.0019402066416127277
+bus_pvd1_power {'11': [0.002094132213302459, 0.004188264426604918, 0.006282396639907377, 0.008376528853209836]}
+Sending to Aggregator_DER_Bus11 at time 55.0: ACE 2.2266285571044222e-05 100 MW.
+Sent voltage at time 55.0: (0.9941943048504939 pu , -0.10704732670601608 rad)to Bus 11
+Sent DER_power at time 55.0: [0.002094132213302459, 0.004188264426604918, 0.006282396639907377, 0.008376528853209836] MW to Bus 11
+=============================
+request_time=55.5
+saving ss to object.
+pvd1_qpower = [0.06572984 0.13145969 0.19718954 0.26291938] at time 55.5
+Received active power from Bus11 at time 55.5: 3501.035483700105 kw
+Received reactive power from Bus11 at time 55.5: 1588.5737570674987 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2464.11%/s]
+Simulation completed in 0.0405 seconds.
+current_time=55.5
+ACE_raw = -0.003171734691544508
+ACE_raw_integral = 0.0003543392958404736
+bus_pvd1_power {'11': [0.0021428207871948637, 0.004285641574389727, 0.006428462361584592, 0.008571283148779455]}
+Sending to Aggregator_DER_Bus11 at time 55.5: ACE 0.0002817395395704035 100 MW.
+=============================
+request_time=56.0
+saving ss to object.
+pvd1_qpower = [0.06572999 0.13145998 0.19718997 0.26291996] at time 56.0
+Received active power from Bus11 at time 56.0: 3501.035483700105 kw
+Received reactive power from Bus11 at time 56.0: 1588.5737570674987 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2680.24%/s]
+Simulation completed in 0.0373 seconds.
+current_time=56.0
+ACE_raw = -0.0030233824045060665
+ACE_raw_integral = -0.0011573519064125596
+bus_pvd1_power {'11': [0.00213646438853401, 0.00427292877706802, 0.006409393165602029, 0.00854585755413604]}
+Sending to Aggregator_DER_Bus11 at time 56.0: ACE 0.00041807343109186265 100 MW.
+Sent voltage at time 56.0: (0.9941961726788116 pu , -0.1264030760994509 rad)to Bus 11
+Sent DER_power at time 56.0: [0.00213646438853401, 0.00427292877706802, 0.006409393165602029, 0.00854585755413604] MW to Bus 11
+=============================
+request_time=56.5
+saving ss to object.
+pvd1_qpower = [0.06573008 0.13146018 0.19719028 0.26292037] at time 56.5
+Received active power from Bus11 at time 56.5: 3501.9578771997085 kw
+Received reactive power from Bus11 at time 56.5: 1592.153705966367 kvar
+bus_name=11
+Received PVD_AGC_response = ['Bus11', '2.8173953957040354e-06', '5.634790791408071e-06', '8.452186187112104e-06', '1.1269581582816142e-05'] from Aggregator_DER_Bus11 at time 56.5.
+tmp1 =  0
+tmp2 =  0
+tmp3 =  4
+PVD_AGC_response_np=[2.81739540e-06 5.63479079e-06 8.45218619e-06 1.12695816e-05]
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2776.64%/s]
+Simulation completed in 0.0360 seconds.
+current_time=56.5
+ACE_raw = -0.0025432359775541015
+ACE_raw_integral = -0.0024289698951896104
+bus_pvd1_power {'11': [0.002126774820275704, 0.004253549640551408, 0.006380324460827111, 0.008507099281102815]}
+Sending to Aggregator_DER_Bus11 at time 56.5: ACE 0.0004972205872743712 100 MW.
+=============================
+request_time=57.0
+saving ss to object.
+pvd1_qpower = [0.06573012 0.13146024 0.19719036 0.26292047] at time 57.0
+Received active power from Bus11 at time 57.0: 3501.9578771997085 kw
+Received reactive power from Bus11 at time 57.0: 1592.153705966367 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2878.15%/s]
+Simulation completed in 0.0347 seconds.
+current_time=57.0
+ACE_raw = -0.003731484112841477
+ACE_raw_integral = -0.004294711951610349
+bus_pvd1_power {'11': [0.0021838137463494316, 0.004367627492698863, 0.006551441239048294, 0.008735254985397727]}
+Sending to Aggregator_DER_Bus11 at time 57.0: ACE 0.0008026196064451827 100 MW.
+Sent voltage at time 57.0: (0.994219968366025 pu , -0.1465040839782178 rad)to Bus 11
+Sent DER_power at time 57.0: [0.0021838137463494316, 0.004367627492698863, 0.006551441239048294, 0.008735254985397727] MW to Bus 11
+=============================
+request_time=57.5
+saving ss to object.
+pvd1_qpower = [0.06573    0.13145999 0.19719001 0.26292001] at time 57.5
+Received active power from Bus11 at time 57.5: 3500.5631503857453 kw
+Received reactive power from Bus11 at time 57.5: 1585.0774336891934 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 3537.14%/s]
+Simulation completed in 0.0282 seconds.
+current_time=57.5
+ACE_raw = -0.004249351710759164
+ACE_raw_integral = -0.006419387806989932
+bus_pvd1_power {'11': [0.002208822121358338, 0.004417644242716676, 0.0066264663640750125, 0.008835288485433352]}
+Sending to Aggregator_DER_Bus11 at time 57.5: ACE 0.0010668739517749096 100 MW.
+=============================
+request_time=58.0
+saving ss to object.
+pvd1_qpower = [0.06573006 0.13146009 0.19719014 0.26292019] at time 58.0
+Received active power from Bus11 at time 58.0: 3500.5631503857453 kw
+Received reactive power from Bus11 at time 58.0: 1585.0774336891934 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2780.02%/s]
+Simulation completed in 0.0359 seconds.
+current_time=58.0
+ACE_raw = -0.003788217995221735
+ACE_raw_integral = -0.0083134968046008
+bus_pvd1_power {'11': [0.002187293002824887, 0.004374586005649774, 0.006561879008474661, 0.008749172011299548]}
+Sending to Aggregator_DER_Bus11 at time 58.0: ACE 0.0012101714799822535 100 MW.
+Sent voltage at time 58.0: (0.9942829320641434 pu , -0.17265065734231735 rad)to Bus 11
+Sent DER_power at time 58.0: [0.002187293002824887, 0.004374586005649774, 0.006561879008474661, 0.008749172011299548] MW to Bus 11
+=============================
+request_time=58.5
+saving ss to object.
+pvd1_qpower = [0.06573009 0.13146018 0.19719027 0.26292036] at time 58.5
+Received active power from Bus11 at time 58.5: 3499.9218449512664 kw
+Received reactive power from Bus11 at time 58.5: 1582.0221153641528 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2879.89%/s]
+Simulation completed in 0.0347 seconds.
+current_time=58.5
+ACE_raw = -0.0034043902190119386
+ACE_raw_integral = -0.010015691914106768
+bus_pvd1_power {'11': [0.0021684827498065257, 0.004336965499613051, 0.006505448249419577, 0.008673930999226103]}
+Sending to Aggregator_DER_Bus11 at time 58.5: ACE 0.0013420082133118708 100 MW.
+=============================
+request_time=59.0
+saving ss to object.
+pvd1_qpower = [0.06573008 0.13146015 0.19719023 0.26292031] at time 59.0
+Received active power from Bus11 at time 59.0: 3499.9218449512664 kw
+Received reactive power from Bus11 at time 59.0: 1582.0221153641528 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2077.43%/s]
+Simulation completed in 0.0481 seconds.
+current_time=59.0
+ACE_raw = -0.002417161987541494
+ACE_raw_integral = -0.011224272907877515
+bus_pvd1_power {'11': [0.0021208886021508422, 0.0042417772043016845, 0.006362665806452527, 0.008483554408603369]}
+Sending to Aggregator_DER_Bus11 at time 59.0: ACE 0.001364143489541901 100 MW.
+Sent voltage at time 59.0: (0.9944039264260978 pu , -0.1929595783783588 rad)to Bus 11
+Sent DER_power at time 59.0: [0.0021208886021508422, 0.0042417772043016845, 0.006362665806452527, 0.008483554408603369] MW to Bus 11
+=============================
+request_time=59.5
+saving ss to object.
+pvd1_qpower = [0.0657301  0.13146019 0.19719029 0.26292037] at time 59.5
+Received active power from Bus11 at time 59.5: 3499.4114323340646 kw
+Received reactive power from Bus11 at time 59.5: 1578.8521015895215 kvar
+bus_name=11
+  0%|                                                    | 0/100 [00:00<?, ?%/s]100%|######################################| 100.0/100 [00:00<00:00, 2127.54%/s]
+Simulation completed in 0.0470 seconds.
+current_time=59.5
+ACE_raw = -0.0019321109169747625
+ACE_raw_integral = -0.012190328366364897
+bus_pvd1_power {'11': [0.002097040253387982, 0.004194080506775964, 0.006291120760163947, 0.008388161013551929]}
+Sending to Aggregator_DER_Bus11 at time 59.5: ACE 0.001412243928333966 100 MW.
+np.array(PVD_vsm_max_all).shape= (0,)
+np.array(PVD_vsm_max_all)=[]
+**********************************************
+Time passed 0.0 min 8.08 s.
+**********************************************
+C:\Users\aaliq\AppData\Local\Programs\Python\Python310\lib\site-packages\helics\capi.py:3993: UserWarning: This function is deprecated. Use `helicsFederateDisconnect` instead.
+  warnings.warn("This function is deprecated. Use `helicsFederateDisconnect` instead.")
+TransmissionSim: Federate finalized

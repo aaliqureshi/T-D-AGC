@@ -1,0 +1,31 @@
+{
+    "name": "Bus11",
+    "total_time": 60,
+    "simulation_step_time": 1,
+    "scale_P": 1,
+    "scale_Q": 1,
+    "num_DER": 4,
+    "DER_output_MW_prescale": 2,
+    "DER_rating_MW_prescale": 10,
+    "v0": 0.99434,
+    "a0": -0.122947974,
+    "publications": {
+        "sourcebus/TotalPower": {
+            "topic": "Totalpower",
+            "type": "complex",
+            "value": "Power"
+        }
+    },
+    "subscriptions": {
+        "sourcebus/pu": {
+            "topic": "TransmissionSim/Voltage_Bus11",
+            "type": "complex",
+            "value": "Voltage"
+        },
+        "DER_output": {
+            "topic": "TransmissionSim/Voltage_Bus11_DER",
+            "type": "vector",
+            "value": "DER_output"
+        }
+    }
+}

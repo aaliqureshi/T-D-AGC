@@ -1,0 +1,247 @@
+python_dir=C:\Users\aaliq\OneDrive\Documents\CoSimulation\CPDS_validation_cosim2\CPDS_validation_cosim\Aggregator_DER\Aggregator_DER_Bus11
+reading json
+reading json okay!
+Aggregator_DER_Bus11: Combination federate created
+endpoint name:
+Aggregator_DER_Bus11_rACE
+Aggregator_DER_Bus11: Entering execution mode
+current_time=0
+sending PVD_AGC_response for Bus11=['Bus11' '0.0' '0.0' '0.0' '0.0']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=1.0
+Received message at time 1.0: ACE -0.00032337913485968814 100 MW
+Received message at time 1.0: ACE -0.0006411333405647174 100 MW
+current_time=2.0
+Received message at time 2.0: ACE -0.00024235865989465712 100 MW
+Received message at time 2.0: ACE 0.00011654291399586952 100 MW
+current_time=3.0
+Received message at time 3.0: ACE 0.00015731522163806664 100 MW
+Received message at time 3.0: ACE 0.00016493329036397188 100 MW
+current_time=4.0
+Received message at time 4.0: ACE -0.00034023687196631865 100 MW
+Received message at time 4.0: ACE -0.000818759002342117 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-8.187590023421171e-06' '-1.6375180046842342e-05'
+ '-2.456277007026351e-05' '-3.2750360093684685e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=5.0
+Received message at time 5.0: ACE -0.0009105670656864099 100 MW
+Received message at time 5.0: ACE -0.0009151639921329646 100 MW
+current_time=6.0
+Received message at time 6.0: ACE -0.0002510753347787894 100 MW
+Received message at time 6.0: ACE 0.0002650127052717038 100 MW
+current_time=7.0
+Received message at time 7.0: ACE -0.000512371101445766 100 MW
+Received message at time 7.0: ACE -0.001286572843453219 100 MW
+current_time=8.0
+Received message at time 8.0: ACE -0.0012886202574896608 100 MW
+Received message at time 8.0: ACE -0.0011966987859818308 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-1.196698785981831e-05' '-2.393397571963662e-05'
+ '-3.590096357945492e-05' '-4.786795143927324e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=9.0
+Received message at time 9.0: ACE -0.0006249296627348064 100 MW
+Received message at time 9.0: ACE -0.00020056587753239271 100 MW
+current_time=10.0
+Received message at time 10.0: ACE -0.000504812541405152 100 MW
+Received message at time 10.0: ACE -0.0007937207030785974 100 MW
+current_time=11.0
+Received message at time 11.0: ACE -0.0009644617938747468 100 MW
+Received message at time 11.0: ACE -0.0010942351375774696 100 MW
+current_time=12.0
+Received message at time 12.0: ACE -0.0010129988775622063 100 MW
+Received message at time 12.0: ACE -0.0009218318066585462 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-9.218318066585464e-06' '-1.8436636133170927e-05'
+ '-2.7654954199756386e-05' '-3.6873272266341855e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=13.0
+Received message at time 13.0: ACE -0.00043274593517980594 100 MW
+Received message at time 13.0: ACE -5.965581804036877e-05 100 MW
+current_time=14.0
+Received message at time 14.0: ACE -0.0003776036261131092 100 MW
+Received message at time 14.0: ACE -0.0006592964061732877 100 MW
+current_time=15.0
+Received message at time 15.0: ACE -0.0008087336175656125 100 MW
+Received message at time 15.0: ACE -0.0009111934435981233 100 MW
+current_time=16.0
+Received message at time 16.0: ACE -0.0009807365355933384 100 MW
+Received message at time 16.0: ACE -0.001030715886313525 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-1.030715886313525e-05' '-2.06143177262705e-05'
+ '-3.092147658940575e-05' '-4.1228635452541e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=17.0
+Received message at time 17.0: ACE -0.00031906613357253076 100 MW
+Received message at time 17.0: ACE 0.00024782489672664314 100 MW
+current_time=18.0
+Received message at time 18.0: ACE 0.0006331501898933923 100 MW
+Received message at time 18.0: ACE 0.0009295308719966305 100 MW
+current_time=19.0
+Received message at time 19.0: ACE 0.0008655370945040317 100 MW
+Received message at time 19.0: ACE 0.0008450628303654777 100 MW
+current_time=20.0
+Received message at time 20.0: ACE 0.0007261762930136756 100 MW
+Received message at time 20.0: ACE 0.0006750416312442075 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '6.750416312442077e-06' '1.3500832624884154e-05'
+ '2.0251248937326224e-05' '2.700166524976831e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=21.0
+Received message at time 21.0: ACE 0.0007768823562955174 100 MW
+Received message at time 21.0: ACE 0.0008505447892906032 100 MW
+current_time=22.0
+Received message at time 22.0: ACE 0.0011157537073706494 100 MW
+Received message at time 22.0: ACE 0.001343613633764374 100 MW
+current_time=23.0
+Received message at time 23.0: ACE 0.0008556591837954859 100 MW
+Received message at time 23.0: ACE 0.00039678982335459147 100 MW
+current_time=24.0
+Received message at time 24.0: ACE 0.000705146880408649 100 MW
+Received message at time 24.0: ACE 0.001029642257685132 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '1.0296422576851321e-05' '2.0592845153702643e-05'
+ '3.088926773055396e-05' '4.1185690307405286e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=25.0
+Received message at time 25.0: ACE 0.000568650566234628 100 MW
+Received message at time 25.0: ACE 0.00010027604705427064 100 MW
+current_time=26.0
+Received message at time 26.0: ACE -8.40306838335702e-05 100 MW
+Received message at time 26.0: ACE -0.00020102496409122998 100 MW
+current_time=27.0
+Received message at time 27.0: ACE 0.0001876013095075535 100 MW
+Received message at time 27.0: ACE 0.0005083706882764826 100 MW
+current_time=28.0
+Received message at time 28.0: ACE 5.566470635219841e-05 100 MW
+Received message at time 28.0: ACE -0.0004189366809702234 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-4.189366809702235e-06' '-8.37873361940447e-06'
+ '-1.2568100429106702e-05' '-1.675746723880894e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=29.0
+Received message at time 29.0: ACE -0.00041322156650046575 100 MW
+Received message at time 29.0: ACE -0.00031925338376516274 100 MW
+current_time=30.0
+Received message at time 30.0: ACE -0.0004609959765508332 100 MW
+Received message at time 30.0: ACE -0.0006172065035887078 100 MW
+current_time=31.0
+Received message at time 31.0: ACE -0.0005670559016232535 100 MW
+Received message at time 31.0: ACE -0.0005121699370965631 100 MW
+current_time=32.0
+Received message at time 32.0: ACE -0.0012799942954820416 100 MW
+Received message at time 32.0: ACE -0.0020297557655765976 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-2.0297557655765982e-05' '-4.0595115311531963e-05'
+ '-6.089267296729793e-05' '-8.119023062306393e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=33.0
+Received message at time 33.0: ACE -0.0023295814257221813 100 MW
+Received message at time 33.0: ACE -0.002470657020814248 100 MW
+current_time=34.0
+Received message at time 34.0: ACE -0.002237413481967971 100 MW
+Received message at time 34.0: ACE -0.002024117512439182 100 MW
+current_time=35.0
+Received message at time 35.0: ACE -0.0014589871649029777 100 MW
+Received message at time 35.0: ACE -0.00105581654823163 100 MW
+current_time=36.0
+Received message at time 36.0: ACE -0.0010942858224911505 100 MW
+Received message at time 36.0: ACE -0.0011458627776845933 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-1.1458627776845935e-05' '-2.291725555369187e-05'
+ '-3.437588333053779e-05' '-4.583451110738374e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=37.0
+Received message at time 37.0: ACE -0.0011124133617834368 100 MW
+Received message at time 37.0: ACE -0.00110362604183959 100 MW
+current_time=38.0
+Received message at time 38.0: ACE -0.0009095197034377507 100 MW
+Received message at time 38.0: ACE -0.000742151950572268 100 MW
+current_time=39.0
+Received message at time 39.0: ACE -0.0010404016650844643 100 MW
+Received message at time 39.0: ACE -0.001316722403353249 100 MW
+current_time=40.0
+Received message at time 40.0: ACE -0.001163592151324838 100 MW
+Received message at time 40.0: ACE -0.0009928423812592493 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-9.928423812592495e-06' '-1.985684762518499e-05'
+ '-2.9785271437777478e-05' '-3.971369525036998e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=41.0
+Received message at time 41.0: ACE -0.0011770634962198386 100 MW
+Received message at time 41.0: ACE -0.0013667106772512325 100 MW
+current_time=42.0
+Received message at time 42.0: ACE -0.0018089200141307676 100 MW
+Received message at time 42.0: ACE -0.0022050475594013346 100 MW
+current_time=43.0
+Received message at time 43.0: ACE -0.002105294561558418 100 MW
+Received message at time 43.0: ACE -0.001968571856912985 100 MW
+current_time=44.0
+Received message at time 44.0: ACE -0.0015987307712194442 100 MW
+Received message at time 44.0: ACE -0.0013364363317195692 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-1.3364363317195694e-05' '-2.672872663439139e-05'
+ '-4.0093089951587076e-05' '-5.345745326878278e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=45.0
+Received message at time 45.0: ACE -0.0012358290614063834 100 MW
+Received message at time 45.0: ACE -0.0011681596006111524 100 MW
+current_time=46.0
+Received message at time 46.0: ACE -0.0012020602608365772 100 MW
+Received message at time 46.0: ACE -0.0012205750566111632 100 MW
+current_time=47.0
+Received message at time 47.0: ACE -0.0005653678611174432 100 MW
+Received message at time 47.0: ACE -2.172947523343654e-05 100 MW
+current_time=48.0
+Received message at time 48.0: ACE -0.0001562307607642218 100 MW
+Received message at time 48.0: ACE -0.0002601973625598348 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-2.6019736255983485e-06' '-5.203947251196697e-06'
+ '-7.805920876795043e-06' '-1.0407894502393394e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=49.0
+Received message at time 49.0: ACE -0.00012194603521587167 100 MW
+Received message at time 49.0: ACE -1.3903559094198949e-06 100 MW
+current_time=50.0
+Received message at time 50.0: ACE 0.0004465101486857153 100 MW
+Received message at time 50.0: ACE 0.0008295752900674815 100 MW
+current_time=51.0
+Received message at time 51.0: ACE 0.00017309916292397896 100 MW
+Received message at time 51.0: ACE -0.000428307615963137 100 MW
+current_time=52.0
+Received message at time 52.0: ACE -0.0008026595996826491 100 MW
+Received message at time 52.0: ACE -0.001064416655613384 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '-1.0644166556133841e-05' '-2.1288333112267683e-05'
+ '-3.193249966840152e-05' '-4.2576666224535365e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=53.0
+Received message at time 53.0: ACE -0.0003888882376936753 100 MW
+Received message at time 53.0: ACE 0.00020055772563327626 100 MW
+current_time=54.0
+Received message at time 54.0: ACE -9.748443755610359e-05 100 MW
+Received message at time 54.0: ACE -0.0003946034297755909 100 MW
+current_time=55.0
+Received message at time 55.0: ACE -0.00036786717176146385 100 MW
+Received message at time 55.0: ACE -0.000306973995237628 100 MW
+current_time=56.0
+Received message at time 56.0: ACE 2.233240055287677e-05 100 MW
+Received message at time 56.0: ACE 0.00028180436398947975 100 MW
+sending PVD_AGC_response for Bus11=['Bus11' '2.818043639894798e-06' '5.636087279789596e-06'
+ '8.454130919684393e-06' '1.1272174559579192e-05']
+to endpoint name:
+TransmissionSim_DER_AGC_Bus11
+current_time=57.0
+Received message at time 57.0: ACE 0.0004181366916869008 100 MW
+Received message at time 57.0: ACE 0.0004972825600004574 100 MW
+current_time=58.0
+Received message at time 58.0: ACE 0.000802680256928632 100 MW
+Received message at time 58.0: ACE 0.0010669331898613384 100 MW
+current_time=59.0
+Received message at time 59.0: ACE 0.0012102292548485456 100 MW
+Received message at time 59.0: ACE 0.001342064499101021 100 MW
+C:\Users\aaliq\AppData\Local\Programs\Python\Python310\lib\site-packages\helics\capi.py:3993: UserWarning: This function is deprecated. Use `helicsFederateDisconnect` instead.
+  warnings.warn("This function is deprecated. Use `helicsFederateDisconnect` instead.")
+Federate finalized

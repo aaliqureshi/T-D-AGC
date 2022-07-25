@@ -1,0 +1,19 @@
+! Define all the transformer and reg controls
+
+New Transformer.sub windings=2 phases=1 Xhl=0.008 kVAs=[1666.7, 1666.7, ]
+~ buses=[sourcebus, 650, ] conns=[wye, wye, ] kVs=[66.395, 2.4018, ]
+~ wdg=1 %R=0.0005 wdg=2 %R=0.0005 normhkVA=1833.3 emerghkVA=2500
+
+
+New Transformer.reg1 phases=1 bank=reg1 Xhl=0.01 kVAs=[1666, 1666, ]
+~ buses=[650, rg60, ] kVs=[2.4, 2.4, ] conns=[wye, wye, ] %loadloss=0.01
+~ normhkVA=1832.6 emerghkVA=2499
+
+New Regcontrol.Reg1 transformer=reg1 winding=2 vreg=120 band=2 
+~ ptratio=20 ctprim=700 !R=3 X=9
+
+New Transformer.xfm1 phases=1 windings=2 Xhl=2 
+~ buses=[633, 634, ] conns=[wye, wye, ] kVs=[2.4018, 0.27713, ] kVAs=[166.67, 166.67, ] 
+~ wdg=1 %R=0.55 Xht=1 wdg=2 %R=0.55 Xlt=1 normhkVA=183.33 emerghkVA=250
+
+

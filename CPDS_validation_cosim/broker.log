@@ -1,0 +1,9 @@
+reading json
+reading json okay!
+Helics version = 3.1.1 (2021-12-14)
+Broker created and connected
+[2022-07-02 22:17:20.346] [console] [warning] commWarning||29292-sucCS-CcfvU-ixIDC-O5eJi (1)[t=-98763.2]::unknown route and no broker, dropping message send_message:From (TransmissionSim_ACE)(131074:3) To Aggregator_DER_Bus11_rACE size 21 at 59
+[2022-07-02 22:17:20.346] [console] [warning] commWarning||29292-sucCS-CcfvU-ixIDC-O5eJi (1)[t=-98763.2]::unknown route and no broker, dropping message pub:From (131074) handle(1) size 24 at 59 to 131072
+[2022-07-02 22:17:20.346] [console] [warning] commWarning||29292-sucCS-CcfvU-ixIDC-O5eJi (1)[t=-98763.2]::unknown route and no broker, dropping message pub:From (131074) handle(2) size 40 at 59 to 131072
+[2022-07-02 22:17:20.407] [console] [warning] commWarning||29292-sucCS-CcfvU-ixIDC-O5eJi (1)[t=-98763.2]::unknown route and no broker, dropping message send_message:From (TransmissionSim_ACE)(131074:3) To Aggregator_DER_Bus11_rACE size 21 at 59.5
+Broker disconnected

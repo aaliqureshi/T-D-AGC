@@ -1,0 +1,50 @@
+{
+    "file_name": "ieee14_pvd1_1DistBus.xlsx",
+    "name": "TransmissionSim",
+    "total_time": 60,
+    "simulation_step_time": 0.5,
+    "num_feeder": 1,
+    "penetration_scenario": 0.1,
+    "ACE_bias": 16.2892,
+    "DER_AGC_flag": true,
+    "tgov_AGC_flag": false,
+    "AGC_controller_kp_ki": [
+        0.1,
+        0.1
+    ],
+    "feeder_list": [
+        "Bus11"
+    ],
+    "num_DER": {
+        "11": 4
+    },
+    "publications": {
+        "11": {
+            "topic": "TransmissionSim/Voltage_Bus11",
+            "type": "complex",
+            "pub_interval": 1,
+            "value": "Voltage",
+            "element_name": "11",
+            "element_type": "Bus"
+        },
+        "11_DER_output": {
+            "topic": "TransmissionSim/Voltage_Bus11_DER",
+            "type": "vector",
+            "pub_interval": 1,
+            "value": "DER_output",
+            "element_name": "11",
+            "element_type": "Bus"
+        }
+    },
+    "subscriptions": {
+        "Bus11": {
+            "topic": "Bus11/Totalpower",
+            "type": "complex",
+            "sub_interval": 1,
+            "value": "Powers",
+            "element_name": "11",
+            "bus_PQ_index": "8"
+        }
+    },
+    "num_federate": 3
+}

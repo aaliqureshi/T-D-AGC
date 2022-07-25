@@ -1,0 +1,30 @@
+{
+    "broker": false,
+    "name": "CPDS_simulation_runner",
+    "federates": [
+        {
+            "directory": ".",
+            "exec": "python -u Broker.py",
+            "name": "Broker",
+            "host": "localhost"
+        },
+        {
+            "directory": "./Transmission",
+            "exec": "python -u TransmissionSim.py",
+            "name": "TransmissionSim",
+            "host": "localhost"
+        },
+        {
+            "directory": "./Distribution/Bus11",
+            "exec": "python -u Bus11.py",
+            "name": "Bus11",
+            "host": "localhost"
+        },
+        {
+            "directory": "./Aggregator_DER/Aggregator_DER_Bus11",
+            "exec": "python -u Aggregator_DER_Bus11.py",
+            "name": "Aggregator_DER_Bus11",
+            "host": "localhost"
+        }
+    ]
+}
