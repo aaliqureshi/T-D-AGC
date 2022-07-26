@@ -9,9 +9,9 @@ import DSS_PF
 
 
 
-num_DER = 5
+num_DER = 4
 feeder_type = '13'
-del_agc = 1550
+del_agc = 1050 # unit is kW
 DER_out_val = 500
 V_max = 1.02
 DER_output = [DER_out_val for idx in range(num_DER)]
@@ -49,16 +49,3 @@ print('~~~~~~~~Max. Error (secant) is %s' %max_error_S)
 print('~~~~~~~~Percent. Error (tangent) is %s' %percent_error_T)
 print('~~~~~~~~Percent. Error (secant) is %s' %percent_error_S) 
 
-
-
-
-
-
-
-
-
-
-
-
-
-# index_DERs = consistent_random_object.randint(len())

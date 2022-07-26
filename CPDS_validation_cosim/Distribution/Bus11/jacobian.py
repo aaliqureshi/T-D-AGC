@@ -5,6 +5,7 @@ import pandas as pd
 
 
 def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
+    """performs calculations for sensitivity matrix. returns sensitivity matrix and DER sensitivity values"""
     dir_to_feeder = os.getcwd()
     # print(dir_to_feeder)
     dir_to_results = os.path.join(dir_to_feeder,'..','simulation_results')
@@ -32,9 +33,7 @@ def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
         X[j]=jac_cols[idx]
         j+=1
 
-    X.size
-    X.shape
-    X=X.T
+    X=X.T # matrix transpose
 
     X_mat = np.asmatrix(X)
 
@@ -51,6 +50,10 @@ def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
 
 
 def Tan(v0,a0,DER_idx,DER_pert,DER_output,del_agc):
+    """function to build Jacobian matrix based on initial voltage and DER_pert (perturbed voltage)
+       returns sensitivity matrix and sensitivity matrix values corresponding to DERs
+       calc function performs the actual calculations
+       solvePF solves power flow using OpenDSS and stores the results in a csv file used by calc function"""
     type='tangent'
     var_dict ={}
     DER_out = DER_output[:]
@@ -68,6 +71,11 @@ def Tan(v0,a0,DER_idx,DER_pert,DER_output,del_agc):
 
 
 def Sec(v0,a0,DER_idx,DER_max,DER_output,del_agc):
+    """function to build Jacobian matrix based on initial voltage and DER_pert (perturbed voltage)
+       returns sensitivity matrix and sensitivity matrix values corresponding to DERs
+       calc function performs the actual calculations
+       solvePF solves power flow using OpenDSS and stores the results in a csv file used by calc function"""
+
     type='secant'
     var_dict={}
     DER_out = DER_output[:]

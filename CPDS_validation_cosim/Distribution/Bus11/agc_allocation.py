@@ -39,6 +39,7 @@ def AGC_alloc (DER_headroom_limit, DER_headroom,num_DER):
 
 
 def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_idx):
+    """function to calculate bus voltage based on sensitivity matrix and change in power (del_pmat)"""
     DER_bus_voltage_all =[]
     DER_bus_voltage=list()
 
@@ -64,6 +65,9 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_idx):
 
 
 def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_voltage,DER_idx,DER_output,X_mat):
+
+    """main function to calculate AGC allocation based on headroom, max. power injection limit(voltage profile)
+    returns bus voltage and DER output"""
     AGC_undelivered = True
     DER_bus_voltage =[Bus_voltage[idx] for idx in DER_idx]
     num_DER = len(DER_idx)

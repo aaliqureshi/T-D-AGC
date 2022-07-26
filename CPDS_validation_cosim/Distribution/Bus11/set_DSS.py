@@ -11,6 +11,9 @@ V_high = 1.05
 
 def setDSS(num_DER, DER_output,del_agc):
 
+    """function to set DSS environment and build the test case
+       returns feeder head voltage, angle, bus idx with which DERs are connected, initial voltage at all nodes """
+
     dir_to_feeder = os.getcwd()
     path_to_tx_xlsx=os.path.join(dir_to_feeder,'..','..','Network_models','Transmission')
 
@@ -129,15 +132,6 @@ def setDSS(num_DER, DER_output,del_agc):
     for request_time in np.arange(0, total_time):
         print("==============================")
         print(f"current_time={request_time}")
-
-        # if DER_output_pre is not None:# 
-        #     if np.isscalar(DER_output_pre):
-        #         DER_output = (DER_output_pre/num_DER)*np.ones(num_DER)
-        #     else:
-        #         # DER_output = (sum(DER_output_pre)/num_DER)*np.ones(num_DER)
-        #         # DER_output = request_MW - sum(DER)
-        #         DER_output = DER_output_pre
-        #     # print(f'scale_P={scale_P}')
         print(f"DER_output={DER_output} at time {request_time}")
 
         # der_output_array.append(DER_output[0])
@@ -172,20 +166,7 @@ def setDSS(num_DER, DER_output,del_agc):
         print('Net active power at time step %s is: %s' %(current_time,P))
         # print('Net reactive power comsumption at time step %s is: %s' %(current_time,Q))
 
-        #Xeq = Q/voltage**2
-        # now publish the results
-        # h.helicsPublicationPublishComplex(pub, P, Q) # Xeq was Q
-        # print("Sent Active power at time {}: {} kw".format(current_time, P))
-        # print("Sent Reactive power at time {}: {} kvar".format(current_time, Q))
-
         allbusmagpu_base = np.array(allbusmagpu)
-        # print(f'min of voltage = {min(allbusmagpu_base)}')
-        # print(f'max of voltage = {max(allbusmagpu_base)}')
-
-        # allbusmagpu_base = np.array(allbusmagpu)
-
-        # print('Bus %s has the lowest voltage of %s'%(V_min,allnodenames[V_min_idx]))
-        # print('Bus %s has the highest voltage of %s'%(V_max,allnodenames[V_max_idx]))
 
         for zz in range(len(allbusmagpu_base)):
             if allbusmagpu_base[zz] < V_low:
