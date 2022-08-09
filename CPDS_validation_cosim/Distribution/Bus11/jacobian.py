@@ -2,6 +2,7 @@ import numpy as np
 import DSS_PF
 import os
 import pandas as pd
+from set_DSS import dir_to_feeder
 
 
 def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
@@ -9,7 +10,7 @@ def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
     dir_to_feeder = os.getcwd()
     # print(dir_to_feeder)
     dir_to_results = os.path.join(dir_to_feeder,'..','simulation_results')
-    print(dir_to_results)
+    # print(dir_to_results)
 
     voltage0_ref=pd.read_csv(dir_to_results+'\\initial_voltage_'+str(del_agc)+'.csv')
 
@@ -37,6 +38,10 @@ def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
 
     X_mat = np.asmatrix(X)
 
+    X_results = pd.DataFrame(X)
+    # dir_to_results = os.path.join(dir_to_feeder, "simulation_results")
+    X_results.to_csv(dir_to_results+'\\'+type+'_Sensitivity_'+str(del_agc)+'_'+type+'.csv')
+
     j=0
     X_sens=list()
     for bus in DER_idx:
@@ -49,19 +54,21 @@ def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
 
 
 
-def Tan(v0,a0,DER_idx,DER_pert,DER_output,del_agc):
+def Tan(DER_idx,DER_pert,DER_output,del_agc):
+
     """function to build Jacobian matrix based on initial voltage and DER_pert (perturbed voltage)
        returns sensitivity matrix and sensitivity matrix values corresponding to DERs
        calc function performs the actual calculations
        solvePF solves power flow using OpenDSS and stores the results in a csv file used by calc function"""
+
     type='tangent'
     var_dict ={}
     DER_out = DER_output[:]
     P_diff = [DER_pert[i] - DER_output[i] for i in range(len(DER_idx))]
     for i in range (len(DER_idx)):
         DER_out[i]=DER_pert[i]
-        print(DER_out)
-        num_nodes,_=DSS_PF.solvePF (DER_out,DER_idx,del_agc,type,i,store=1)
+        # print(DER_out)
+        num_nodes,_,_=DSS_PF.solvePF (DER_out,DER_idx,del_agc,type,i,store=1)
         DER_out[i]=DER_output[i]
         val='vt_d' + str(i)
         var_dict[i] = val
@@ -70,7 +77,7 @@ def Tan(v0,a0,DER_idx,DER_pert,DER_output,del_agc):
 
 
 
-def Sec(v0,a0,DER_idx,DER_max,DER_output,del_agc):
+def Sec(DER_idx,DER_max,DER_output,del_agc):
     """function to build Jacobian matrix based on initial voltage and DER_pert (perturbed voltage)
        returns sensitivity matrix and sensitivity matrix values corresponding to DERs
        calc function performs the actual calculations
@@ -83,7 +90,7 @@ def Sec(v0,a0,DER_idx,DER_max,DER_output,del_agc):
     for i in range (len(DER_idx)):
         DER_out[i]=DER_max[i]
         print(DER_out)
-        num_nodes,_=DSS_PF.solvePF (DER_out,DER_idx,del_agc,type,i,store=1)
+        num_nodes,_,_=DSS_PF.solvePF (DER_out,DER_idx,del_agc,type,i,store=1)
         DER_out[i]=DER_output[i]
         val='vs_d'+str(i)
         var_dict[i]= val
