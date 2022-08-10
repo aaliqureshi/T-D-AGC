@@ -5,7 +5,7 @@ import pandas as pd
 from set_DSS import dir_to_feeder
 
 
-def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
+def calc (del_agc,type,DER_idx,DER_node_idx,var_dict,num_nodes,P_diff):
     """performs calculations for sensitivity matrix. returns sensitivity matrix and DER sensitivity values"""
     dir_to_feeder = os.getcwd()
     # print(dir_to_feeder)
@@ -23,7 +23,8 @@ def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
     for row in range(len(DER_idx)):
         arr=list()
         for col in range (num_nodes):
-            val = (var_dict[row].iloc[col,1] - voltage0_ref.iloc[4,col+1])/P_diff[row]
+            # val = (var_dict[row].iloc[col,1] - voltage0_ref.iloc[4,col+1])/P_diff[row]
+            val = (var_dict[row].iloc[col,1] - voltage0_ref.iloc[0,col+1])/P_diff[row]
             arr.append(val)
         jac_cols[row]=arr
 
@@ -42,11 +43,17 @@ def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
     # dir_to_results = os.path.join(dir_to_feeder, "simulation_results")
     X_results.to_csv(dir_to_results+'\\'+type+'_Sensitivity_'+str(del_agc)+'_'+type+'.csv')
 
-    j=0
+
+
+    col=0
+    idx =0
     X_sens=list()
-    for bus in DER_idx:
-        X_sens.append(X[bus,j])
-        j+=1
+    while col< len(DER_idx):
+        sens1 = X[DER_node_idx[idx],col]
+        sens2 = X[DER_node_idx[idx+1],col]
+        X_sens.append(min(sens1,sens2))
+        col+=1
+        idx+=2
 
     return X_mat,X_sens
 
@@ -54,7 +61,7 @@ def calc (del_agc,type,DER_idx,var_dict,num_nodes,P_diff):
 
 
 
-def Tan(DER_idx,DER_pert,DER_output,del_agc):
+def Tan(DER_idx,DER_node_idx,DER_pert,DER_output,del_agc):
 
     """function to build Jacobian matrix based on initial voltage and DER_pert (perturbed voltage)
        returns sensitivity matrix and sensitivity matrix values corresponding to DERs
@@ -68,16 +75,17 @@ def Tan(DER_idx,DER_pert,DER_output,del_agc):
     for i in range (len(DER_idx)):
         DER_out[i]=DER_pert[i]
         # print(DER_out)
-        num_nodes,_,_=DSS_PF.solvePF (DER_out,DER_idx,del_agc,type,i,store=1)
+        # num_nodes,_,_=DSS_PF.solvePF (DER_out,DER_idx,del_agc,type,i,store=1)
+        num_nodes,_,_=DSS_PF.solvePF_8500_balanced (DER_out,DER_idx,del_agc,type,i,store=1)
         DER_out[i]=DER_output[i]
         val='vt_d' + str(i)
         var_dict[i] = val
-    T_mat,T_sens=calc(del_agc,type,DER_idx,var_dict,num_nodes,P_diff)
-    return T_mat, T_sens
+    T_mat,T_sens=calc(del_agc,type,DER_idx,DER_node_idx,var_dict,num_nodes,P_diff)
+    return T_mat,T_sens
 
 
 
-def Sec(DER_idx,DER_max,DER_output,del_agc):
+def Sec(DER_idx,DER_node_idx,DER_max,DER_output,del_agc):
     """function to build Jacobian matrix based on initial voltage and DER_pert (perturbed voltage)
        returns sensitivity matrix and sensitivity matrix values corresponding to DERs
        calc function performs the actual calculations
@@ -89,12 +97,13 @@ def Sec(DER_idx,DER_max,DER_output,del_agc):
     P_diff=[DER_max[i]-DER_output[i] for i in range(len(DER_output))]
     for i in range (len(DER_idx)):
         DER_out[i]=DER_max[i]
-        print(DER_out)
-        num_nodes,_,_=DSS_PF.solvePF (DER_out,DER_idx,del_agc,type,i,store=1)
+        # print(DER_out)
+        # num_nodes,_,_=DSS_PF.solvePF (DER_out,DER_idx,del_agc,type,i,store=1)
+        num_nodes,_,_=DSS_PF.solvePF_8500_balanced (DER_out,DER_idx,del_agc,type,i,store=1)
         DER_out[i]=DER_output[i]
         val='vs_d'+str(i)
         var_dict[i]= val
-    S_mat,S_sens=calc(del_agc,type,DER_idx,var_dict,num_nodes,P_diff)
+    S_mat,S_sens=calc(del_agc,type,DER_idx,DER_node_idx,var_dict,num_nodes,P_diff)
 
     return S_mat,S_sens
 
