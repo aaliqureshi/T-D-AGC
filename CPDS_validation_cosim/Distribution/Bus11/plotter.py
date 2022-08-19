@@ -103,14 +103,14 @@ def plot_ratio (key,method):
     plotter(power_demand,avg_error,'Average',key,method)
     plotter(power_demand,max_error,'Maximum',key,method)
 
-def plotter(power_demand,error,type,key,method):
+def plotter(power_demand,error,typee,key,method):
     plt.figure()
     plt.stem(error)
     plt.xticks(ticks = range(len(power_demand)), labels=power_demand)
     plt.xlabel('Power Demand (kW)', fontweight='bold')
-    plt.ylabel(f'{type} Voltage Error (%) pu ',fontweight='bold')
+    plt.ylabel(f'{typee} Voltage Error (%) pu ',fontweight='bold')
     plt.title(f'{key} approximation',fontweight='bold')
-    pic_title=key+'_'+type+'_'+method
+    pic_title=key+'_'+typee+'_'+method
     plt.savefig(pic_title,dpi=300)
     plt.clf()
     # plt.show()

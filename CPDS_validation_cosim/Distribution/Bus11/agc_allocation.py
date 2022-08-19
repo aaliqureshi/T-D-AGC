@@ -57,9 +57,9 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_node_idx):
 
     end = time_ns()
 
-    t = (end - start)/10e6
+    t = (end - start)/1e6
 
-    print(f'LPF solved in {t} sec.')
+    print(f'LPF solved in {t} millisec.')
 
     # print('size : %s' %len(DER_bus_voltage_all))
 

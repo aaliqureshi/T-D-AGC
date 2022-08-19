@@ -10,7 +10,7 @@ from time import time_ns
 # dir_to_feeder=os.getcwd()
 # print('<><><><><>I am in %s'%dir_to_feeder)
 
-def solvePF (DER_output, index_DERs,del_agc,type,DER,store):
+def solvePF (DER_output, index_DERs,del_agc,typee,DER,store):
     """Solve power flow using OpenDSS based on new DER_output
     returns total number of nodes in the system & bus voltage magnitude, save node bus voltages in a csv file if
     input argument store!=0
@@ -91,7 +91,7 @@ def solvePF (DER_output, index_DERs,del_agc,type,DER,store):
     if store!=0:
         voltage_results = pd.DataFrame(allbusmagpu_base)
         dir_to_results = os.path.join(dir_to_feeder, "simulation_results")
-        voltage_results.to_csv(dir_to_results+'\\'+type+'_results_'+str(del_agc)+'_'+str(DER)+'.csv')
+        voltage_results.to_csv(dir_to_results+'\\'+typee+'_results_'+str(del_agc)+'_'+str(DER)+'.csv')
     
     run_command('clear')
     dss.Basic.ClearAll()
@@ -101,7 +101,7 @@ def solvePF (DER_output, index_DERs,del_agc,type,DER,store):
 
 
 
-def solvePF_8500_balanced (DER_output, index_DERs,del_agc,type,DER,store):
+def solvePF_8500_balanced (DER_output, index_DERs,del_agc,typee,DER,store):
 
     """Solve power flow using OpenDSS based on new DER_output
     returns total number of nodes in the system & bus voltage magnitude, save node bus voltages in a csv file if
@@ -185,7 +185,7 @@ def solvePF_8500_balanced (DER_output, index_DERs,del_agc,type,DER,store):
     dss.Text.Command('solve')
     time_end=time_ns()
     # print(f'DSS solved executed in {time_end-time_start} sec')
-    total_time = (time_end - time_start)/10e6
+    total_time = (time_end - time_start)/1e6
     print(f'$$$$$$$$$$$$ DSS solution time is {total_time} sec.')
     # res=dss.Text.Result()
     # print(res)
@@ -205,7 +205,7 @@ def solvePF_8500_balanced (DER_output, index_DERs,del_agc,type,DER,store):
     if store!=0:
         voltage_results = pd.DataFrame(allbusmagpu_base)
         dir_to_results = os.path.join(dir_to_feeder, "simulation_results")
-        voltage_results.to_csv(dir_to_results+'\\'+type+'_results_'+str(del_agc)+'_'+str(DER)+'.csv')
+        voltage_results.to_csv(dir_to_results+'\\'+typee+'_results_'+str(del_agc)+'_'+str(DER)+'.csv')
     
     run_command('clear')
     dss.Basic.ClearAll()

@@ -66,9 +66,9 @@ print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} sec.$$$$$
 # DER_output = [DER_out_val for idx in range(num_DER)]
 
 
-_,Bus_voltage_DSS_T,net_power_T=DSS_PF.solvePF_8500_balanced(DER_output_T,DER_idx,del_agc,type=None,DER=None,store=0)
+_,Bus_voltage_DSS_T,net_power_T=DSS_PF.solvePF_8500_balanced(DER_output_T,DER_idx,del_agc,typee=None,DER=None,store=0)
 
-_,Bus_voltage_DSS_S,net_power_S=DSS_PF.solvePF_8500_balanced(DER_output_S,DER_idx,del_agc,type=None,DER=None,store=0)
+_,Bus_voltage_DSS_S,net_power_S=DSS_PF.solvePF_8500_balanced(DER_output_S,DER_idx,del_agc,typee=None,DER=None,store=0)
 
 
 import_diff_T,ratio_T= DSS_PF.response_ratio(initial_net_power,net_power_T,DER_output_T,del_agc)
