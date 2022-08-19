@@ -1,0 +1,9 @@
+
+GENERATOR ENERGY METER VALUES
+
+Generator          kWh        kvarh      Max kW     Max kVA    Hours      $          
+
+der1                 0          0          0          0          0          0 
+der2                 0          0          0          0          0          0 
+der3                 0          0          0          0          0          0 
+der4                 0          0          0          0          0          0 
