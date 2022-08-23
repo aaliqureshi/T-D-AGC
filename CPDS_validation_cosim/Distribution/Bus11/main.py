@@ -17,14 +17,14 @@ dir_to_feeder = os.getcwd()
 num_DER = 100
 method='direct'
 feeder_type = '8500'
-del_agc = 300 # unit is kW
+del_agc = 2000 # unit is kW
 DER_out_val = 10 # originally it was set as 500
-V_max = 1.05
+V_max = 1.05001
 DER_output = [DER_out_val for idx in range(num_DER)]
 # DER_output = [50,50,100,50]
 DER_pert=[DER_output[idx]*1.05 for idx in range(num_DER)]
-DER_max = [DER_output[idx]*2.5 for idx in range(num_DER)]
-DER_headroom = [DER_output[idx]*2 for idx in range(num_DER)]
+DER_max = [DER_output[idx]*3 for idx in range(num_DER)]
+DER_headroom = [DER_output[idx]*2.5 for idx in range(num_DER)]
 # DER_headroom = [125,125,125,125]
 
 
@@ -55,14 +55,14 @@ print(star*10)
 Bus_voltage_T,DER_output_T,avg_sol_time_T=ac.AGC_calculation(DER_headroom, del_agc,V_max,T_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,T_mat)
 # time_end=time_ns()
 # print(time_end)
-print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_T} sec.$$$$$$$$$$$$$$')
+print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_T} milli-sec.$$$$$$$$$$$$$$')
 
 # print(f'AGC allocated in {time_end - time_start} sec.')
 # DER_output = [DER_out_val for idx in range(num_DER)]
 
 Bus_voltage_S,DER_output_S,avg_sol_time_S=ac.AGC_calculation(DER_headroom, del_agc,V_max,S_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,S_mat)
 
-print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} sec.$$$$$$$$$$$$$$')
+print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} milli-sec.$$$$$$$$$$$$$$')
 # DER_output = [DER_out_val for idx in range(num_DER)]
 
 
@@ -116,19 +116,19 @@ percent_error_S, S_error_max,S_error_avg = DSS_PF.Percent_error (Bus_voltage_DSS
 
 ## uncomment if need to store & plot results
 
-rows_T = [str(del_agc),str(T_error_avg),str(T_error_max)]
-rows_S = [str(del_agc),str(S_error_avg),str(S_error_max)]
+# rows_T = [str(del_agc),str(T_error_avg),str(T_error_max)]
+# rows_S = [str(del_agc),str(S_error_avg),str(S_error_max)]
 
-with open('Tangent_errors.csv','a',newline='') as csvfile:
-    error_writer = csv.writer(csvfile,quoting=csv.QUOTE_NONE)
-    error_writer.writerow(rows_T)
+# with open('Tangent_errors.csv','a',newline='') as csvfile:
+#     error_writer = csv.writer(csvfile,quoting=csv.QUOTE_NONE)
+#     error_writer.writerow(rows_T)
 
-with open('Secant_errors.csv','a',newline='') as csvfile:
-    error_writer = csv.writer(csvfile,quoting=csv.QUOTE_NONE)
-    error_writer.writerow(rows_S)
+# with open('Secant_errors.csv','a',newline='') as csvfile:
+#     error_writer = csv.writer(csvfile,quoting=csv.QUOTE_NONE)
+#     error_writer.writerow(rows_S)
 
-# uncomment for plotting!!
-plotter.plot_ratio('Tangent',method)
-plotter.plot_ratio('Secant',method)
+# # uncomment for plotting!!
+# plotter.plot_ratio('Tangent',method)
+# plotter.plot_ratio('Secant',method)
 
 #########################################################################################

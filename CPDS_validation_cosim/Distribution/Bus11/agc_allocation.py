@@ -8,16 +8,17 @@ def AGC_prop(DER_headroom,power_demand):
     DER_headroom_prop = []
     # proportional factor
     alpha = power_demand/sum(DER_headroom)
+    power_diff=0
 
     # check if power demand is greater than available headroom limit
     if alpha > 1:
         # find the difference between demand and availbile power
-        val=power_demand - sum(DER_headroom)
-        print("DERs can't meet the request. Maximum available power could be {}. \n Difference is {} ".format(sum(DER_headroom),val) )
-        print('Setting requirement to %s' %sum(DER_headroom))
+        power_diff=power_demand - sum(DER_headroom)
+        print("^^^^^^^^^^^^^^^^^^^DERs can't meet the request. Maximum available power could be {}. \n Difference is {} ".format(sum(DER_headroom),power_diff) )
+        print('^^^^^^^^^^^^^^^^^^^Setting requirement to %s' %sum(DER_headroom))
         alpha=1
     DER_headroom_prop=[alpha*val for val in DER_headroom]
-    return DER_headroom_prop
+    return DER_headroom_prop,power_diff
 
 
 
@@ -30,11 +31,25 @@ def AGC_limit (V_max,DER_bus_voltage,DER_sens_list,num_DER):
     return DER_headroom_limit
 
 
+def AGC_limit_max (V_max,Bus_voltage,X_mat,num_DER):
+    """compute effective headroom based on jacobian inverse"""
+    DER_headroom_limit=np.array([])
+    V_max_array = np.ones(len(Bus_voltage)) * V_max
+    delta_V = np.subtract(V_max_array,Bus_voltage)
+
+    DER_headroom_limit = np.linalg.pinv(X_mat) @ delta_V
+
+    DER_headroom_limit = DER_headroom_limit /10
+
+    return DER_headroom_limit
+
+
+
 
 
 def AGC_alloc (DER_headroom_limit, DER_headroom,num_DER):
     """find min. of AGC_prop & AGC_limit and set that value as power increase for each unit """
-    del_pmat = [min(DER_headroom_limit[i],DER_headroom[i]) for i in range(num_DER)]
+    del_pmat = [min(DER_headroom_limit[0,i],DER_headroom[i]) for i in range(num_DER)]
     return del_pmat
 
 
@@ -47,13 +62,18 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_node_idx):
     # perform M * del_pmat 
     # calculate time taken to solve LPF
     start = time_ns()
+
     # for bus in range (num_bus):
     #     val=0
     #     for col in range (num_DER):
     #         val = val + X_mat[bus,col] *  del_pmat[col]
     #     DER_bus_voltage_all.append(val)
 
-    DER_bus_voltage_all = X_mat @  del_pmat
+    DER_bus_voltage_all = X_mat @  del_pmat # DER_bus_voltage_all.shape = (1,8531)
+
+    # DER_bus_voltage_all_2 = np.reshape(DER_bus_voltage_all_1, num_bus)
+
+
 
     end = time_ns()
 
@@ -63,7 +83,7 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_node_idx):
 
     # print('size : %s' %len(DER_bus_voltage_all))
 
-    Bus_voltage = [DER_bus_voltage_all[i]+Bus_voltage[i] for i in range(num_bus)]
+    Bus_voltage = [DER_bus_voltage_all[0,i]+Bus_voltage[i] for i in range(num_bus)]
     DER_voltage = [Bus_voltage[idx] for idx in DER_node_idx]
 
     # return only DER_bus voltages
@@ -94,7 +114,7 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
     del_power_demand_const=del_power_demand
     initial_output = sum(DER_output)
     ii=0 # iterator to check max_iter
-    max_iter = 50
+    max_iter = 100
     solution_time=list()
 
     while AGC_undelivered:
@@ -102,7 +122,7 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
         # print('DER headroom is %s' %DER_head)
 
         # find the proportional headroom for each DER unit
-        DER_headroom_prop=AGC_prop(DER_head,del_power_demand)
+        DER_headroom_prop,power_diff_prop=AGC_prop(DER_head,del_power_demand)
 
         # print(sum(DER_headroom_prop))
 
@@ -112,18 +132,21 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
         # DER_bus_voltage = [voltage0_ref.iloc[10,5],voltage0_ref.iloc[10,11],voltage0_ref.iloc[10,13],voltage0_ref.iloc[10,16]]
 
         # find effective headroom for each DER unit
-        DER_headroom_limit = AGC_limit(V_max,DER_bus_voltage,DER_sens_list,num_DER)
+
+        # DER_headroom_limit = AGC_limit(V_max,DER_bus_voltage,DER_sens_list,num_DER)
+
+        DER_headroom_limit_max = AGC_limit_max (V_max,Bus_volt,X_mat,num_DER)
 
         # print('DER headroom limit : %s'%DER_headroom_limit)
 
         # Allocate AGC to DER units based on AGC_prop & AGC_limit
-        DER_head = AGC_alloc (DER_headroom_limit, DER_head,num_DER)
+        DER_head = AGC_alloc (DER_headroom_limit_max, DER_head,num_DER)
 
         # print('DER headroom updated to: %s' %DER_head)   
 
         # print('Sum of initial power allocation is %s' %sum(del_pmat))
 
-        P_diff=0
+        P_diff=power_diff_prop
         # allocate appropriate ower to each unit
         for i in range (num_DER):
             # check if eff < prop
@@ -181,7 +204,7 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
             print(f'*_*_* Total Iterations: {ii+1} *_*_*')
             AGC_undelivered = False
         elif sum(DER_head) == 0:
-            print(f'********DER max. limit reached. Difference in diapatched power & requested power is {sum(DER_output)+del_power_demand_const-sum(DER_out)} kW. ********')
+            print(f'********DER max. limit reached. Total power dispatched is {sum(DER_out)-sum(DER_output)} kW. Total Iterations are {ii+1} ********')
             AGC_undelivered = False
         elif ii > max_iter:
             print('!!!!!!!!!Max. iterations reached!!!!!')
