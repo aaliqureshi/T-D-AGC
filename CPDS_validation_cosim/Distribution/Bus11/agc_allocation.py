@@ -10,12 +10,18 @@ def AGC_prop(DER_headroom,power_demand):
     alpha = power_demand/sum(DER_headroom)
     power_diff=0
 
+    # if alpha < 0.001:
+    #     DER_max_headroom_idx = np.argmax(DER_headroom)
+    #     if DER_headroom[DER_max_headroom_idx] > power_demand:
+    #         DER_headroom[DER_max_headroom_idx] = alpha*DER_headroom[DER_max_headroom_idx]
+    #     return DER_headroom_prop, power_diff 
+
     # check if power demand is greater than available headroom limit
     if alpha > 1:
         # find the difference between demand and availbile power
         power_diff=power_demand - sum(DER_headroom)
         print("^^^^^^^^^^^^^^^^^^^DERs can't meet the request. Maximum available power could be {}. \n Difference is {} ".format(sum(DER_headroom),power_diff) )
-        print('^^^^^^^^^^^^^^^^^^^Setting requirement to %s' %sum(DER_headroom))
+        # print('^^^^^^^^^^^^^^^^^^^Setting requirement to %s' %sum(DER_headroom))
         alpha=1
     DER_headroom_prop=[alpha*val for val in DER_headroom]
     return DER_headroom_prop,power_diff
@@ -179,6 +185,8 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
         # print('DER headroom updated to: %s' %DER_head)
         del_power_demand = P_diff # update the power demand as the total undelivered power
 
+
+
         # perform linear power flow for node voltage 
 
         # time_start =time_ns() 
@@ -199,7 +207,7 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
             # print("DER max. limit reached. \n Total power delivered is {}".format(sum(DER_out) - initial_output))
             print('DERs are not availble at this time.')
             AGC_undelivered = False
-        elif sum(DER_output)+del_power_demand_const == sum(DER_out) or P_diff <= 0.1:
+        elif sum(DER_output)+del_power_demand_const == sum(DER_out) or P_diff <= 1:
             print('_+_+_+_+_+_Requested power dispatched!_+_+_+_+_+_')
             print(f'*_*_* Total Iterations: {ii+1} *_*_*')
             AGC_undelivered = False

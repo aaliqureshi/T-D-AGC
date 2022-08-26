@@ -11,13 +11,14 @@ import matplotlib.pyplot as plt
 # from time import time_ns
 import os
 import csv
+from optim import LP
 
 # time_start = time_ns()
 dir_to_feeder = os.getcwd()
-num_DER = 100
+num_DER = 5
 method='direct'
 feeder_type = '8500'
-del_agc = 2000 # unit is kW
+del_agc = 15 # unit is kW
 DER_out_val = 10 # originally it was set as 500
 V_max = 1.05001
 DER_output = [DER_out_val for idx in range(num_DER)]
@@ -63,6 +64,10 @@ print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_T} milli-sec
 Bus_voltage_S,DER_output_S,avg_sol_time_S=ac.AGC_calculation(DER_headroom, del_agc,V_max,S_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,S_mat)
 
 print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} milli-sec.$$$$$$$$$$$$$$')
+
+LP(DER_headroom,del_agc,V_max,T_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,T_mat)
+
+
 # DER_output = [DER_out_val for idx in range(num_DER)]
 
 
