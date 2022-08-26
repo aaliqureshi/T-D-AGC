@@ -14,10 +14,10 @@ import csv
 
 # time_start = time_ns()
 dir_to_feeder = os.getcwd()
-num_DER = 100
+num_DER = 5
 method='direct'
 feeder_type = '8500'
-del_agc = 300 # unit is kW
+del_agc = 5 # unit is kW
 DER_out_val = 10 # originally it was set as 500
 V_max = 1.05
 DER_output = [DER_out_val for idx in range(num_DER)]

@@ -1,5 +1,6 @@
 import numpy as np
 from time import time_ns
+from pulp import *
 
 
 def AGC_prop(DER_headroom,power_demand):
@@ -29,12 +30,27 @@ def AGC_limit (V_max,DER_bus_voltage,DER_sens_list,num_DER):
         DER_headroom_limit.append(((V_max - DER_bus_voltage[val]) / DER_sens_list[val] )/10)
     return DER_headroom_limit
 
+def AGC_limit_max (V_max,Bus_voltage,X_mat,num_DER):
+    """compute effective headroom based on jacobian inverse"""
+    DER_headroom_limit=np.array([])
+    V_max_array = np.ones(len(Bus_voltage)) * V_max
+    delta_V = np.subtract(V_max_array,Bus_voltage)
+
+    DER_headroom_limit = np.linalg.pinv(X_mat) @ delta_V
+
+    chkk= np.linalg.pinv(X_mat) @ X_mat
+
+    # DER_headroom_limit = DER_headroom_limit /10
+    DER_headroom_limit = DER_headroom_limit 
+
+    return DER_headroom_limit
+
 
 
 
 def AGC_alloc (DER_headroom_limit, DER_headroom,num_DER):
     """find min. of AGC_prop & AGC_limit and set that value as power increase for each unit """
-    del_pmat = [min(DER_headroom_limit[i],DER_headroom[i]) for i in range(num_DER)]
+    del_pmat = [min(DER_headroom_limit[0,i],DER_headroom[i]) for i in range(num_DER)]
     return del_pmat
 
 
@@ -75,6 +91,100 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_node_idx):
     return Bus_voltage, DER_voltage, t
 
 
+def AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output):
+    
+    X_mat_inv = np.linalg.pinv(X_mat)
+    opt_model = LpProblem('get_DER_limit',LpMaximize)
+    num_nodes = len(Bus_voltage)
+    set_x = range(0,num_DER)
+    set_v = range(0,num_nodes)
+    # low = {i:0 for i in set_x}
+    low = {i:0 for i in set_x}
+    # up = {i:DER_headroom[i] for i in set_x}
+    up = {i:1000 for i in set_x}
+
+    # v_l_ANSI = np.min(Bus_voltage) - 0.01
+    # v_u_ANSI = np.max(Bus_voltage) + 0.01
+
+    v_l_ANSI = 0.95
+    v_u_ANSI = 1.0501
+
+    v_l = {i: v_l_ANSI - Bus_voltage[i] for i in set_v}
+    v_u = {i:v_u_ANSI - Bus_voltage[i] for i in set_v}
+
+
+    x_vars = {i: LpVariable(cat = LpContinuous, lowBound=low[i], upBound=up[i],\
+              name="x_{}".format(i)) for i in set_x}
+    
+    constraints = {i: opt_model.addConstraint(LpConstraint(\
+                e = lpSum([X_mat[i,j]*x_vars[j] for j in set_x]),\
+                sense=LpConstraintLE,\
+                rhs = v_u[i],\
+                name = 'constraint_v_u{}'.format(i)))\
+                for i in set_v}
+
+    # constraints = {i: opt_model.addConstraint(LpConstraint(\
+    #             e = lpSum(X_mat[i,j]*x_vars[j] for j in set_x),\
+    #             sense=LpConstraintGE,\
+    #             rhs = v_l[i],\
+    #             name = 'constraint_v_l{}'.format(i)))\
+    #             for i in set_v}
+    
+    objective = lpSum([x_vars[i] for i in set_x])
+
+    opt_model.setObjective(objective)
+
+    opt_model.solve()
+
+    print('=======> Optimization Status:%s'%LpStatus[opt_model.status])
+
+    print('Sum of total injectable power is: ',value(opt_model.objective))
+
+    for v in opt_model.variables():
+        print(v.name, '=',v.varValue)
+
+
+def AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,DER_sens_list):
+
+    V_min = 0.95
+    V_max = 1.05
+
+    prob = LpProblem('OPF-type-AGC_distribution',LpMaximize)
+
+    volt_limit = {i:V_max-Bus_voltage[i] for i in range(len(Bus_voltage))}
+
+    xx=[V_max-Bus_voltage[i] for i in range(len(Bus_voltage))]
+
+
+    x_vars = {i: LpVariable(cat = LpContinuous, lowBound=0, upBound=1000,\
+              name = 'x_{}'.format(i)) for i in range(num_DER)}
+    
+    
+    prob +=(lpSum([x_vars[i] for i in range(num_DER)]),"Sum of DER power output ",)
+
+    for row in range (len(Bus_voltage)):
+        prob +=(lpSum([X_mat[row,col]*x_vars[col] for col in range (num_DER)]) <=xx[row], "Voltage limit %s,%s"%(row,row*2),)
+
+    prob.solve()
+    print('=======> Optimization Status:%s'%LpStatus[prob.status])
+
+    print('Sum of total injectable power is: ',value(prob.objective))
+
+    for v in prob.variables():
+        print(v.name, '=',v.varValue)
+
+
+
+
+    
+    
+
+
+
+
+
+
+
 def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_voltage,DER_idx,DER_node_idx,DER_output,X_mat):
 
     """main function to calculate AGC allocation based on headroom, max. power injection limit(voltage profile)
@@ -112,12 +222,17 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
         # DER_bus_voltage = [voltage0_ref.iloc[10,5],voltage0_ref.iloc[10,11],voltage0_ref.iloc[10,13],voltage0_ref.iloc[10,16]]
 
         # find effective headroom for each DER unit
-        DER_headroom_limit = AGC_limit(V_max,DER_bus_voltage,DER_sens_list,num_DER)
+        # DER_headroom_limit = AGC_limit(V_max,DER_bus_voltage,DER_sens_list,num_DER)
+        DER_headroom_limit_max = AGC_limit_max(V_max,Bus_volt,X_mat,num_DER)
+
+        AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output)
+
+        AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,DER_sens_list)
 
         # print('DER headroom limit : %s'%DER_headroom_limit)
 
         # Allocate AGC to DER units based on AGC_prop & AGC_limit
-        DER_head = AGC_alloc (DER_headroom_limit, DER_head,num_DER)
+        DER_head = AGC_alloc (DER_headroom_limit_max, DER_head,num_DER)
 
         # print('DER headroom updated to: %s' %DER_head)   
 
