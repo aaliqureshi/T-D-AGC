@@ -1,0 +1,16 @@
+/.idea
+
+# ignore temp files in all directories
+
+/temp/
+
+/Aggregator_DER
+
+/Controller_Thermal
+
+/Module_files
+
+/Transmission
+/lol
+
+yolo.txt
