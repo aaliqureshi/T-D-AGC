@@ -259,7 +259,7 @@ def setDSS_8500_balanced(num_DER, DER_output,del_agc,feeder_type):
     seed = np.random.RandomState(321)
     # index = seed.randint(len(loadbuses),size = 100)
 
-    DER_index_two_phase = seed.choice(len(loadbuses_two_phase),size=num_DER,replace=False) # replace is set as False so that no two buses are selected twice
+    DER_index_two_phase = seed.choice(len(loadbuses_two_phase),size=num_DER,replace=False) # replace is set as False so that no bus is selected twice
 
     DER_index =[]
 

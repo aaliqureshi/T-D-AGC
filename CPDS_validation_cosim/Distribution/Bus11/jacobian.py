@@ -19,39 +19,39 @@ def calc (del_agc,typee,DER_idx,DER_node_idx,var_dict,num_nodes,P_diff):
         var_dict[idx] = pd.read_csv(dir_to_results+'\\'+typee+'_results_'+str(del_agc)+'_'+str(idx)+'.csv')
 
 
-    jac_cols={}
+    # jac_cols={}
     
-    start = time_ns()
-    for row in range(len(DER_idx)):
-        arr=list()
-        for col in range (num_nodes):
-            # val = (var_dict[row].iloc[col,1] - voltage0_ref.iloc[4,col+1])/P_diff[row]
-            val = (var_dict[row].iloc[col,1] - voltage0_ref.iloc[0,col+1])/P_diff[row]
-            arr.append(val)
-        jac_cols[row]=arr
-    end = time_ns()
+    # start = time_ns()
+    # for row in range(len(DER_idx)):
+    #     arr=list()
+    #     for col in range (num_nodes):
+    #         # val = (var_dict[row].iloc[col,1] - voltage0_ref.iloc[4,col+1])/P_diff[row]
+    #         val = (var_dict[row].iloc[col,1] - voltage0_ref.iloc[0,col+1])/P_diff[row]
+    #         arr.append(val)
+    #     jac_cols[row]=arr
+    # end = time_ns()
 
-    t0 = (end-start)/1e6
+    # t0 = (end-start)/1e6
 
-    print(f'Nested Loop executed in {t0} msec.')
+    # print(f'Nested Loop executed in {t0} msec.')
 
     ###### just for fun testing ###################################
 
     ## using list comprehension!
 
-    arr=list()
-    jac_cols={}
-    start = time_ns()
-    i=0
-    for row in range(len(DER_idx)):
-        val = [(var_dict[row].iloc[col,1] - voltage0_ref.iloc[0,col+1])/P_diff[row] for col in range(num_nodes)]
-        jac_cols[i]=val[:]
-        i+=1
-    end =time_ns()
+    # arr=list()
+    # jac_cols={}
+    # start = time_ns()
+    # i=0
+    # for row in range(len(DER_idx)):
+    #     val = [(var_dict[row].iloc[col,1] - voltage0_ref.iloc[0,col+1])/P_diff[row] for col in range(num_nodes)]
+    #     jac_cols[i]=val[:]
+    #     i+=1
+    # end =time_ns()
 
-    t1=(end-start)/1e6
+    # t1=(end-start)/1e6
 
-    print(f'List Comprehension executed in {t1} millisec')
+    # print(f'List Comprehension executed in {t1} millisec')
 
 
     # start = time_ns()
@@ -68,7 +68,7 @@ def calc (del_agc,typee,DER_idx,DER_node_idx,var_dict,num_nodes,P_diff):
     voltage0_ref=pd.read_csv(dir_to_results+'\\initial_voltage_'+str(del_agc)+'.csv')
 
     voltage0_np = voltage0_ref.iloc[0,1:].to_numpy()
-    var_np = np.array([])
+    # var_np = np.array([])
     
     for idx in range (len(DER_idx)):
         val = pd.read_csv(dir_to_results+'\\'+typee+'_results_'+str(del_agc)+'_'+str(idx)+'.csv')
@@ -77,7 +77,7 @@ def calc (del_agc,typee,DER_idx,DER_node_idx,var_dict,num_nodes,P_diff):
     start=time_ns()
     i=0
     for col in range (len(DER_idx)):
-        val = (var_dict[col] - voltage0_np)/P_diff[row]
+        val = (var_dict[col] - voltage0_np)/P_diff[col]
         jac_cols[i]=val[:]
         i+=1
     end=time_ns()
