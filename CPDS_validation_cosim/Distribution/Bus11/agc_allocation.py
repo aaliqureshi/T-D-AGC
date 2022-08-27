@@ -40,8 +40,10 @@ def AGC_limit_max (V_max,Bus_voltage,X_mat,num_DER):
 
     chkk= np.linalg.pinv(X_mat) @ X_mat
 
-    # DER_headroom_limit = DER_headroom_limit /10
-    DER_headroom_limit = DER_headroom_limit 
+    # chkk2 = chkk @ X_mat
+
+    DER_headroom_limit = DER_headroom_limit /10
+    # DER_headroom_limit = DER_headroom_limit 
 
     return DER_headroom_limit
 
@@ -291,7 +293,7 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
             # print("DER max. limit reached. \n Total power delivered is {}".format(sum(DER_out) - initial_output))
             print('DERs are not availble at this time.')
             AGC_undelivered = False
-        elif sum(DER_output)+del_power_demand_const == sum(DER_out) or P_diff <= 0.1:
+        elif sum(DER_output)+del_power_demand_const == sum(DER_out) or P_diff <= 1:
             print('_+_+_+_+_+_Requested power dispatched!_+_+_+_+_+_')
             print(f'*_*_* Total Iterations: {ii+1} *_*_*')
             AGC_undelivered = False
