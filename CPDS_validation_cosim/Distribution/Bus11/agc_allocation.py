@@ -139,7 +139,7 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
 
         # find effective headroom for each DER unit
 
-        # DER_headroom_limit = AGC_limit(V_max,DER_bus_voltage,DER_sens_list,num_DER)
+        DER_headroom_limit = AGC_limit(V_max,DER_bus_voltage,DER_sens_list,num_DER)
 
         DER_headroom_limit_max = AGC_limit_max (V_max,Bus_volt,X_mat,num_DER)
 

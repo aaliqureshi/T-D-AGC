@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # from time import time_ns
 import os
 import csv
-from optim import LP
+# from optim import LP
 
 # time_start = time_ns()
 dir_to_feeder = os.getcwd()
@@ -65,7 +65,7 @@ Bus_voltage_S,DER_output_S,avg_sol_time_S=ac.AGC_calculation(DER_headroom, del_a
 
 print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} milli-sec.$$$$$$$$$$$$$$')
 
-LP(DER_headroom,del_agc,V_max,T_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,T_mat)
+# LP(DER_headroom,del_agc,V_max,T_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,T_mat)
 
 
 # DER_output = [DER_out_val for idx in range(num_DER)]
