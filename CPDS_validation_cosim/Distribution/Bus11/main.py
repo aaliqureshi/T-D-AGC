@@ -15,10 +15,10 @@ import csv
 
 # time_start = time_ns()
 dir_to_feeder = os.getcwd()
-num_DER = 5
+num_DER = 100
 method='direct'
 feeder_type = '8500'
-del_agc = 15 # unit is kW
+del_agc = 700 # unit is kW
 DER_out_val = 10 # originally it was set as 500
 V_max = 1.05001
 DER_output = [DER_out_val for idx in range(num_DER)]
@@ -38,7 +38,7 @@ DER_idx,DER_node_idx,Bus_voltage,initial_net_power=set_DSS.setDSS_8500_balanced(
 
 # build jacobian
 
-T_mat,T_sens=jacobian.Tan(DER_idx,DER_node_idx,DER_pert,DER_output,del_agc)
+# T_mat,T_sens=jacobian.Tan(DER_idx,DER_node_idx,DER_pert,DER_output,del_agc)
 star='%'
 print(star*10)
 # print('Tangent sensitivities are: %s'%T_sens)
@@ -53,10 +53,10 @@ print(star*10)
 
 # time_start= time_ns()
 # print(time_start)
-Bus_voltage_T,DER_output_T,avg_sol_time_T=ac.AGC_calculation(DER_headroom, del_agc,V_max,T_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,T_mat)
+# Bus_voltage_T,DER_output_T,avg_sol_time_T=ac.AGC_calculation(DER_headroom, del_agc,V_max,T_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,T_mat)
 # time_end=time_ns()
 # print(time_end)
-print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_T} milli-sec.$$$$$$$$$$$$$$')
+# print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_T} milli-sec.$$$$$$$$$$$$$$')
 
 # print(f'AGC allocated in {time_end - time_start} sec.')
 # DER_output = [DER_out_val for idx in range(num_DER)]
@@ -71,15 +71,15 @@ print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} milli-sec
 # DER_output = [DER_out_val for idx in range(num_DER)]
 
 
-_,Bus_voltage_DSS_T,net_power_T=DSS_PF.solvePF_8500_balanced(DER_output_T,DER_idx,del_agc,typee=None,DER=None,store=0)
+# _,Bus_voltage_DSS_T,net_power_T=DSS_PF.solvePF_8500_balanced(DER_output_T,DER_idx,del_agc,typee=None,DER=None,store=0)
 
 _,Bus_voltage_DSS_S,net_power_S=DSS_PF.solvePF_8500_balanced(DER_output_S,DER_idx,del_agc,typee=None,DER=None,store=0)
 
 
-import_diff_T,ratio_T= DSS_PF.response_ratio(initial_net_power,net_power_T,DER_output_T,del_agc)
-import_diff_S,ratio_S= DSS_PF.response_ratio(initial_net_power,net_power_T,DER_output_T,del_agc)
+# import_diff_T,ratio_T= DSS_PF.response_ratio(initial_net_power,net_power_T,DER_output_T,del_agc)
+import_diff_S,ratio_S= DSS_PF.response_ratio(initial_net_power,net_power_S,DER_output_S,del_agc)
 
-percent_error_T, T_error_max, T_error_avg  = DSS_PF.Percent_error (Bus_voltage_DSS_T, Bus_voltage_T,del_agc)
+# percent_error_T, T_error_max, T_error_avg  = DSS_PF.Percent_error (Bus_voltage_DSS_T, Bus_voltage_T,del_agc)
 # print(f'Max. % error for tangent is: {T_error_max}')
 # print(f'Avg. % error for tangent is: {T_error_avg}')
 percent_error_S, S_error_max,S_error_avg = DSS_PF.Percent_error (Bus_voltage_DSS_S, Bus_voltage_S,del_agc)
