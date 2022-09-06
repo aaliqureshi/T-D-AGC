@@ -46,7 +46,7 @@ def AGC_limit_max (V_max,Bus_voltage,X_mat,num_DER):
 
     DER_headroom_limit = np.linalg.pinv(X_mat) @ delta_V
 
-    DER_headroom_limit = DER_headroom_limit /10
+    DER_headroom_limit = DER_headroom_limit 
 
     DER_headroom_limit = np.asarray(DER_headroom_limit).reshape(-1)
 
@@ -105,23 +105,14 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_node_idx):
 
 
 
-def AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output):
+def AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,AGC_request):
     
-    X_mat_inv = np.linalg.pinv(X_mat)
     opt_model = LpProblem('get_DER_limit',LpMaximize)
     num_nodes = len(Bus_voltage)
     set_x = range(0,num_DER)
     set_v = range(0,num_nodes)
-    # low = {i:0 for i in set_x}
-    low = {i:0 for i in set_x}
-    # up = {i:DER_headroom[i] for i in set_x}
-    up = {i:1000 for i in set_x}
-
-    # v_l_ANSI = np.min(Bus_voltage) - 0.01
-    # v_u_ANSI = np.max(Bus_voltage) + 0.01
-
     v_l_ANSI = 0.95
-    v_u_ANSI = 1.0501
+    v_u_ANSI = V_max
 
     v_l = {i: v_l_ANSI - Bus_voltage[i] for i in set_v}
     v_u = {i:v_u_ANSI - Bus_voltage[i] for i in set_v}
@@ -136,6 +127,13 @@ def AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output):
                 rhs = v_u[i],\
                 name = 'constraint_v_u{}'.format(i)))\
                 for i in set_v}
+
+    constraints = {0: opt_model.addConstraint(LpConstraint(\
+            e = lpSum([x_vars[j] for j in set_x]),\
+            sense=LpConstraintEQ,\
+            rhs = AGC_request,\
+            name = 'constraint_p{}'.format(0)))\
+            }
 
     # constraints = {i: opt_model.addConstraint(LpConstraint(\
     #             e = lpSum(X_mat[i,j]*x_vars[j] for j in set_x),\
@@ -164,10 +162,10 @@ def AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output):
 
 
 
-def AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,DER_sens_list):
+def AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,AGC_request):
 
     V_min = 0.95
-    V_max = 1.05
+    # V_max = 1.05
 
     prob = LpProblem('OPF-type-AGC_distribution',LpMaximize)
 
@@ -176,7 +174,7 @@ def AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,D
     xx=[V_max-Bus_voltage[i] for i in range(len(Bus_voltage))]
 
 
-    x_vars = {i: LpVariable(cat = LpContinuous, lowBound=-DER_output[i], upBound=DER_headroom[i],\
+    x_vars = {i: LpVariable(cat = LpContinuous, lowBound=0, upBound=DER_headroom[i],\
               name = 'x_{}'.format(i)) for i in range(num_DER)}
     
     
@@ -184,6 +182,8 @@ def AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,D
 
     for row in range (len(Bus_voltage)):
         prob +=(lpSum([X_mat[row,col]*x_vars[col] for col in range (num_DER)]) <= xx[row], "Voltage limit %s,%s"%(row,row*2),)
+    
+    prob += (lpSum([x_vars[i] for i in range(num_DER)]) == AGC_request)
 
     prob.solve()
     print('=======> Optimization Status:%s'%LpStatus[prob.status])
@@ -197,6 +197,43 @@ def AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,D
         limit.append(v.varValue)
     
     return limit
+
+
+
+
+def Optimize (DER_headroom,AGC_request,V_max,Bus_voltage,DER_output,X_mat,DER_node_idx):
+
+    num_DER = len(DER_headroom)
+    num_bus = len(Bus_voltage)
+    Bus_volt = Bus_voltage[:]
+    DER_head = DER_headroom[:]
+
+                                ## OPtimization Based Approach
+
+    DER_headroom_limit_LP1=AGC_limit_LP (V_max,Bus_volt,X_mat,num_DER,DER_head,DER_output,AGC_request)
+    DER_headroom_limit_LP2=AGC_limit_LP_mult (V_max,Bus_volt,X_mat,num_DER,DER_head,DER_output,AGC_request)
+
+    print('Optimization [W] results ---> Power increase is : %s'%sum(DER_headroom_limit_LP1))
+    print('Optimization [A] results ---> Power increase is : %s'%sum(DER_headroom_limit_LP2))
+
+    jj = sum([int(DER_headroom_limit_LP1[i]!=int(DER_headroom_limit_LP2[i])) for i in range(len(DER_headroom_limit_LP1))])
+
+    print('Difference between W & A is %s' %jj)
+
+
+    Bus_volt_W,_,_ = solveLPF(DER_headroom_limit_LP1, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
+    Bus_volt_A,_,_ = solveLPF(DER_headroom_limit_LP2, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
+
+    gp_w = sum([Bus_volt_W[i]>V_max for i in range(len(Bus_voltage))])
+    gp_a = sum([Bus_volt_A[i]>V_max for i in range(len(Bus_voltage))])
+
+    print('Voltage Violations in Optimization [W] are %s' %gp_w)
+    print('Voltage Violations in Optimization [A] are %s' %gp_a)
+
+    return list(DER_headroom_limit_LP2)
+
+
+
 
 
 
@@ -224,6 +261,24 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
     max_iter = 100
     solution_time=list()
 
+    LP_power=Optimize(DER_headroom,del_power_demand,V_max,Bus_voltage,DER_output,X_mat,DER_node_idx)
+
+                            ## OPtimization Based Approach
+
+    # DER_headroom_limit_LP1=AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,del_power_demand_const)
+    # DER_headroom_limit_LP2=AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,DER_sens_list,del_power_demand_const)
+
+    # print('Optimization [W] results ---> Power increase is : %s'%sum(DER_headroom_limit_LP1))
+    # print('Optimization [A] results ---> Power increase is : %s'%sum(DER_headroom_limit_LP2))
+
+    # jj = sum([int(DER_headroom_limit_LP1[i]!=int(DER_headroom_limit_LP2[i])) for i in range(len(DER_headroom_limit_LP1))])
+
+    # print('Difference between W & A is %s' %jj)
+
+    # Bus_volt,DER_bus_voltage,t = solveLPF(del_pmat, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
+
+                                    ## end  ##########
+
     while AGC_undelivered:
 
         # print('DER headroom is %s' %DER_head)
@@ -242,27 +297,24 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
 
         # DER_headroom_limit = AGC_limit(V_max,DER_bus_voltage,DER_sens_list,num_DER)
 
-        gp = sum([Bus_volt[i]>V_max for i in range(len(Bus_voltage))])
+        # gp = sum([Bus_volt[i]>V_max for i in range(len(Bus_voltage))])
 
         # for i in range(len(Bus_voltage)):
         #     if Bus_volt[i] > V_max:
         #         DER_head_LP[i] = 0
 
-        # DER_headroom_limit_max = AGC_limit_max (V_max,Bus_volt,X_mat,num_DER)
+        DER_headroom_limit_max = AGC_limit_max (V_max,Bus_volt,X_mat,num_DER)
 
-        DER_headroom_limit_LP1=AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output)
-
-
-        # DER_headroom_limit_LP2=AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,DER_sens_list)
+        # print('Proposed results are %s' %DER_headroom_limit_max)
 
         
 
-        print('$$$$$$$$$ ####### ######## %s &&&&&&&&&&&&&&&&&&&&& *****************' %gp)
+        # print('$$$$$$$$$ ####### ######## %s &&&&&&&&&&&&&&&&&&&&& *****************' %gp)
 
         # print('DER headroom limit : %s'%DER_headroom_limit)
 
         # Allocate AGC to DER units based on AGC_prop & AGC_limit
-        DER_head = AGC_alloc (DER_headroom_limit_LP1, DER_head,num_DER)
+        DER_head = AGC_alloc (DER_headroom_limit_max, DER_head,num_DER)
 
         # print('DER headroom updated to: %s' %DER_head)   
 
@@ -326,6 +378,8 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
         elif sum(DER_output)+del_power_demand_const == sum(DER_out) or P_diff <= 1:
             print('_+_+_+_+_+_Requested power dispatched!_+_+_+_+_+_')
             print(f'*_*_* Total Iterations: {ii+1} *_*_*')
+            gp = sum([Bus_volt[i]>V_max for i in range(len(Bus_voltage))])
+            print('Voltage violations in proposed method are %s' %gp)
             AGC_undelivered = False
         elif sum(DER_head) == 0:
             print(f'********DER max. limit reached. Total power dispatched is {sum(DER_out)-sum(DER_output)} kW. Total Iterations are {ii+1} ********')
@@ -335,7 +389,6 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
             AGC_undelivered = False
         else:
             ii+=1
-            # continue
-            break
+            continue
     
-    return Bus_volt,DER_out,sum(solution_time)/len(solution_time)
+    return Bus_volt,DER_out,sum(solution_time)/len(solution_time),LP_power
