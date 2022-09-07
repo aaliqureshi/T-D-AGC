@@ -204,6 +204,60 @@ def AGC_limit_LP_mult (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,A
     
     return limit
 
+def AGC_limit_LP_mult_cost (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,AGC_request):
+
+    V_min = 0.95
+    # V_max = 1.05
+
+                    ## Calculate Cost Functions ## 
+
+    # [1] https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
+    # [2] Economic dispatch for a microgrid considering renewable energy cost functions
+
+    interest_rate =  0.09
+    investment_life = 20
+    investment_cost = 1748 # $/kW
+    om_cost = 0.0038 # $/Kwh
+
+    investment_coeff = interest_rate/abs(1-(1+interest_rate)**-investment_life)
+
+    var1 = investment_coeff*investment_cost
+
+    var2 = om_cost
+
+
+
+    prob = LpProblem('Cost_Based_AGC_distribution',LpMinimize)
+
+    volt_limit = {i:V_max-Bus_voltage[i] for i in range(len(Bus_voltage))}
+
+    xx=[V_max-Bus_voltage[i] for i in range(len(Bus_voltage))]
+
+
+    x_vars = {i: LpVariable(cat = LpContinuous, lowBound=0, upBound=DER_headroom[i],\
+              name = 'x_{}'.format(i)) for i in range(num_DER)}
+    
+    
+    prob +=(lpSum([var1*x_vars[i] + om_cost*x_vars[i] for i in range(num_DER)]),"Sum of DER power output cost ",)
+
+    for row in range (len(Bus_voltage)):
+        prob +=(lpSum([X_mat[row,col]*x_vars[col] for col in range (num_DER)]) <= xx[row], "Voltage limit %s,%s"%(row,row*2),)
+    
+    prob += (lpSum([x_vars[i] for i in range(num_DER)]) == AGC_request)
+
+    prob.solve()
+    print('=======> Optimization Status:%s'%LpStatus[prob.status])
+
+    # print('Sum of total injectable power is: ',value(prob.objective))
+
+    limit = []
+
+    for v in prob.variables():
+        # print(v.name, '=',v.varValue)
+        limit.append(v.varValue)
+    
+    return limit
+
 
 
 
@@ -217,7 +271,7 @@ def Optimize (DER_headroom,AGC_request,V_max,Bus_voltage,DER_output,X_mat,DER_no
                                 ## OPtimization Based Approach
 
     DER_headroom_limit_LP1=AGC_limit_LP (V_max,Bus_volt,X_mat,num_DER,DER_head,DER_output,AGC_request)
-    DER_headroom_limit_LP2=AGC_limit_LP_mult (V_max,Bus_volt,X_mat,num_DER,DER_head,DER_output,AGC_request)
+    DER_headroom_limit_LP2=AGC_limit_LP_mult_cost (V_max,Bus_volt,X_mat,num_DER,DER_head,DER_output,AGC_request)
 
     print('Optimization [W] results ---> Power increase is : %s'%sum(DER_headroom_limit_LP1))
     print('Optimization [A] results ---> Power increase is : %s'%sum(DER_headroom_limit_LP2))

@@ -18,14 +18,19 @@ dir_to_feeder = os.getcwd()
 num_DER = 10
 method='direct'
 feeder_type = '8500'
-del_agc =15  # unit is kW
+del_agc = 25  # unit is kW
 DER_out_val = 10 # originally it was set as 500
 V_max = 1.0511
 DER_output = [DER_out_val for idx in range(num_DER)]
 # DER_output = [50,50,100,50]
 DER_pert=[DER_output[idx]*1.05 for idx in range(num_DER)]
-DER_max = [DER_output[idx]*3 for idx in range(num_DER)]
-DER_headroom = [DER_output[idx]*2.5 for idx in range(num_DER)]
+
+consistent_random_object = np.random.RandomState(123)
+max_factor = consistent_random_object.randint(2,6,num_DER,dtype=int)
+# headroom_factor = consistent_random_object.random(1)
+
+DER_max = [DER_output[idx]*max_factor[idx] for idx in range(num_DER)]
+DER_headroom = [DER_max[idx]*1 for idx in range(num_DER)]
 # DER_headroom = [125,125,125,125]
 
 
@@ -63,6 +68,10 @@ print(star*10)
 
 # Bus_voltage_S,DER_output_S,avg_sol_time_S,DER_output_LP=ac.AGC_calculation(DER_headroom, del_agc,V_max,S_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,S_mat)
 Bus_voltage_S,DER_output_S,DER_output_LP=ac.AGC_calculation(DER_headroom, del_agc,V_max,S_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,S_mat)
+
+print(f'======> DER Output (Proposed): {DER_output_S}')
+
+print(f'======> DER Output (LP): {DER_output_LP}')
 
 # print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} milli-sec.$$$$$$$$$$$$$$')
 
