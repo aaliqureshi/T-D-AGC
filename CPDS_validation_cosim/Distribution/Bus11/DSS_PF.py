@@ -186,7 +186,7 @@ def solvePF_8500_balanced (DER_output, index_DERs,del_agc,typee,DER,store):
     time_end=time_ns()
     # print(f'DSS solved executed in {time_end-time_start} sec')
     total_time = (time_end - time_start)/1e6
-    print(f'$$$$$$$$$$$$ DSS solution time is {total_time} sec.')
+    print(f'$$$$$$$$$$$$ DSS solution time is {total_time} milli-sec.')
     # res=dss.Text.Result()
     # print(res)
     # print(f'Network active power demand after DER connection is{dss.Circuit.TotalPower()}')

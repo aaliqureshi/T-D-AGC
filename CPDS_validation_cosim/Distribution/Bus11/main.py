@@ -15,10 +15,10 @@ import csv
 
 # time_start = time_ns()
 dir_to_feeder = os.getcwd()
-num_DER = 100
+num_DER = 10
 method='direct'
 feeder_type = '8500'
-del_agc =1000  # unit is kW
+del_agc =15  # unit is kW
 DER_out_val = 10 # originally it was set as 500
 V_max = 1.0511
 DER_output = [DER_out_val for idx in range(num_DER)]
@@ -61,9 +61,10 @@ print(star*10)
 # print(f'AGC allocated in {time_end - time_start} sec.')
 # DER_output = [DER_out_val for idx in range(num_DER)]
 
-Bus_voltage_S,DER_output_S,avg_sol_time_S,LP_power=ac.AGC_calculation(DER_headroom, del_agc,V_max,S_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,S_mat)
+# Bus_voltage_S,DER_output_S,avg_sol_time_S,DER_output_LP=ac.AGC_calculation(DER_headroom, del_agc,V_max,S_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,S_mat)
+Bus_voltage_S,DER_output_S,DER_output_LP=ac.AGC_calculation(DER_headroom, del_agc,V_max,S_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,S_mat)
 
-print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} milli-sec.$$$$$$$$$$$$$$')
+# print(f'$$$$$$$$$$$$$$$ Average time to solve LPF is: {avg_sol_time_S} milli-sec.$$$$$$$$$$$$$$')
 
 # LP(DER_headroom,del_agc,V_max,T_sens,Bus_voltage,DER_idx,DER_node_idx,DER_output,T_mat)
 
@@ -78,9 +79,8 @@ _,Bus_voltage_DSS_S,net_power_S=DSS_PF.solvePF_8500_balanced(DER_output_S,DER_id
 gp = sum([Bus_voltage_DSS_S[i]>V_max for i in range(len(Bus_voltage))])
 print('Actual Voltage violations in proposed method are %s' %gp)
 
-_,Bus_voltage_DSS_LP,net_power_LP=DSS_PF.solvePF_8500_balanced(LP_power,DER_idx,del_agc,typee=None,DER=None,store=0)
+_,Bus_voltage_DSS_LP,net_power_LP=DSS_PF.solvePF_8500_balanced(DER_output_LP,DER_idx,del_agc,typee=None,DER=None,store=0)
 
-print('----> LP power is %s '%LP_power)
 
 gp = sum([Bus_voltage_DSS_LP[i]>V_max for i in range(len(Bus_voltage))])
 print('OP Actual Voltage violations in proposed method are %s' %gp)
@@ -89,7 +89,7 @@ print('OP Actual Voltage violations in proposed method are %s' %gp)
 # import_diff_T,ratio_T= DSS_PF.response_ratio(initial_net_power,net_power_T,DER_output_T,del_agc)
 import_diff_S,ratio_S= DSS_PF.response_ratio(initial_net_power,net_power_S,DER_output_S,del_agc)
 
-import_diff_LP,ratio_LP= DSS_PF.response_ratio(initial_net_power,net_power_LP,LP_power,del_agc)
+import_diff_LP,ratio_LP= DSS_PF.response_ratio(initial_net_power,net_power_LP,DER_output_LP,del_agc)
 
 # percent_error_T, T_error_max, T_error_avg  = DSS_PF.Percent_error (Bus_voltage_DSS_T, Bus_voltage_T,del_agc)
 # print(f'Max. % error for tangent is: {T_error_max}')

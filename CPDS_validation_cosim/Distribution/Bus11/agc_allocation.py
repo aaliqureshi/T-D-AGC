@@ -46,7 +46,7 @@ def AGC_limit_max (V_max,Bus_voltage,X_mat,num_DER):
 
     DER_headroom_limit = np.linalg.pinv(X_mat) @ delta_V
 
-    DER_headroom_limit = DER_headroom_limit 
+    # DER_headroom_limit = DER_headroom_limit 
 
     DER_headroom_limit = np.asarray(DER_headroom_limit).reshape(-1)
 
@@ -70,7 +70,7 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_node_idx):
 
     # perform M * del_pmat 
     # calculate time taken to solve LPF
-    start = time_ns()
+    # start = time_ns()
 
     # for bus in range (num_bus):
     #     val=0
@@ -84,16 +84,16 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_node_idx):
 
 
 
-    end = time_ns()
+    # end = time_ns()
 
-    t = (end - start)/1e6
+    # t = (end - start)/1e6
 
-    print(f'LPF solved in {t} millisec.')
+    # print(f'LPF solved in {t} millisec.')
 
     # print('size : %s' %len(DER_bus_voltage_all))
 
     Bus_volt = [DER_bus_voltage_all[0,i]+Bus_voltage[i] for i in range(num_bus)]
-    DER_voltage = [Bus_voltage[idx] for idx in DER_node_idx]
+    # DER_voltage = [Bus_voltage[idx] for idx in DER_node_idx]
 
     # return only DER_bus voltages
     # j=0
@@ -101,7 +101,7 @@ def solveLPF (del_pmat,Bus_voltage,num_bus,num_DER,X_mat,DER_node_idx):
     #     DER_bus_voltage_a.append(float(DER_bus_voltage_all[idx] + DER_bus_voltage_init[j]))
     #     j+=1
 
-    return Bus_volt, DER_voltage, t
+    return Bus_volt
 
 
 
@@ -146,7 +146,13 @@ def AGC_limit_LP (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_output,AGC_re
 
     opt_model.setObjective(objective)
 
+    t_start = time_ns()
+
     opt_model.solve()
+
+    t_end = time_ns()
+
+    print(f'--->LP solved in {(t_end - t_start)/1e6} milli-sec')
 
     # print('=======> Optimization Status:%s'%LpStatus[opt_model.status])
 
@@ -221,8 +227,8 @@ def Optimize (DER_headroom,AGC_request,V_max,Bus_voltage,DER_output,X_mat,DER_no
     print('Difference between W & A is %s' %jj)
 
 
-    Bus_volt_W,_,_ = solveLPF(DER_headroom_limit_LP1, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
-    Bus_volt_A,_,_ = solveLPF(DER_headroom_limit_LP2, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
+    Bus_volt_W= solveLPF(DER_headroom_limit_LP1, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
+    Bus_volt_A = solveLPF(DER_headroom_limit_LP2, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
 
     gp_w = sum([Bus_volt_W[i]>V_max for i in range(len(Bus_voltage))])
     gp_a = sum([Bus_volt_A[i]>V_max for i in range(len(Bus_voltage))])
@@ -230,7 +236,9 @@ def Optimize (DER_headroom,AGC_request,V_max,Bus_voltage,DER_output,X_mat,DER_no
     print('Voltage Violations in Optimization [W] are %s' %gp_w)
     print('Voltage Violations in Optimization [A] are %s' %gp_a)
 
-    return list(DER_headroom_limit_LP2)
+    DER_output_LP = [DER_output[i]+DER_headroom_limit_LP2[i] for i in range(num_DER)]
+
+    return DER_output_LP
 
 
 
@@ -261,7 +269,7 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
     max_iter = 100
     solution_time=list()
 
-    LP_power=Optimize(DER_headroom,del_power_demand,V_max,Bus_voltage,DER_output,X_mat,DER_node_idx)
+    DER_out_LP=Optimize(DER_headroom,del_power_demand,V_max,Bus_voltage,DER_output,X_mat,DER_node_idx)
 
                             ## OPtimization Based Approach
 
@@ -284,6 +292,7 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
         # print('DER headroom is %s' %DER_head)
 
         # find the proportional headroom for each DER unit
+        t_start = time_ns()
         DER_headroom_prop,power_diff_prop=AGC_prop(DER_head,del_power_demand)
 
         # print(sum(DER_headroom_prop))
@@ -359,8 +368,8 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
 
         # time_start =time_ns() 
         # print(time_start)
-        Bus_volt,DER_bus_voltage,t = solveLPF(del_pmat, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
-        solution_time.append(t)
+        Bus_volt = solveLPF(del_pmat, Bus_volt, num_bus,num_DER,X_mat,DER_node_idx)
+        # solution_time.append(t)
         # time_end=time_ns()
         # print(time_end)
         # elap = time_end - time_start
@@ -376,6 +385,8 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
             print('DERs are not availble at this time.')
             AGC_undelivered = False
         elif sum(DER_output)+del_power_demand_const == sum(DER_out) or P_diff <= 1:
+            t_end = time_ns()
+            print(f'--->> Proposed Method solved in {(t_end - t_start)/1e6 } milli-sec')
             print('_+_+_+_+_+_Requested power dispatched!_+_+_+_+_+_')
             print(f'*_*_* Total Iterations: {ii+1} *_*_*')
             gp = sum([Bus_volt[i]>V_max for i in range(len(Bus_voltage))])
@@ -391,4 +402,5 @@ def AGC_calculation (DER_headroom,del_power_demand,V_max,DER_sens_list,Bus_volta
             ii+=1
             continue
     
-    return Bus_volt,DER_out,sum(solution_time)/len(solution_time),LP_power
+    # return Bus_volt,DER_out,sum(solution_time)/len(solution_time),DER_out_LP
+    return Bus_volt,DER_out,DER_out_LP

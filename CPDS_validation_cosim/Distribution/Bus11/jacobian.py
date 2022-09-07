@@ -13,10 +13,10 @@ def calc (del_agc,typee,DER_idx,DER_node_idx,var_dict,num_nodes,P_diff):
     dir_to_results = os.path.join(dir_to_feeder,'..','simulation_results')
     # print(dir_to_results)
 
-    voltage0_ref=pd.read_csv(dir_to_results+'\\initial_voltage_'+str(del_agc)+'.csv')
+    # voltage0_ref=pd.read_csv(dir_to_results+'\\initial_voltage_'+str(del_agc)+'.csv')
 
-    for idx in range (len(DER_idx)):
-        var_dict[idx] = pd.read_csv(dir_to_results+'\\'+typee+'_results_'+str(del_agc)+'_'+str(idx)+'.csv')
+    # for idx in range (len(DER_idx)):
+    #     var_dict[idx] = pd.read_csv(dir_to_results+'\\'+typee+'_results_'+str(del_agc)+'_'+str(idx)+'.csv')
 
 
     # jac_cols={}
@@ -84,7 +84,7 @@ def calc (del_agc,typee,DER_idx,DER_node_idx,var_dict,num_nodes,P_diff):
 
     t2 = (end-start)/1e6
 
-    print(f'Numpy executed in {t2} millisec.')
+    print(f'--->> Jacobian computed in {t2} millisec.')
 
 
 
