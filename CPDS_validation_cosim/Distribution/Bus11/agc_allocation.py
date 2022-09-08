@@ -225,6 +225,13 @@ def AGC_limit_LP_mult_cost (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_out
 
     var2 = om_cost
 
+    bid_price = 1 # $/kW
+    consistent_random_obj = np.random.RandomState(710)
+    offer_price_factor = consistent_random_obj.random(num_DER)+1 # normalized offer from seller, min is 1 (which is the bid)
+
+    # offer_price_factor = [1,2,1,1,1]
+
+
 
 
     prob = LpProblem('Cost_Based_AGC_distribution',LpMinimize)
@@ -238,7 +245,8 @@ def AGC_limit_LP_mult_cost (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_out
               name = 'x_{}'.format(i)) for i in range(num_DER)}
     
     
-    prob +=(lpSum([var1*x_vars[i] + om_cost*x_vars[i] for i in range(num_DER)]),"Sum of DER power output cost ",)
+    # prob +=(lpSum([var1*x_vars[i] + om_cost*x_vars[i] for i in range(num_DER)]),"Sum of DER power output cost ",)
+    prob +=(lpSum([offer_price_factor[i]*x_vars[i] for i in range(num_DER)]),"Sum of DER power output cost ",)
 
     for row in range (len(Bus_voltage)):
         prob +=(lpSum([X_mat[row,col]*x_vars[col] for col in range (num_DER)]) <= xx[row], "Voltage limit %s,%s"%(row,row*2),)
@@ -253,7 +261,7 @@ def AGC_limit_LP_mult_cost (V_max,Bus_voltage,X_mat,num_DER,DER_headroom,DER_out
     limit = []
 
     for v in prob.variables():
-        # print(v.name, '=',v.varValue)
+        print(f'---->> Cost aware allocation = {v.varValue}')
         limit.append(v.varValue)
     
     return limit
